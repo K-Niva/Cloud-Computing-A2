@@ -1,3 +1,5 @@
+// MIGHT NEED TO CHANGE TO FIT IN LIKE LAB
+
 const AWS = require('aws-sdk');
 
 // Configure region
