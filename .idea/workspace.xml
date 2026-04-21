@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="added some comments/ NEED TO ADD COMMENTS AT END">
-      <change afterPath="$PROJECT_DIR$/users.json" afterDir="false" />
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Added users">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/LoadUsers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/users.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,13 +54,14 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.CreateLoginTable.executor": "Run",
+    "Application.LoadUsers.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/petreatheodorakopoulos/IdeaProjects/Cloud-Computing-A2/src/main/java/com/amazonaws/samples/storage",
+    "last_opened_file_path": "/Users/petreatheodorakopoulos/IdeaProjects/Cloud-Computing-A2/src/main/resources",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -71,11 +75,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/storage" />
       <recent name="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/backend" />
       <recent name="$PROJECT_DIR$/src/main/java/com/amazonaws/samples" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/.idea" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/ecs" />
@@ -254,7 +258,23 @@
       <option name="project" value="LOCAL" />
       <updated>1776749920083</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added json file, need to add 10+ users">
+      <option name="closed" value="true" />
+      <created>1776750202035</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1776750202035</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Added users">
+      <option name="closed" value="true" />
+      <created>1776751102539</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1776751102539</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -274,6 +294,8 @@
     <MESSAGE value="Changed the layout should be good to go!" />
     <MESSAGE value="Changed the createLoginTable to java, created table" />
     <MESSAGE value="added some comments/ NEED TO ADD COMMENTS AT END" />
-    <option name="LAST_COMMIT_MESSAGE" value="added some comments/ NEED TO ADD COMMENTS AT END" />
+    <MESSAGE value="Added json file, need to add 10+ users" />
+    <MESSAGE value="Added users" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added users" />
   </component>
 </project>
