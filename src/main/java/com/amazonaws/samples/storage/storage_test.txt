@@ -1,0 +1,14 @@
+Testing and uploading commit
+
+ok testin
+
+will need to add:
+
+project-root/
+│
+├── src/main/java/...        ← Java backend (Maven)
+├── frontend/               ← your HTML/CSS/JS
+│   ├── index.html
+│   ├── styles.css
+│   └── script.js
+├── pom.xml
