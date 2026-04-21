@@ -1,6 +1,6 @@
 package com.amazonaws.samples.database;
 
-import java.util.Arrays;
+// might need to remove this; import java.util.Arrays;
 
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.regions.Regions;
