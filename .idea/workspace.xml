@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Removed pom.xml as we need to add it">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Ok, i think i have added maven" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -195,7 +193,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776746947025</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Ok, i think i have added maven">
+      <option name="closed" value="true" />
+      <created>1776747549282</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1776747549282</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -210,6 +216,7 @@
     <MESSAGE value="added note for me to fix the code to match with lab" />
     <MESSAGE value="Removed pom.xml as we need to add it differnt" />
     <MESSAGE value="Removed pom.xml as we need to add it" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed pom.xml as we need to add it" />
+    <MESSAGE value="Ok, i think i have added maven" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ok, i think i have added maven" />
   </component>
 </project>
