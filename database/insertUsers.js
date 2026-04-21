@@ -4,3 +4,6 @@ const AWS = require('aws-sdk');
 AWS.config.update({ region: 'us-east-1' });
 
 const docClient = new AWS.DynamoDB.DocumentClient();
+
+
+// will delete later adding this to commit and push
