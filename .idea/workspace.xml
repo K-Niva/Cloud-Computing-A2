@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Changed file names">
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Created music create">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/CreateMusicTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/CreateMusicTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -320,7 +320,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776753892157</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Created music create">
+      <option name="closed" value="true" />
+      <created>1776754849025</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1776754849025</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -346,6 +354,7 @@
     <MESSAGE value="added the songs json file" />
     <MESSAGE value="added note in website file" />
     <MESSAGE value="Changed file names" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed file names" />
+    <MESSAGE value="Created music create" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created music create" />
   </component>
 </project>
