@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="added note for me to fix the code to match with lab">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Removed pom.xml as we need to add it">
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,8 +47,8 @@
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/petreatheodorakopoulos/IdeaProjects/Cloud-Computing-A2",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   },
@@ -180,7 +179,23 @@
       <option name="project" value="LOCAL" />
       <updated>1776237822909</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Removed pom.xml as we need to add it differnt">
+      <option name="closed" value="true" />
+      <created>1776746912389</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1776746912389</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Removed pom.xml as we need to add it">
+      <option name="closed" value="true" />
+      <created>1776746947025</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1776746947025</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -193,6 +208,8 @@
     <MESSAGE value="added website folder" />
     <MESSAGE value="Added a pom.xml to download AWS SDK related artifacts, will need to get MAVEN" />
     <MESSAGE value="added note for me to fix the code to match with lab" />
-    <option name="LAST_COMMIT_MESSAGE" value="added note for me to fix the code to match with lab" />
+    <MESSAGE value="Removed pom.xml as we need to add it differnt" />
+    <MESSAGE value="Removed pom.xml as we need to add it" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed pom.xml as we need to add it" />
   </component>
 </project>
