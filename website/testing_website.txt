@@ -1,1 +1,13 @@
 This is where we will put all the html/css files for the website
+
+
+project-root/
+│
+├── src/main/java/...        ← Java backend (Maven)
+├── frontend/               ← your HTML/CSS/JS
+│   ├── index.html
+│   ├── styles.css
+│   └── script.js
+├── pom.xml
+
+grihgirkn
