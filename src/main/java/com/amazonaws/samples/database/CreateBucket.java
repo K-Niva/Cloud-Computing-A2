@@ -16,7 +16,7 @@ public class CreateBucket {
     public static void main(String[] args) {
 
         Regions clientRegion = Regions.US_EAST_1;
-        String bucketName = "music-images";
+        String bucketName = "a2_130_music_images";
 
         try {
             AmazonS3 s3Client = AmazonS3ClientBuilder.standard()

@@ -5,15 +5,29 @@ import com.amazonaws.SdkClientException;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
-import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 
-import java.io.File;
-import java.io.IOException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.*;
+import java.net.URL;
+import java.util.Iterator;
+
 
 public class UploadImagesToS3 {
+
+    public static void main(String[] args) throws IOException {
+
+        Regions clientRegion = Regions.US_EAST_1;
+        String bucketName = "a2_130_music_images";
+
+        try {
+
+
+        }
 }
 
 
 
-// rgnrjng
+// commit to grjgnrg

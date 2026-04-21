@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="ok loaded data :)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/CreateBucket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/UploadImagesToS3.java" afterDir="false" />
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="started to createBuckets to upload images">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/CreateBucket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/CreateBucket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/UploadImagesToS3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/UploadImagesToS3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -346,7 +346,23 @@
       <option name="project" value="LOCAL" />
       <updated>1776757009587</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="started to createBuckets to upload images">
+      <option name="closed" value="true" />
+      <created>1776757494050</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1776757494050</updated>
+    </task>
+    <task id="LOCAL-00030" summary="started to createBuckets to upload images">
+      <option name="closed" value="true" />
+      <created>1776757507434</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1776757507434</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -375,6 +391,7 @@
     <MESSAGE value="Created music create" />
     <MESSAGE value="chnaged the sort key in cratemusic table" />
     <MESSAGE value="ok loaded data :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="ok loaded data :)" />
+    <MESSAGE value="started to createBuckets to upload images" />
+    <option name="LAST_COMMIT_MESSAGE" value="started to createBuckets to upload images" />
   </component>
 </project>
