@@ -1,0 +1,17 @@
+[
+  {
+    "email": "s1234560@student.rmit.edu.au",
+    "user_name": "",
+    "password": "012345"
+  },
+  {
+    "email": "s1234561@student.rmit.edu.au",
+    "user_name": "JaneDoe1",
+    "password": "012345"
+  },
+  {
+    "email": "s1234562@student.rmit.edu.au",
+    "user_name": "AlexBrown2",
+    "password": "012345"
+  }
+]
