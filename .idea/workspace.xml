@@ -4,18 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="added files">
-      <change beforePath="$PROJECT_DIR$/backend/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/backend/test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/createLoginTable.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/insertUsers.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecs/test_ecs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/ecs/test_ecs.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/frontend_test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/frontend/frontend_test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/storage_test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/storage/storage_test.txt" afterDir="false" />
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Changed the layout should be good to go!">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/CreateLoginTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -45,6 +47,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.CreateLoginTable.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -224,7 +227,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776748165006</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Changed the layout should be good to go!">
+      <option name="closed" value="true" />
+      <created>1776749166487</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1776749166487</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -241,6 +252,7 @@
     <MESSAGE value="Removed pom.xml as we need to add it" />
     <MESSAGE value="Ok, i think i have added maven" />
     <MESSAGE value="added files" />
-    <option name="LAST_COMMIT_MESSAGE" value="added files" />
+    <MESSAGE value="Changed the layout should be good to go!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed the layout should be good to go!" />
   </component>
 </project>
