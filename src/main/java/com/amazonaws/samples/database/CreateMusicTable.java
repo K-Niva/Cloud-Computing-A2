@@ -29,11 +29,11 @@ public class CreateMusicTable {
                     .withTableName(tableName)
                     .withKeySchema(
                             new KeySchemaElement("artist", KeyType.HASH),  // Partition key
-                            new KeySchemaElement("album_title", KeyType.RANGE)   // Sort key
+                            new KeySchemaElement("song_id", KeyType.RANGE)   // Sort key
                     )
                     .withAttributeDefinitions(
                             new AttributeDefinition("artist", ScalarAttributeType.S),
-                            new AttributeDefinition("album_title", ScalarAttributeType.S)
+                            new AttributeDefinition("song_id", ScalarAttributeType.S)
                     )
                     .withBillingMode(BillingMode.PAY_PER_REQUEST);
 
