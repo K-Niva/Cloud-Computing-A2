@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="added the songs json file">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/CreateMusicTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/testing_website.txt" beforeDir="false" afterPath="$PROJECT_DIR$/website/testing_website.txt" afterDir="false" />
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Changed file names">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/CreateMusicTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/CreateMusicTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +51,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.CreateLoginTable.executor": "Run",
+    "Application.CreateMusicTable.executor": "Run",
     "Application.LoadUsers.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -289,7 +288,39 @@
       <option name="project" value="LOCAL" />
       <updated>1776752399955</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="added note in website file">
+      <option name="closed" value="true" />
+      <created>1776753721995</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1776753721995</updated>
+    </task>
+    <task id="LOCAL-00023" summary="added note in website file">
+      <option name="closed" value="true" />
+      <created>1776753736882</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1776753736882</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Changed file names">
+      <option name="closed" value="true" />
+      <created>1776753793282</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1776753793282</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Changed file names">
+      <option name="closed" value="true" />
+      <created>1776753892157</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1776753892157</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -313,6 +344,8 @@
     <MESSAGE value="Added users" />
     <MESSAGE value="Added users to the database" />
     <MESSAGE value="added the songs json file" />
-    <option name="LAST_COMMIT_MESSAGE" value="added the songs json file" />
+    <MESSAGE value="added note in website file" />
+    <MESSAGE value="Changed file names" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed file names" />
   </component>
 </project>
