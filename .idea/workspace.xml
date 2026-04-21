@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Added users">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/LoadUsers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/users.json" afterDir="false" />
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="added the songs json file">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/CreateMusicTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/testing_website.txt" beforeDir="false" afterPath="$PROJECT_DIR$/website/testing_website.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +60,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/petreatheodorakopoulos/IdeaProjects/Cloud-Computing-A2/src/main/resources",
+    "last_opened_file_path": "/Users/petreatheodorakopoulos/IdeaProjects/Cloud-Computing-A2",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -75,11 +74,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/storage" />
       <recent name="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/backend" />
       <recent name="$PROJECT_DIR$/src/main/java/com/amazonaws/samples" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/ecs" />
@@ -274,7 +273,23 @@
       <option name="project" value="LOCAL" />
       <updated>1776751102539</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Added users to the database">
+      <option name="closed" value="true" />
+      <created>1776752258920</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1776752258920</updated>
+    </task>
+    <task id="LOCAL-00021" summary="added the songs json file">
+      <option name="closed" value="true" />
+      <created>1776752399955</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1776752399955</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -296,6 +311,8 @@
     <MESSAGE value="added some comments/ NEED TO ADD COMMENTS AT END" />
     <MESSAGE value="Added json file, need to add 10+ users" />
     <MESSAGE value="Added users" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added users" />
+    <MESSAGE value="Added users to the database" />
+    <MESSAGE value="added the songs json file" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the songs json file" />
   </component>
 </project>
