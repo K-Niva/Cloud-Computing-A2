@@ -31,9 +31,30 @@ public class CreateMusicTable {
                             new KeySchemaElement("artist", KeyType.HASH),  // Partition key
                             new KeySchemaElement("song_id", KeyType.RANGE)   // Sort key
                     )
+                    .withLocalSecondaryIndexes(
+                            new LocalSecondaryIndex()
+                                    .withIndexName("ArtistYearIndex")
+                                    .withKeySchema(
+                                            new KeySchemaElement("artist", KeyType.HASH),
+                                            new KeySchemaElement("year", KeyType.RANGE)
+                                    )
+                                    .withProjection(new Projection().withProjectionType(ProjectionType.ALL))
+                    )
+                    .withGlobalSecondaryIndexes(
+                            new GlobalSecondaryIndex()
+                                    .withIndexName("AlbumArtistIndex")
+                                    .withKeySchema(
+                                            new KeySchemaElement("album", KeyType.HASH),
+                                            new KeySchemaElement("artist", KeyType.RANGE)
+                                    )
+                                    .withProjection(new Projection().withProjectionType(ProjectionType.ALL))
+                                    .withProvisionedThroughput(new ProvisionedThroughput(5L, 5L))
+                    )
                     .withAttributeDefinitions(
                             new AttributeDefinition("artist", ScalarAttributeType.S),
-                            new AttributeDefinition("song_id", ScalarAttributeType.S)
+                            new AttributeDefinition("song_id", ScalarAttributeType.S),
+                            new AttributeDefinition("year", ScalarAttributeType.S),
+                            new AttributeDefinition("album", ScalarAttributeType.S)
                     )
                     .withBillingMode(BillingMode.PAY_PER_REQUEST);
 
