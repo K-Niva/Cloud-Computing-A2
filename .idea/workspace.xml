@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="started to createBuckets to upload images">
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="added GSI and LSI to createMusicTable">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/CreateMusicTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/CreateMusicTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/CreateBucket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/CreateBucket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/UploadImagesToS3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/UploadImagesToS3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,26 +87,6 @@
       <recent name="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/frontend" />
       <recent name="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Cloud-Computing-A2" />
-      <option name="filePath" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <module name="Cloud-Computing-A2" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="RUN_TOOL" value="" />
-      <method v="2" />
-    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -370,12 +351,19 @@
       <option name="project" value="LOCAL" />
       <updated>1776757987652</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="added GSI and LSI to createMusicTable">
+      <option name="closed" value="true" />
+      <created>1776844274819</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1776844274819</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="Added folders + checking how commit works on intelliJ" />
     <MESSAGE value="Added folders - you will need to add files if to add the folder" />
     <MESSAGE value="Added folders - you will need to add files if to add the folder, you will also need to put commit and push" />
     <MESSAGE value="Did the code for creatLoginTable, still need to connect AWS" />
@@ -400,6 +388,7 @@
     <MESSAGE value="chnaged the sort key in cratemusic table" />
     <MESSAGE value="ok loaded data :)" />
     <MESSAGE value="started to createBuckets to upload images" />
-    <option name="LAST_COMMIT_MESSAGE" value="started to createBuckets to upload images" />
+    <MESSAGE value="added GSI and LSI to createMusicTable" />
+    <option name="LAST_COMMIT_MESSAGE" value="added GSI and LSI to createMusicTable" />
   </component>
 </project>

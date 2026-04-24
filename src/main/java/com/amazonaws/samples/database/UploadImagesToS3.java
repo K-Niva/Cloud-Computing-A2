@@ -20,7 +20,7 @@ public class UploadImagesToS3 {
     public static void main(String[] args) throws IOException {
 
         Regions clientRegion = Regions.US_EAST_1;
-        String bucketName = "a2_130_music_images";
+        String bucketName = "a2-130-music-images";
 
         try {
 
