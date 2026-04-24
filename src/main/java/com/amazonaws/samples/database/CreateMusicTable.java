@@ -54,7 +54,6 @@ public class CreateMusicTable {
                             new AttributeDefinition("artist", ScalarAttributeType.S),
                             new AttributeDefinition("title", ScalarAttributeType.S),
                             new AttributeDefinition("song_id", ScalarAttributeType.S),
-                            new AttributeDefinition("year", ScalarAttributeType.S),
                             new AttributeDefinition("album", ScalarAttributeType.S)
                     )
                     .withBillingMode(BillingMode.PAY_PER_REQUEST);
