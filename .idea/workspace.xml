@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="have uploaded the images to s3">
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Changed the code to createMusic table, as i changed the gsi and lsi">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/frontend/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/frontend/main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/frontend/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/CreateMusicTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/CreateMusicTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -376,12 +378,35 @@
       <option name="project" value="LOCAL" />
       <updated>1777047588692</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Changed the code to createMusic table, as i changed the gsi and lsi">
+      <option name="closed" value="true" />
+      <created>1777050032301</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1777050032301</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Changed the code to createMusic table, as i changed the gsi and lsi">
+      <option name="closed" value="true" />
+      <created>1777050196798</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1777050196798</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Changed the code to createMusic table, as i changed the gsi and lsi">
+      <option name="closed" value="true" />
+      <created>1777050231689</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1777050231689</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="Did the code for creatLoginTable, still need to connect AWS" />
     <MESSAGE value="Creating insetUser file" />
     <MESSAGE value="added website folder" />
     <MESSAGE value="Added a pom.xml to download AWS SDK related artifacts, will need to get MAVEN" />
@@ -406,6 +431,7 @@
     <MESSAGE value="added GSI and LSI to createMusicTable" />
     <MESSAGE value="added secuirty meassures to the buckets creation" />
     <MESSAGE value="have uploaded the images to s3" />
-    <option name="LAST_COMMIT_MESSAGE" value="have uploaded the images to s3" />
+    <MESSAGE value="Changed the code to createMusic table, as i changed the gsi and lsi" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed the code to createMusic table, as i changed the gsi and lsi" />
   </component>
 </project>
