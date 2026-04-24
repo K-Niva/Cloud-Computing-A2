@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="added secuirty meassures to the buckets creation">
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="have uploaded the images to s3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/UploadImagesToS3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/UploadImagesToS3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/CreateMusicTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/CreateMusicTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -368,12 +368,19 @@
       <option name="project" value="LOCAL" />
       <updated>1777045749495</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="have uploaded the images to s3">
+      <option name="closed" value="true" />
+      <created>1777047588692</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1777047588692</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="Added folders - you will need to add files if to add the folder, you will also need to put commit and push" />
     <MESSAGE value="Did the code for creatLoginTable, still need to connect AWS" />
     <MESSAGE value="Creating insetUser file" />
     <MESSAGE value="added website folder" />
@@ -398,6 +405,7 @@
     <MESSAGE value="started to createBuckets to upload images" />
     <MESSAGE value="added GSI and LSI to createMusicTable" />
     <MESSAGE value="added secuirty meassures to the buckets creation" />
-    <option name="LAST_COMMIT_MESSAGE" value="added secuirty meassures to the buckets creation" />
+    <MESSAGE value="have uploaded the images to s3" />
+    <option name="LAST_COMMIT_MESSAGE" value="have uploaded the images to s3" />
   </component>
 </project>
