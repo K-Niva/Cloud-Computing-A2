@@ -27,10 +27,10 @@ body {
     padding: 8px 20px;
     border-radius: 10px;
     cursor: pointer;
-    font-weight: bold; /* ✅ bold logout */
+    font-weight: bold;
 }
 
-/* MAIN CONTENT */
+/* CONTENT */
 .content-container { padding: 40px; }
 
 .user-banner {
@@ -41,75 +41,57 @@ body {
     margin-bottom: 30px;
 }
 
-/* ✅ welcome border */
+/* welcome box */
 #welcome-msg {
     border: 2px solid black;
     display: inline-block;
     padding: 6px 12px;
 }
 
-/* SUBSCRIPTION HEADER */
+/* SUB HEADER */
 .sub-header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
 }
 
-/* ✅ Your Subscriptions button */
+/* subscriptions title */
 .sub-title-box {
     background: #de6352;
     border: 2px solid black;
-    padding: 10px 25px; /* smaller */
+    padding: 10px 25px;
     font-weight: bold;
-    font-size: 1.2rem;
 }
 
-/* ✅ Add songs */
+/* add songs */
 .add-songs-box {
     background: #c78eaa;
-    color: white;
+    border: 2px solid black;
     padding: 10px 20px;
     display: flex;
     align-items: center;
     cursor: pointer;
-    border: 2px solid black;
 }
 
-.plus-btn {
-    background: #95afba;
-    border: none;
-    font-size: 2rem;
-    margin-left: 15px;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-}
-
-/* TABLES */
+/* table */
 .music-table {
     width: 100%;
     border-collapse: collapse;
     background: white;
 }
 
-/* ✅ table borders black */
-.music-table th {
-    border: 2px solid black;
-    padding: 12px;
-}
-
+.music-table th,
 .music-table td {
     border: 1px solid black;
     padding: 10px;
     text-align: center;
-    height: 50px;
 }
 
-/* MODAL / QUERY AREA */
+/* MODAL */
 .modal-overlay {
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     background: rgba(0,0,0,0.6);
     display: none;
     justify-content: center;
@@ -122,81 +104,56 @@ body {
     max-width: 1000px;
     border-radius: 15px;
     overflow: hidden;
-    position: relative;
-    padding-bottom: 20px;
 }
 
-/* ✅ bigger top bar */
-.modal-top-bar { 
-    background: #000; 
-    height: 40px; 
-    padding: 5px;
+/* top bar */
+.modal-top-bar {
+    background: #000;
+    height: 40px;
 }
 
-/* ✅ bigger X + box */
-.close-x { 
-    color: red; 
-    font-size: 28px; 
-    cursor: pointer; 
-    float: left; 
-    margin-left: 10px; 
-    line-height: 30px;
+/* close X */
+.close-x {
+    color: red;
+    font-size: 28px;
     border: 2px solid black;
     padding: 2px 10px;
     border-radius: 6px;
+    cursor: pointer;
 }
 
-.query-inputs {
-    display: flex;
-    justify-content: space-around;
-    padding: 30px;
-    align-items: center;
-}
-
-/* ✅ labels colour */
+/* inputs */
 .input-group label {
     background: #e95e5b;
     color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
-    margin-right: -15px;
-    position: relative;
-    z-index: 2;
+    padding: 10px;
+    border-radius: 10px;
 }
 
-/* ✅ input boxes colour */
 .input-group input {
     background: #c78eaa;
     border: none;
-    padding: 10px 10px 10px 25px;
-    width: 100px;
+    padding: 10px;
     border-radius: 6px;
 }
 
-/* ✅ search button */
+/* search button */
 .search-btn {
     background: #fee05b;
     border: none;
     padding: 15px 30px;
-    font-weight: bold;
-    cursor: pointer;
     border-radius: 20px;
-}
-
-/* RESULTS */
-.results-area { padding: 0 20px; }
-
-/* ✅ green pop-out title */
-.results-label { 
-    background: transparent;
-    color: #0ba84a;
-    width: fit-content; 
-    padding: 10px 30px; 
-    margin-bottom: 10px; 
+    cursor: pointer;
     font-weight: bold;
 }
 
-/* ERROR MESSAGE POPUP */
+/* results title */
+.results-label {
+    color: #0ba84a;
+    font-weight: bold;
+}
+
+/* error popup */
 .error-modal {
     position: absolute;
     top: 50%; left: 50%;
@@ -204,15 +161,4 @@ body {
     background: #ff9999;
     border: 2px solid purple;
     padding: 20px;
-    text-align: center;
-    z-index: 10;
-}
-
-/* If the table body is empty, show a message */
-#query-results-body:empty::after {
-    content: "Please enter at least one field to search for music.";
-    display: block;
-    padding: 20px;
-    color: #888;
-    text-align: center;
 }
