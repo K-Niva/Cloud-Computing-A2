@@ -1,0 +1,173 @@
+/* GLOBAL STYLES */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #000;
+}
+
+/* HEADER */
+.main-header {
+    background: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.header-left { display: flex; align-items: center; }
+.nav-logo { width: 40px; margin-right: 15px; }
+
+.logout-btn {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* MAIN CONTENT */
+.content-container { padding: 40px; }
+
+.user-banner {
+    background: #3e445e;
+    color: white;
+    width: fit-content;
+    padding: 10px 40px;
+    margin-bottom: 30px;
+}
+
+/* SUBSCRIPTION HEADER */
+.sub-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.sub-title-box {
+    background: #f1d35e;
+    padding: 15px 50px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.add-songs-box {
+    background: #008ba3;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.plus-btn {
+    background: #95afba;
+    border: none;
+    font-size: 2rem;
+    margin-left: 15px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+/* TABLES */
+.music-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.music-table th {
+    border: 2px solid #ff9999;
+    padding: 12px;
+}
+
+.music-table td {
+    border: 1px solid #ff9999;
+    padding: 10px;
+    text-align: center;
+    height: 50px;
+}
+
+/* MODAL / QUERY AREA */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #3e445e;
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.modal-top-bar { background: #000; height: 30px; }
+.close-x { color: red; font-size: 2rem; cursor: pointer; float: left; margin-left: 10px; line-height: 25px; }
+
+.query-inputs {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    align-items: center;
+}
+
+.input-group label {
+    background: #10a347;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-right: -15px;
+    position: relative;
+    z-index: 2;
+}
+
+.input-group input {
+    background: #a3e4d7;
+    border: none;
+    padding: 10px 10px 10px 25px;
+    width: 100px;
+}
+
+.search-btn {
+    background: #ff9999;
+    border: none;
+    padding: 15px 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.results-area { padding: 0 20px; }
+.results-label { background: #a3e4d7; width: fit-content; padding: 10px 30px; margin-bottom: 10px; }
+
+/* ERROR MESSAGE POPUP */
+.error-modal {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ff9999;
+    border: 2px solid purple;
+    padding: 20px;
+    text-align: center;
+    z-index: 10;
+}
+
+/* If the table body is empty, show a message */
+#query-results-body:empty::after {
+    content: "Please enter at least one field to search for music.";
+    display: block;
+    padding: 20px;
+    color: #888;
+    text-align: center;
+}
