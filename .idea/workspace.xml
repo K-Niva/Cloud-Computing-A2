@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="added html and css for home page">
-      <change afterPath="$PROJECT_DIR$/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logo_with_background.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/frontend/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/frontend/main.html" afterDir="false" />
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="testing commit">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/frontend/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/frontend/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -434,12 +431,19 @@
       <option name="project" value="LOCAL" />
       <updated>1777351526099</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="testing commit">
+      <option name="closed" value="true" />
+      <created>1777361743153</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1777361743154</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="Removed pom.xml as we need to add it differnt" />
     <MESSAGE value="Removed pom.xml as we need to add it" />
     <MESSAGE value="Ok, i think i have added maven" />
     <MESSAGE value="added files" />
@@ -464,6 +468,7 @@
     <MESSAGE value="added the website files + added basic html for login page based on design" />
     <MESSAGE value="added css for login page" />
     <MESSAGE value="added html and css for home page" />
-    <option name="LAST_COMMIT_MESSAGE" value="added html and css for home page" />
+    <MESSAGE value="testing commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing commit" />
   </component>
 </project>
