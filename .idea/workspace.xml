@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="added the songs json file">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/CreateMusicTable.java" afterDir="false" />
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="added html and css for home page">
+      <change afterPath="$PROJECT_DIR$/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logo_with_background.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/testing_website.txt" beforeDir="false" afterPath="$PROJECT_DIR$/website/testing_website.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/frontend/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/frontend/main.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,28 +51,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.CreateLoginTable.executor": "Run",
-    "Application.LoadUsers.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/petreatheodorakopoulos/IdeaProjects/Cloud-Computing-A2",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.CreateBucket.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CreateLoginTable.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CreateMusicTable.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoadMusicData.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoadUsers.executor&quot;: &quot;Run&quot;,
+    &quot;Application.UploadImagesToS3.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/petreatheodorakopoulos/IdeaProjects/Cloud-Computing-A2&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "TEXT"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;TEXT&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -85,26 +90,6 @@
       <recent name="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/frontend" />
       <recent name="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Cloud-Computing-A2" />
-      <option name="filePath" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <module name="Cloud-Computing-A2" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="RUN_TOOL" value="" />
-      <method v="2" />
-    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -289,19 +274,171 @@
       <option name="project" value="LOCAL" />
       <updated>1776752399955</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="added note in website file">
+      <option name="closed" value="true" />
+      <created>1776753721995</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1776753721995</updated>
+    </task>
+    <task id="LOCAL-00023" summary="added note in website file">
+      <option name="closed" value="true" />
+      <created>1776753736882</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1776753736882</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Changed file names">
+      <option name="closed" value="true" />
+      <created>1776753793282</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1776753793282</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Changed file names">
+      <option name="closed" value="true" />
+      <created>1776753892157</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1776753892157</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Created music create">
+      <option name="closed" value="true" />
+      <created>1776754849025</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1776754849025</updated>
+    </task>
+    <task id="LOCAL-00027" summary="chnaged the sort key in cratemusic table">
+      <option name="closed" value="true" />
+      <created>1776755968707</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1776755968707</updated>
+    </task>
+    <task id="LOCAL-00028" summary="ok loaded data :)">
+      <option name="closed" value="true" />
+      <created>1776757009587</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1776757009587</updated>
+    </task>
+    <task id="LOCAL-00029" summary="started to createBuckets to upload images">
+      <option name="closed" value="true" />
+      <created>1776757494050</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1776757494050</updated>
+    </task>
+    <task id="LOCAL-00030" summary="started to createBuckets to upload images">
+      <option name="closed" value="true" />
+      <created>1776757507434</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1776757507434</updated>
+    </task>
+    <task id="LOCAL-00031" summary="started to createBuckets to upload images">
+      <option name="closed" value="true" />
+      <created>1776757987652</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1776757987652</updated>
+    </task>
+    <task id="LOCAL-00032" summary="added GSI and LSI to createMusicTable">
+      <option name="closed" value="true" />
+      <created>1776844274819</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1776844274819</updated>
+    </task>
+    <task id="LOCAL-00033" summary="added secuirty meassures to the buckets creation">
+      <option name="closed" value="true" />
+      <created>1777045749494</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1777045749495</updated>
+    </task>
+    <task id="LOCAL-00034" summary="have uploaded the images to s3">
+      <option name="closed" value="true" />
+      <created>1777047588692</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1777047588692</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Changed the code to createMusic table, as i changed the gsi and lsi">
+      <option name="closed" value="true" />
+      <created>1777050032301</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1777050032301</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Changed the code to createMusic table, as i changed the gsi and lsi">
+      <option name="closed" value="true" />
+      <created>1777050196798</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1777050196798</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Changed the code to createMusic table, as i changed the gsi and lsi">
+      <option name="closed" value="true" />
+      <created>1777050231689</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1777050231689</updated>
+    </task>
+    <task id="LOCAL-00038" summary="addeed the website files + added basic html for login page based on design">
+      <option name="closed" value="true" />
+      <created>1777051494449</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1777051494449</updated>
+    </task>
+    <task id="LOCAL-00039" summary="added the website files + added basic html for login page based on design">
+      <option name="closed" value="true" />
+      <created>1777053271278</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1777053271278</updated>
+    </task>
+    <task id="LOCAL-00040" summary="added css for login page">
+      <option name="closed" value="true" />
+      <created>1777054303423</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1777054303423</updated>
+    </task>
+    <task id="LOCAL-00041" summary="added html and css for home page">
+      <option name="closed" value="true" />
+      <created>1777351526099</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1777351526099</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="Added folders + checking how commit works on intelliJ" />
-    <MESSAGE value="Added folders - you will need to add files if to add the folder" />
-    <MESSAGE value="Added folders - you will need to add files if to add the folder, you will also need to put commit and push" />
-    <MESSAGE value="Did the code for creatLoginTable, still need to connect AWS" />
-    <MESSAGE value="Creating insetUser file" />
-    <MESSAGE value="added website folder" />
-    <MESSAGE value="Added a pom.xml to download AWS SDK related artifacts, will need to get MAVEN" />
-    <MESSAGE value="added note for me to fix the code to match with lab" />
     <MESSAGE value="Removed pom.xml as we need to add it differnt" />
     <MESSAGE value="Removed pom.xml as we need to add it" />
     <MESSAGE value="Ok, i think i have added maven" />
@@ -313,6 +450,20 @@
     <MESSAGE value="Added users" />
     <MESSAGE value="Added users to the database" />
     <MESSAGE value="added the songs json file" />
-    <option name="LAST_COMMIT_MESSAGE" value="added the songs json file" />
+    <MESSAGE value="added note in website file" />
+    <MESSAGE value="Changed file names" />
+    <MESSAGE value="Created music create" />
+    <MESSAGE value="chnaged the sort key in cratemusic table" />
+    <MESSAGE value="ok loaded data :)" />
+    <MESSAGE value="started to createBuckets to upload images" />
+    <MESSAGE value="added GSI and LSI to createMusicTable" />
+    <MESSAGE value="added secuirty meassures to the buckets creation" />
+    <MESSAGE value="have uploaded the images to s3" />
+    <MESSAGE value="Changed the code to createMusic table, as i changed the gsi and lsi" />
+    <MESSAGE value="addeed the website files + added basic html for login page based on design" />
+    <MESSAGE value="added the website files + added basic html for login page based on design" />
+    <MESSAGE value="added css for login page" />
+    <MESSAGE value="added html and css for home page" />
+    <option name="LAST_COMMIT_MESSAGE" value="added html and css for home page" />
   </component>
 </project>
