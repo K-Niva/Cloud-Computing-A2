@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="added css for login page">
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="added html and css for home page">
+      <change afterPath="$PROJECT_DIR$/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logo_with_background.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/frontend/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/frontend/main.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,32 +51,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.CreateBucket.executor": "Run",
-    "Application.CreateLoginTable.executor": "Run",
-    "Application.CreateMusicTable.executor": "Run",
-    "Application.LoadMusicData.executor": "Run",
-    "Application.LoadUsers.executor": "Run",
-    "Application.UploadImagesToS3.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/petreatheodorakopoulos/IdeaProjects/Cloud-Computing-A2",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.CreateBucket.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CreateLoginTable.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CreateMusicTable.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoadMusicData.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoadUsers.executor&quot;: &quot;Run&quot;,
+    &quot;Application.UploadImagesToS3.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/petreatheodorakopoulos/IdeaProjects/Cloud-Computing-A2&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "TEXT"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;TEXT&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -423,12 +426,19 @@
       <option name="project" value="LOCAL" />
       <updated>1777054303423</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="added html and css for home page">
+      <option name="closed" value="true" />
+      <created>1777351526099</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1777351526099</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="added note for me to fix the code to match with lab" />
     <MESSAGE value="Removed pom.xml as we need to add it differnt" />
     <MESSAGE value="Removed pom.xml as we need to add it" />
     <MESSAGE value="Ok, i think i have added maven" />
@@ -453,6 +463,7 @@
     <MESSAGE value="addeed the website files + added basic html for login page based on design" />
     <MESSAGE value="added the website files + added basic html for login page based on design" />
     <MESSAGE value="added css for login page" />
-    <option name="LAST_COMMIT_MESSAGE" value="added css for login page" />
+    <MESSAGE value="added html and css for home page" />
+    <option name="LAST_COMMIT_MESSAGE" value="added html and css for home page" />
   </component>
 </project>
