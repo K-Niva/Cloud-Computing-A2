@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="added ec2 folder">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/backend/ec2/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/backend/ec2/server.js" afterDir="false" />
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="added code for server.js">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -504,7 +504,23 @@
       <option name="project" value="LOCAL" />
       <updated>1777444955237</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="added code for server.js">
+      <option name="closed" value="true" />
+      <created>1777446311992</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1777446311992</updated>
+    </task>
+    <task id="LOCAL-00046" summary="added code for server.js">
+      <option name="closed" value="true" />
+      <created>1777446326782</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1777446326782</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -520,7 +536,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="added files" />
     <MESSAGE value="Changed the layout should be good to go!" />
     <MESSAGE value="Changed the createLoginTable to java, created table" />
     <MESSAGE value="added some comments/ NEED TO ADD COMMENTS AT END" />
@@ -545,6 +560,7 @@
     <MESSAGE value="testing commit" />
     <MESSAGE value="chaining login html to help with backend" />
     <MESSAGE value="added ec2 folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="added ec2 folder" />
+    <MESSAGE value="added code for server.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="added code for server.js" />
   </component>
 </project>
