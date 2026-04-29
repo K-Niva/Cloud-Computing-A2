@@ -13,7 +13,7 @@ const dynamo = new AWS.DynamoDB.DocumentClient();
 
 //
 app.use(express.static(path.join(__dirname, "frontend")));
-const dynamo = new AWS.DynamoDB.DocumentClient();
+
 
 const LOGIN_TABLE = "login";
 
