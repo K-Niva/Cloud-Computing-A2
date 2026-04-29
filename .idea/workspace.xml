@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="chaining login html to help with backend">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/frontend/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/frontend/login.html" afterDir="false" />
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="added ec2 folder">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/backend/ec2/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/backend/ec2/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -497,7 +496,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777365176443</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="added ec2 folder">
+      <option name="closed" value="true" />
+      <created>1777444955237</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1777444955237</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -513,7 +520,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="Ok, i think i have added maven" />
     <MESSAGE value="added files" />
     <MESSAGE value="Changed the layout should be good to go!" />
     <MESSAGE value="Changed the createLoginTable to java, created table" />
@@ -538,6 +544,7 @@
     <MESSAGE value="added html and css for home page" />
     <MESSAGE value="testing commit" />
     <MESSAGE value="chaining login html to help with backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="chaining login html to help with backend" />
+    <MESSAGE value="added ec2 folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="added ec2 folder" />
   </component>
 </project>
