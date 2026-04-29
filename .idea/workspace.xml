@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Chaining IP" />
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Chaining code around">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -526,7 +528,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777447032353</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Chaining code around">
+      <option name="closed" value="true" />
+      <created>1777447271884</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1777447271884</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -542,7 +552,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="Changed the createLoginTable to java, created table" />
     <MESSAGE value="added some comments/ NEED TO ADD COMMENTS AT END" />
     <MESSAGE value="Added json file, need to add 10+ users" />
     <MESSAGE value="Added users" />
@@ -567,6 +576,7 @@
     <MESSAGE value="added ec2 folder" />
     <MESSAGE value="added code for server.js" />
     <MESSAGE value="Chaining IP" />
-    <option name="LAST_COMMIT_MESSAGE" value="Chaining IP" />
+    <MESSAGE value="Chaining code around" />
+    <option name="LAST_COMMIT_MESSAGE" value="Chaining code around" />
   </component>
 </project>

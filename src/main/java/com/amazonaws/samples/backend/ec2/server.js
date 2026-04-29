@@ -6,6 +6,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+const path = require("path");
+
+// Serve frontend static files
+app.use(express.static(path.join(__dirname, "frontend")));
+
 // AWS setup (IMPORTANT: uses LabRole automatically on EC2)
 AWS.config.update({ region: "us-east-1" });
 
