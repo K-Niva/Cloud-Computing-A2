@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="added code for server.js">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Chaining IP" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -520,7 +518,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777446326782</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Chaining IP">
+      <option name="closed" value="true" />
+      <created>1777447032353</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1777447032353</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -536,7 +542,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="Changed the layout should be good to go!" />
     <MESSAGE value="Changed the createLoginTable to java, created table" />
     <MESSAGE value="added some comments/ NEED TO ADD COMMENTS AT END" />
     <MESSAGE value="Added json file, need to add 10+ users" />
@@ -561,6 +566,7 @@
     <MESSAGE value="chaining login html to help with backend" />
     <MESSAGE value="added ec2 folder" />
     <MESSAGE value="added code for server.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="added code for server.js" />
+    <MESSAGE value="Chaining IP" />
+    <option name="LAST_COMMIT_MESSAGE" value="Chaining IP" />
   </component>
 </project>
