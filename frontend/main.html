@@ -173,7 +173,8 @@ window.onload = () => {
                         <td>${song.album}</td>
                         <td>${song.year}</td>
                         <td>
-                            <button onclick=onclick='subscribeSong(${JSON.stringify(song)})'>
+                            <button data-song='${JSON.stringify(song)}'
+                                    onclick="subscribeSong(JSON.parse(this.dataset.song))">
                                 Subscribe
                             </button>
                         </td>
