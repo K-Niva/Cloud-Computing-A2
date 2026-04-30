@@ -20,12 +20,13 @@
 
 <main class="content-container">
     <section class="user-banner">
-        <h2 id="welcome-msg">Welcome Back <span id="username">User</span>!</h2>
+        <h1 id="welcome-msg">Welcome Back <span id="username">User</span>!</h1>
     </section>
 
     <section class="subscription-section">
         <div class="sub-header">
             <div class="sub-title-box">Your Subscriptions!</div>
+
             <div class="add-songs-box" onclick="toggleModal(true)">
                 <span>Add New Songs?</span>
                 <button class="plus-btn">+</button>
@@ -49,35 +50,42 @@
     </section>
 </main>
 
+<!-- MODAL -->
 <div id="query-modal" class="modal-overlay">
     <div class="modal-content">
+
         <div class="modal-top-bar">
             <span class="close-x" onclick="toggleModal(false)">&times;</span>
         </div>
 
         <div class="query-inputs">
+
             <div class="input-group">
                 <label>Title</label>
-                <input type="text" id="q-title">
-            </div>
-            <div class="input-group">
-                <label>Artist</label>
-                <input type="text" id="q-artist">
-            </div>
-            <div class="input-group">
-                <label>Year</label>
-                <input type="text" id="q-year">
-            </div>
-            <div class="input-group">
-                <label>Album</label>
-                <input type="text" id="q-album">
+                <input type="text" id="q-title" placeholder="Text box">
             </div>
 
-            <button class="search-btn" onclick="performSearch()">Search!</button>
+            <div class="input-group">
+                <label>Artist</label>
+                <input type="text" id="q-artist" placeholder="Text box">
+            </div>
+
+            <div class="input-group">
+                <label>Year</label>
+                <input type="text" id="q-year" placeholder="Text box">
+            </div>
+
+            <div class="input-group">
+                <label>Album</label>
+                <input type="text" id="q-album" placeholder="Text box">
+            </div>
+
+            <button class="search-btn-modal" onclick="performSearch()">Search!</button>
         </div>
 
         <div class="results-area">
-            <div class="results-label">Your Matching Results:</div>
+            <div class="results-label">Your Matching Results !! :</div>
+
             <table class="music-table">
                 <thead>
                 <tr>
@@ -98,6 +106,7 @@
             <span class="close-x-small" onclick="closeError()">&times;</span>
             <p>No result is retrieved. Please query again</p>
         </div>
+
     </div>
 </div>
 
@@ -111,7 +120,17 @@ function closeError() {
 }
 
 function performSearch() {
-    alert("Search button clicked!");
+    // show results title ONLY after clicking search
+    document.querySelector(".results-label").style.display = "inline-block";
+
+    const title = document.getElementById("q-title").value;
+    const artist = document.getElementById("q-artist").value;
+    const year = document.getElementById("q-year").value;
+    const album = document.getElementById("q-album").value;
+
+    console.log({ title, artist, year, album });
+
+    alert("Search submitted!");
 }
 </script>
 
