@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="chaning the ip for page also chaning the 3000 to 80" />
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="fixing more bugs">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -150,22 +152,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Removed pom.xml as we need to add it">
-      <option name="closed" value="true" />
-      <created>1776746947025</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1776746947025</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Ok, i think i have added maven">
-      <option name="closed" value="true" />
-      <created>1776747549282</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1776747549282</updated>
     </task>
     <task id="LOCAL-00014" summary="added files">
       <option name="closed" value="true" />
@@ -543,7 +529,23 @@
       <option name="project" value="LOCAL" />
       <updated>1777569577042</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="fixing bug">
+      <option name="closed" value="true" />
+      <created>1777569723080</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1777569723080</updated>
+    </task>
+    <task id="LOCAL-00062" summary="fixing more bugs">
+      <option name="closed" value="true" />
+      <created>1777569862746</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1777569862746</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -559,8 +561,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="Changed file names" />
-    <MESSAGE value="Created music create" />
     <MESSAGE value="chnaged the sort key in cratemusic table" />
     <MESSAGE value="ok loaded data :)" />
     <MESSAGE value="started to createBuckets to upload images" />
@@ -584,6 +584,8 @@
     <MESSAGE value="PLEASE READ THE TEXT FILE!!!" />
     <MESSAGE value="moving files around" />
     <MESSAGE value="chaning the ip for page also chaning the 3000 to 80" />
-    <option name="LAST_COMMIT_MESSAGE" value="chaning the ip for page also chaning the 3000 to 80" />
+    <MESSAGE value="fixing bug" />
+    <MESSAGE value="fixing more bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing more bugs" />
   </component>
 </project>
