@@ -84,6 +84,16 @@ app.get("/music/search", async (req, res) => {
                 }
             }).promise();
 
+            let items = result.Items;
+
+            // POST-FILTER for title (IMPORTANT FIX)
+            if (title) {
+                items = items.filter(song =>
+                    song.title &&
+                    song.title.toLowerCase().includes(title.toLowerCase())
+                );
+
+            }
             return res.json(result.Items);
         }
 
