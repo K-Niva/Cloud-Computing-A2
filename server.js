@@ -66,7 +66,7 @@ app.get("/music/search", async (req, res) => {
 
     try {
 
-        // ARTIST QUERY (PK)
+        // 1. ARTIST ONLY (PK QUERY)
         if (artist && !year) {
 
             const result = await dynamo.query({
@@ -80,7 +80,7 @@ app.get("/music/search", async (req, res) => {
             return res.json(result.Items);
         }
 
-        // ARTIST + YEAR (LSI)
+        // 2. ARTIST + YEAR (LSI)
         if (artist && year) {
 
             const result = await dynamo.query({
@@ -99,7 +99,7 @@ app.get("/music/search", async (req, res) => {
             return res.json(result.Items);
         }
 
-        // ALBUM SEARCH (GSI)
+        // 3. ALBUM SEARCH (GSI)
         if (album) {
 
             const result = await dynamo.query({
@@ -114,7 +114,7 @@ app.get("/music/search", async (req, res) => {
             return res.json(result.Items);
         }
 
-        // MULTI-FILTER SEARCH (SCAN)
+        // 4. FALLBACK SCAN (SAFE FIXED VERSION)
         let filters = [];
         let values = {};
         let names = {};
@@ -140,18 +140,22 @@ app.get("/music/search", async (req, res) => {
             names["#y"] = "year";
         }
 
-        // SAFETY CHECK (IMPORTANT FIX)
         if (filters.length === 0) {
             return res.json([]);
         }
 
-        const result = await dynamo.scan({
+        const scanParams = {
             TableName: MUSIC_TABLE,
             FilterExpression: filters.join(" AND "),
-            ExpressionAttributeValues: values,
-            ExpressionAttributeNames: names
-        }).promise();
+            ExpressionAttributeValues: values
+        };
 
+        // IMPORTANT FIX (prevents your crash)
+        if (Object.keys(names).length > 0) {
+            scanParams.ExpressionAttributeNames = names;
+        }
+
+        const result = await dynamo.scan(scanParams).promise();
         res.json(result.Items);
 
     } catch (err) {
@@ -172,7 +176,7 @@ app.post("/subscribe", async (req, res) => {
             TableName: SUB_TABLE,
             Item: {
                 email,
-                song_id,
+                song_id,   // MUST BE album#title everywhere
                 title,
                 artist,
                 album,
@@ -214,9 +218,9 @@ app.get("/subscriptions", async (req, res) => {
 });
 
 /* =========================
-   REMOVE SUBSCRIPTION
+   REMOVE SUBSCRIPTION (SAFE VERSION)
 ========================= */
-app.delete("/subscription", async (req, res) => {
+app.post("/subscription/delete", async (req, res) => {
 
     const { email, song_id } = req.body;
 
@@ -247,5 +251,4 @@ app.delete("/subscription", async (req, res) => {
 app.listen(80, "0.0.0.0", () => {
     console.log("Server running on port 80");
 });
-
 //push

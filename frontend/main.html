@@ -127,7 +127,7 @@ window.onload = () => {
     if (username) {
         document.getElementById("user_name").innerText = username;
     } else {
-        document.getElementById("username").innerText = "User";
+        document.getElementById("user_name").innerText = "User";
     }
 
     loadSubscriptions();
@@ -173,7 +173,7 @@ window.onload = () => {
                         <td>${song.album}</td>
                         <td>${song.year}</td>
                         <td>
-                            <button onclick='subscribeSong(${JSON.stringify(song).replace(/'/g, "\\'")})'>
+                            <button onclick=onclick='subscribeSong(${JSON.stringify(song)})'>
                                 Subscribe
                             </button>
                         </td>
@@ -274,8 +274,8 @@ window.onload = () => {
     async function removeSong(email, song_id) {
 
         try {
-            await fetch("/subscription", {
-                method: "DELETE",
+            await fetch("/subscription/delete", {
+                method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
