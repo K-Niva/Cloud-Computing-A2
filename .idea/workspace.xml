@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Added maven again :/" />
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Fixed bugs in main page">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -170,22 +174,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Changed the createLoginTable to java, created table">
-      <option name="closed" value="true" />
-      <created>1776749778055</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1776749778055</updated>
-    </task>
-    <task id="LOCAL-00017" summary="added some comments/ NEED TO ADD COMMENTS AT END">
-      <option name="closed" value="true" />
-      <created>1776749920083</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1776749920083</updated>
     </task>
     <task id="LOCAL-00018" summary="Added json file, need to add 10+ users">
       <option name="closed" value="true" />
@@ -563,7 +551,23 @@
       <option name="project" value="LOCAL" />
       <updated>1777574732117</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Ok ready to start backend now for main page">
+      <option name="closed" value="true" />
+      <created>1777575148380</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1777575148380</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Fixed bugs in main page">
+      <option name="closed" value="true" />
+      <created>1777575849984</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1777575849984</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -579,9 +583,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="ok loaded data :)" />
-    <MESSAGE value="started to createBuckets to upload images" />
-    <MESSAGE value="added GSI and LSI to createMusicTable" />
     <MESSAGE value="added secuirty meassures to the buckets creation" />
     <MESSAGE value="have uploaded the images to s3" />
     <MESSAGE value="Changed the code to createMusic table, as i changed the gsi and lsi" />
@@ -604,6 +605,9 @@
     <MESSAGE value="fixing bug" />
     <MESSAGE value="fixing more bugs" />
     <MESSAGE value="Added maven again :/" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added maven again :/" />
+    <MESSAGE value="Ok ready to start backend now for main page" />
+    <MESSAGE value="Added script for main page" />
+    <MESSAGE value="Fixed bugs in main page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bugs in main page" />
   </component>
 </project>
