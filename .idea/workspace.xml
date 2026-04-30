@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="fixing username on main page">
-      <change beforePath="$PROJECT_DIR$/frontend/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/main.html" afterDir="false" />
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="fixed button to add songs">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/CreateSubscriptionsTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,32 +48,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.CreateBucket.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CreateLoginTable.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CreateMusicTable.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LoadMusicData.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LoadUsers.executor&quot;: &quot;Run&quot;,
-    &quot;Application.UploadImagesToS3.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/petreatheodorakopoulos/IdeaProjects/Cloud-Computing-A2&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.CreateBucket.executor": "Run",
+    "Application.CreateLoginTable.executor": "Run",
+    "Application.CreateMusicTable.executor": "Run",
+    "Application.CreateSubscriptionsTable.executor": "Run",
+    "Application.LoadMusicData.executor": "Run",
+    "Application.LoadUsers.executor": "Run",
+    "Application.UploadImagesToS3.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/petreatheodorakopoulos/IdeaProjects/Cloud-Computing-A2",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "MavenSettings"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;TEXT&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "TEXT"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -172,14 +173,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00021" summary="added the songs json file">
-      <option name="closed" value="true" />
-      <created>1776752399955</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1776752399955</updated>
     </task>
     <task id="LOCAL-00022" summary="added note in website file">
       <option name="closed" value="true" />
@@ -565,7 +558,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777577351593</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="fixed button to add songs">
+      <option name="closed" value="true" />
+      <created>1777577857325</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1777577857326</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -581,7 +582,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="Changed the code to createMusic table, as i changed the gsi and lsi" />
     <MESSAGE value="addeed the website files + added basic html for login page based on design" />
     <MESSAGE value="added the website files + added basic html for login page based on design" />
     <MESSAGE value="added css for login page" />
@@ -606,6 +606,7 @@
     <MESSAGE value="Fixed bugs in main page" />
     <MESSAGE value="Added code for server.js for the main page" />
     <MESSAGE value="fixing username on main page" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing username on main page" />
+    <MESSAGE value="fixed button to add songs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed button to add songs" />
   </component>
 </project>
