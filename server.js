@@ -8,14 +8,19 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Serve frontend files
+app.use(express.static(path.join(__dirname, "frontend")));
+
+// AWS DynamoDB setup
 AWS.config.update({ region: "us-east-1" });
 const dynamo = new AWS.DynamoDB.DocumentClient();
 
-//
-app.use(express.static(path.join(__dirname, "frontend")));
-
-
 const LOGIN_TABLE = "login";
+
+// Home page = login page
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "frontend", "login.html"));
+});
 
 // LOGIN API
 app.post("/login", async (req, res) => {
@@ -49,7 +54,7 @@ app.post("/login", async (req, res) => {
 });
 
 app.listen(80, "0.0.0.0", () => {
-    console.log("Server running on port 3000");
+    console.log("Server running on port 80");
 });
 
 //push

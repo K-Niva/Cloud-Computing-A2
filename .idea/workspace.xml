@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="moving files around">
-      <change beforePath="$PROJECT_DIR$/website/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/BADhomepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/loginpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/BADLOGIN.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/registerpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/BADregisterpage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,14 +152,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00010" summary="added note for me to fix the code to match with lab">
-      <option name="closed" value="true" />
-      <created>1776237822909</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1776237822909</updated>
     </task>
     <task id="LOCAL-00011" summary="Removed pom.xml as we need to add it differnt">
       <option name="closed" value="true" />
@@ -547,7 +537,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777560425002</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="moving files around">
+      <option name="closed" value="true" />
+      <created>1777560623702</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1777560623702</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
