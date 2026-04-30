@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="moving files around">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="chaning the ip for page also chaning the 3000 to 80" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -152,14 +150,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Removed pom.xml as we need to add it differnt">
-      <option name="closed" value="true" />
-      <created>1776746912389</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1776746912389</updated>
     </task>
     <task id="LOCAL-00012" summary="Removed pom.xml as we need to add it">
       <option name="closed" value="true" />
@@ -545,7 +535,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777560623702</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="chaning the ip for page also chaning the 3000 to 80">
+      <option name="closed" value="true" />
+      <created>1777569577042</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1777569577042</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -561,7 +559,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="added note in website file" />
     <MESSAGE value="Changed file names" />
     <MESSAGE value="Created music create" />
     <MESSAGE value="chnaged the sort key in cratemusic table" />
@@ -586,6 +583,7 @@
     <MESSAGE value="Moving things around" />
     <MESSAGE value="PLEASE READ THE TEXT FILE!!!" />
     <MESSAGE value="moving files around" />
-    <option name="LAST_COMMIT_MESSAGE" value="moving files around" />
+    <MESSAGE value="chaning the ip for page also chaning the 3000 to 80" />
+    <option name="LAST_COMMIT_MESSAGE" value="chaning the ip for page also chaning the 3000 to 80" />
   </component>
 </project>

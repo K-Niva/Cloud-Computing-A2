@@ -51,7 +51,7 @@
         const password = document.getElementById("password").value;
 
         try {
-            const response = await fetch("http://3.85.195.88", {
+            const response = await fetch("/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
