@@ -53,6 +53,7 @@ public class LoadMusicData {
                                 "song_id", songId
                         )
                         .withString("year", year)
+                        .withString("title", title)
                         .withString("album", album)
                         .withString("img_url", imgUrl)
                 );

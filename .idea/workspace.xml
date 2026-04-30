@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="fixed button to add songs">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/CreateSubscriptionsTable.java" afterDir="false" />
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Fixing bugs">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/LoadMusicData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/LoadMusicData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,30 +173,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00022" summary="added note in website file">
-      <option name="closed" value="true" />
-      <created>1776753721995</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1776753721995</updated>
-    </task>
-    <task id="LOCAL-00023" summary="added note in website file">
-      <option name="closed" value="true" />
-      <created>1776753736882</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1776753736882</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Changed file names">
-      <option name="closed" value="true" />
-      <created>1776753793282</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1776753793282</updated>
     </task>
     <task id="LOCAL-00025" summary="Changed file names">
       <option name="closed" value="true" />
@@ -566,7 +542,31 @@
       <option name="project" value="LOCAL" />
       <updated>1777577857326</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Created subscription table">
+      <option name="closed" value="true" />
+      <created>1777578741251</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1777578741251</updated>
+    </task>
+    <task id="LOCAL-00072" summary="Fixing bugs">
+      <option name="closed" value="true" />
+      <created>1777579186112</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1777579186112</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Fixing bugs">
+      <option name="closed" value="true" />
+      <created>1777579493658</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1777579493659</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -582,8 +582,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="addeed the website files + added basic html for login page based on design" />
-    <MESSAGE value="added the website files + added basic html for login page based on design" />
     <MESSAGE value="added css for login page" />
     <MESSAGE value="added html and css for home page" />
     <MESSAGE value="testing commit" />
@@ -607,6 +605,8 @@
     <MESSAGE value="Added code for server.js for the main page" />
     <MESSAGE value="fixing username on main page" />
     <MESSAGE value="fixed button to add songs" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed button to add songs" />
+    <MESSAGE value="Created subscription table" />
+    <MESSAGE value="Fixing bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing bugs" />
   </component>
 </project>
