@@ -13,14 +13,14 @@
         <img src="logo.png" alt="Logo" class="nav-logo">
         <h1>STARDUST MUSIC</h1>
     </div>
-    <a href="page.html">
-        <button id="logout-btn" class="logout-btn">Logout</button>
+    <a href="login.html">
+        <button id="logout-btn" class="logout-btn" onclick="logout()">Logout</button>
     </a>
 </header>
 
 <main class="content-container">
     <section class="user-banner">
-        <h1 id="welcome-msg">Welcome Back <span id="username">User</span>!</h1>
+        <h1 id="welcome-msg">Welcome Back <span id="user_name">User</span>!</h1>
     </section>
 
     <section class="subscription-section">
@@ -111,27 +111,192 @@
 </div>
 
 <script>
-function toggleModal(show) {
-    document.getElementById('query-modal').style.display = show ? 'flex' : 'none';
-}
 
-function closeError() {
-    document.getElementById('no-results-popup').style.display = 'none';
-}
+    function toggleModal(show) {
+        document.getElementById('query-modal').style.display = show ? 'flex' : 'none';
+    }
 
-function performSearch() {
-    // show results title ONLY after clicking search
-    document.querySelector(".results-label").style.display = "inline-block";
+    function closeError() {
+        document.getElementById('no-results-popup').style.display = 'none';
+    }
 
-    const title = document.getElementById("q-title").value;
-    const artist = document.getElementById("q-artist").value;
-    const year = document.getElementById("q-year").value;
-    const album = document.getElementById("q-album").value;
+window.onload = () => {
+    const email = localStorage.getItem("email");
 
-    console.log({ title, artist, year, album });
+    if (email) {
+        document.getElementById("user_name").innerText = email;
+    }
 
-    alert("Search submitted!");
-}
+    loadSubscriptions();
+};
+
+    /* =========================
+       SEARCH MUSIC (EC2)
+    ========================= */
+    async function performSearch() {
+
+        const title = document.getElementById("q-title").value;
+        const artist = document.getElementById("q-artist").value;
+        const year = document.getElementById("q-year").value;
+        const album = document.getElementById("q-album").value;
+
+        const query = new URLSearchParams({
+            title,
+            artist,
+            year,
+            album
+        });
+
+        try {
+            const res = await fetch(`/music/search?${query}`);
+            const data = await res.json();
+
+            const tbody = document.getElementById("query-results-body");
+            tbody.innerHTML = "";
+
+            if (!data || data.length === 0) {
+                document.getElementById("no-results-popup").style.display = "block";
+                return;
+            }
+
+            data.forEach((song, index) => {
+
+                const row = `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td><img src="${song.img_url}" width="50"></td>
+                        <td>${song.title}</td>
+                        <td>${song.artist}</td>
+                        <td>${song.album}</td>
+                        <td>${song.year}</td>
+                        <td>
+                            <button onclick='subscribeSong(${JSON.stringify(song).replace(/'/g, "\\'")})'>
+                                Subscribe
+                            </button>
+                        </td>
+                    </tr>
+                `;
+
+                tbody.innerHTML += row;
+            });
+
+        } catch (err) {
+            console.log(err);
+            alert("Search failed");
+        }
+    }
+
+    /* =========================
+       SUBSCRIBE SONG
+    ========================= */
+    async function subscribeSong(song) {
+
+        const email = localStorage.getItem("email");
+
+        if (!email) {
+            alert("No user logged in");
+            return;
+        }
+
+        try {
+            await fetch("/subscribe", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    email,
+                    song_id: song.artist + "#" + song.title,
+                    title: song.title,
+                    artist: song.artist,
+                    album: song.album,
+                    year: song.year,
+                    img_url: song.img_url
+                })
+            });
+
+            alert("Subscribed!");
+            loadSubscriptions();
+
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    /* =========================
+       LOAD SUBSCRIPTIONS
+    ========================= */
+    async function loadSubscriptions() {
+
+        const email = localStorage.getItem("email");
+
+        if (!email) return;
+
+        try {
+            const res = await fetch(`/subscriptions?email=${email}`);
+            const data = await res.json();
+
+            const tbody = document.getElementById("subscription-body");
+            tbody.innerHTML = "";
+
+            data.forEach((song, index) => {
+
+                const row = `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td><img src="${song.img_url}" width="50"></td>
+                        <td>${song.title}</td>
+                        <td>${song.artist}</td>
+                        <td>${song.album}</td>
+                        <td>${song.year}</td>
+                        <td>
+                            <button onclick="removeSong('${song.email}', '${song.song_id}')">
+                                Remove
+                            </button>
+                        </td>
+                    </tr>
+                `;
+
+                tbody.innerHTML += row;
+            });
+
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    /* =========================
+       REMOVE SUBSCRIPTION
+    ========================= */
+    async function removeSong(email, song_id) {
+
+        try {
+            await fetch("/subscription", {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    email,
+                    song_id
+                })
+            });
+
+            loadSubscriptions();
+
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    /* =========================
+       LOGOUT
+    ========================= */
+    function logout() {
+        localStorage.removeItem("email");
+        window.location.href = "/";
+    }
+
 </script>
 
 </body>
