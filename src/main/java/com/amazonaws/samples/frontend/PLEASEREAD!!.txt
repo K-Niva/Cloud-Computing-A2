@@ -1,9 +1,0 @@
-Testing and uploading commit
-
-added this so i can commit and push lol
-
-// PLEASE MOVE EVERYTHING TO THE FRONTEND FOLDER HERE:
-// /Users/petreatheodorakopoulos/IdeaProjects/Cloud-Computing-A2/frontend
-// everything should be already moved be please double check
-
-njnjkn]
