@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="PLEASE READ THE TEXT FILE!!!">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/frontend/PLEASEREAD!!.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/frontend/frontend_test.txt" beforeDir="false" />
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="moving files around">
+      <change beforePath="$PROJECT_DIR$/website/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/BADhomepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/loginpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/BADLOGIN.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/registerpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/BADregisterpage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,30 +154,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Creating insetUser file">
-      <option name="closed" value="true" />
-      <created>1776153875800</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1776153875800</updated>
-    </task>
-    <task id="LOCAL-00008" summary="added website folder">
-      <option name="closed" value="true" />
-      <created>1776154012571</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1776154012571</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Added a pom.xml to download AWS SDK related artifacts, will need to get MAVEN">
-      <option name="closed" value="true" />
-      <created>1776237135338</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1776237135338</updated>
     </task>
     <task id="LOCAL-00010" summary="added note for me to fix the code to match with lab">
       <option name="closed" value="true" />
@@ -547,7 +523,31 @@
       <option name="project" value="LOCAL" />
       <updated>1777545948635</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="PLEASE READ THE TEXT FILE!!!">
+      <option name="closed" value="true" />
+      <created>1777560205580</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1777560205580</updated>
+    </task>
+    <task id="LOCAL-00057" summary="moving files around">
+      <option name="closed" value="true" />
+      <created>1777560347687</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1777560347687</updated>
+    </task>
+    <task id="LOCAL-00058" summary="moving files around">
+      <option name="closed" value="true" />
+      <created>1777560425002</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1777560425002</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -563,7 +563,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="added the songs json file" />
     <MESSAGE value="added note in website file" />
     <MESSAGE value="Changed file names" />
     <MESSAGE value="Created music create" />
@@ -588,6 +587,7 @@
     <MESSAGE value="Chaning the port from 3000 to 80" />
     <MESSAGE value="Moving things around" />
     <MESSAGE value="PLEASE READ THE TEXT FILE!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="PLEASE READ THE TEXT FILE!!!" />
+    <MESSAGE value="moving files around" />
+    <option name="LAST_COMMIT_MESSAGE" value="moving files around" />
   </component>
 </project>
