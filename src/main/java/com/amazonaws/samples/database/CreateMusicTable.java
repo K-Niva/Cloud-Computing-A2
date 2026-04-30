@@ -33,10 +33,10 @@ public class CreateMusicTable {
                     )
                     .withLocalSecondaryIndexes(
                             new LocalSecondaryIndex()
-                                    .withIndexName("ArtistTitleIndex")
+                                    .withIndexName("ArtistYearIndex")
                                     .withKeySchema(
                                             new KeySchemaElement("artist", KeyType.HASH),
-                                            new KeySchemaElement("title", KeyType.RANGE)
+                                            new KeySchemaElement("year", KeyType.RANGE)
                                     )
                                     .withProjection(new Projection().withProjectionType(ProjectionType.ALL))
                     )
@@ -53,6 +53,7 @@ public class CreateMusicTable {
                     .withAttributeDefinitions(
                             new AttributeDefinition("artist", ScalarAttributeType.S),
                             new AttributeDefinition("title", ScalarAttributeType.S),
+                            new AttributeDefinition("year", ScalarAttributeType.S),
                             new AttributeDefinition("song_id", ScalarAttributeType.S),
                             new AttributeDefinition("album", ScalarAttributeType.S)
                     )
