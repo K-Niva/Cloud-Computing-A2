@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="fixing things around server.js">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/CreateMusicTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/CreateMusicTable.java" afterDir="false" />
-    </list>
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Added maven again :/" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -173,14 +170,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Changed the layout should be good to go!">
-      <option name="closed" value="true" />
-      <created>1776749166487</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1776749166487</updated>
     </task>
     <task id="LOCAL-00016" summary="Changed the createLoginTable to java, created table">
       <option name="closed" value="true" />
@@ -566,7 +555,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777570380479</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Added maven again :/">
+      <option name="closed" value="true" />
+      <created>1777574732116</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1777574732117</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -582,7 +579,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="chnaged the sort key in cratemusic table" />
     <MESSAGE value="ok loaded data :)" />
     <MESSAGE value="started to createBuckets to upload images" />
     <MESSAGE value="added GSI and LSI to createMusicTable" />
@@ -607,6 +603,7 @@
     <MESSAGE value="chaning the ip for page also chaning the 3000 to 80" />
     <MESSAGE value="fixing bug" />
     <MESSAGE value="fixing more bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing more bugs" />
+    <MESSAGE value="Added maven again :/" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added maven again :/" />
   </component>
 </project>
