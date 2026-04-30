@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Fixing bugs">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/LoadMusicData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/LoadMusicData.java" afterDir="false" />
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Fixing code for the table">
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,14 +173,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Changed file names">
-      <option name="closed" value="true" />
-      <created>1776753892157</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1776753892157</updated>
     </task>
     <task id="LOCAL-00026" summary="Created music create">
       <option name="closed" value="true" />
@@ -566,7 +558,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777579493659</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="Fixing code for the table">
+      <option name="closed" value="true" />
+      <created>1777579945577</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1777579945578</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -582,7 +582,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="added css for login page" />
     <MESSAGE value="added html and css for home page" />
     <MESSAGE value="testing commit" />
     <MESSAGE value="chaining login html to help with backend" />
@@ -607,6 +606,7 @@
     <MESSAGE value="fixed button to add songs" />
     <MESSAGE value="Created subscription table" />
     <MESSAGE value="Fixing bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing bugs" />
+    <MESSAGE value="Fixing code for the table" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing code for the table" />
   </component>
 </project>

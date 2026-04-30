@@ -66,21 +66,9 @@ app.get("/music/search", async (req, res) => {
 
     try {
 
-        // 1. ARTIST ONLY (PK QUERY)
-        if (artist && !year) {
-
-            const result = await dynamo.query({
-                TableName: MUSIC_TABLE,
-                KeyConditionExpression: "artist = :a",
-                ExpressionAttributeValues: {
-                    ":a": artist
-                }
-            }).promise();
-
-            return res.json(result.Items);
-        }
-
-        // 2. ARTIST + YEAR (LSI)
+        /* =========================
+           1. ARTIST + YEAR (LSI)
+        ========================= */
         if (artist && year) {
 
             const result = await dynamo.query({
@@ -99,12 +87,34 @@ app.get("/music/search", async (req, res) => {
             return res.json(result.Items);
         }
 
-        // 3. ALBUM SEARCH (GSI)
+
+        /* =========================
+           2. ARTIST + ALBUM (SCAN FILTER)
+           (required for demo questions like "Taylor Swift in Fearless")
+        ========================= */
+        if (artist && album) {
+
+            const result = await dynamo.scan({
+                TableName: MUSIC_TABLE,
+                FilterExpression: "artist = :a AND album = :al",
+                ExpressionAttributeValues: {
+                    ":a": artist,
+                    ":al": album
+                }
+            }).promise();
+
+            return res.json(result.Items);
+        }
+
+
+        /* =========================
+           3. ALBUM SEARCH (GSI)
+        ========================= */
         if (album) {
 
             const result = await dynamo.query({
                 TableName: MUSIC_TABLE,
-                IndexName: "AlbumTitleIndex",
+                IndexName: "AlbumArtistIndex",   // ✅ FIXED NAME
                 KeyConditionExpression: "album = :al",
                 ExpressionAttributeValues: {
                     ":al": album
@@ -114,7 +124,27 @@ app.get("/music/search", async (req, res) => {
             return res.json(result.Items);
         }
 
-        // 4. FALLBACK SCAN (SAFE FIXED VERSION)
+
+        /* =========================
+           4. ARTIST ONLY (PK QUERY)
+        ========================= */
+        if (artist) {
+
+            const result = await dynamo.query({
+                TableName: MUSIC_TABLE,
+                KeyConditionExpression: "artist = :a",
+                ExpressionAttributeValues: {
+                    ":a": artist
+                }
+            }).promise();
+
+            return res.json(result.Items);
+        }
+
+
+        /* =========================
+           5. FALLBACK SCAN (MULTI-FILTER)
+        ========================= */
         let filters = [];
         let values = {};
         let names = {};
@@ -150,17 +180,16 @@ app.get("/music/search", async (req, res) => {
             ExpressionAttributeValues: values
         };
 
-        // IMPORTANT FIX (prevents your crash)
         if (Object.keys(names).length > 0) {
             scanParams.ExpressionAttributeNames = names;
         }
 
         const result = await dynamo.scan(scanParams).promise();
-        res.json(result.Items);
+        return res.json(result.Items);
 
     } catch (err) {
         console.log(err);
-        res.status(500).json({ error: err.message });
+        return res.status(500).json({ error: err.message });
     }
 });
 
