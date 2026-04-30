@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Fixed bugs in main page">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Added code for server.js for the main page">
+      <change beforePath="$PROJECT_DIR$/frontend/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,14 +173,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Added json file, need to add 10+ users">
-      <option name="closed" value="true" />
-      <created>1776750202035</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1776750202035</updated>
     </task>
     <task id="LOCAL-00019" summary="Added users">
       <option name="closed" value="true" />
@@ -567,7 +558,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777575849984</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Added code for server.js for the main page">
+      <option name="closed" value="true" />
+      <created>1777576866992</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1777576866992</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -583,7 +582,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="added secuirty meassures to the buckets creation" />
     <MESSAGE value="have uploaded the images to s3" />
     <MESSAGE value="Changed the code to createMusic table, as i changed the gsi and lsi" />
     <MESSAGE value="addeed the website files + added basic html for login page based on design" />
@@ -608,6 +606,7 @@
     <MESSAGE value="Ok ready to start backend now for main page" />
     <MESSAGE value="Added script for main page" />
     <MESSAGE value="Fixed bugs in main page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bugs in main page" />
+    <MESSAGE value="Added code for server.js for the main page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added code for server.js for the main page" />
   </component>
 </project>

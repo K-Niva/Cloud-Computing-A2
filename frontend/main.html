@@ -121,10 +121,13 @@
     }
 
 window.onload = () => {
-    const email = localStorage.getItem("email");
 
-    if (email) {
-        document.getElementById("user_name").innerText = email;
+    const username = localStorage.getItem("user_name");
+
+    if (username) {
+        document.getElementById("username").innerText = username;
+    } else {
+        document.getElementById("username").innerText = "User";
     }
 
     loadSubscriptions();

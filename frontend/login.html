@@ -63,6 +63,7 @@
 
             if (data.success) {
                 // optional: store user in browser session
+                localStorage.setItem("email", email);
                 localStorage.setItem("user_name", data.user_name);
 
                 // redirect to main page
