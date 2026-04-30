@@ -125,7 +125,7 @@ window.onload = () => {
     const username = localStorage.getItem("user_name");
 
     if (username) {
-        document.getElementById("username").innerText = username;
+        document.getElementById("user_name").innerText = username;
     } else {
         document.getElementById("username").innerText = "User";
     }
@@ -209,7 +209,7 @@ window.onload = () => {
                 },
                 body: JSON.stringify({
                     email,
-                    song_id: song.album + "#" + song.title
+                    song_id: song.album + "#" + song.title,
                     title: song.title,
                     artist: song.artist,
                     album: song.album,
