@@ -94,7 +94,7 @@ app.get("/music/search", async (req, res) => {
                 );
 
             }
-            return res.json(result.Items);
+            return res.json(items);
         }
 
 
