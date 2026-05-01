@@ -109,7 +109,10 @@ app.post("/register", async (req, res) => {
 ========================= */
 app.get("/music/search", async (req, res) => {
 
-    const { title, artist, album, year } = req.query;
+    const artist = req.query.artist?.toLowerCase();
+    const album = req.query.album?.toLowerCase();
+    const title = req.query.title?.toLowerCase();
+    const year = req.query.year;
 
     try {
 
@@ -122,7 +125,7 @@ app.get("/music/search", async (req, res) => {
             const result = await dynamo.query({
                 TableName: MUSIC_TABLE,
                 IndexName: "ArtistYearIndex",
-                KeyConditionExpression: "artist = :a AND #y = :y",
+                KeyConditionExpression: "artist = :a AND #y = :y", // must stay artist (LSI constraint)
                 ExpressionAttributeNames: {
                     "#y": "year"
                 },
@@ -133,8 +136,8 @@ app.get("/music/search", async (req, res) => {
             }).promise();
 
             const items = result.Items.filter(song =>
-                song.title &&
-                song.title.toLowerCase().includes(title.toLowerCase())
+                song.title_key &&   // FIX
+                song.title_key.includes(title) // FIX
             );
 
             return res.json(items);
@@ -155,10 +158,10 @@ app.get("/music/search", async (req, res) => {
             }).promise();
 
             const items = result.Items.filter(song =>
-                song.album &&
-                song.album.toLowerCase() === album.toLowerCase() &&
-                song.title &&
-                song.title.toLowerCase().includes(title.toLowerCase())
+                song.album_key &&   // FIX
+                song.album_key === album &&  // FIX
+                song.title_key &&   // FIX
+                song.title_key.includes(title) // FIX
             );
 
             return res.json(items);
@@ -183,8 +186,8 @@ app.get("/music/search", async (req, res) => {
             }).promise();
 
             const items = result.Items.filter(song =>
-                song.album &&
-                song.album.toLowerCase() === album.toLowerCase()
+                song.album_key &&   // FIX
+                song.album_key === album // FIX
             );
 
             return res.json(items);
@@ -227,8 +230,8 @@ app.get("/music/search", async (req, res) => {
             }).promise();
 
             const items = result.Items.filter(song =>
-                song.album &&
-                song.album.toLowerCase() === album.toLowerCase()
+                song.album_key &&   // FIX
+                song.album_key === album // FIX
             );
 
             return res.json(items);
@@ -249,8 +252,8 @@ app.get("/music/search", async (req, res) => {
             }).promise();
 
             const items = result.Items.filter(song =>
-                song.title &&
-                song.title.toLowerCase().includes(title.toLowerCase())
+                song.title_key &&   // FIX
+                song.title_key.includes(title) // FIX
             );
 
             return res.json(items);
@@ -265,13 +268,17 @@ app.get("/music/search", async (req, res) => {
             const result = await dynamo.query({
                 TableName: MUSIC_TABLE,
                 IndexName: "AlbumArtistIndex",
-                KeyConditionExpression: "album = :al",
+                KeyConditionExpression: "album = :al", // keep if index uses album
                 ExpressionAttributeValues: {
                     ":al": album
                 }
             }).promise();
 
-            return res.json(result.Items);
+            const items = result.Items.filter(song =>
+                song.album_key === album // FIX (ensures case consistency)
+            );
+
+            return res.json(items);
         }
 
         /* ==================================================
@@ -299,7 +306,7 @@ app.get("/music/search", async (req, res) => {
 
             const result = await dynamo.scan({
                 TableName: MUSIC_TABLE,
-                FilterExpression: "contains(title, :t)",
+                FilterExpression: "contains(title_key, :t)", // FIX
                 ExpressionAttributeValues: {
                     ":t": title
                 }
