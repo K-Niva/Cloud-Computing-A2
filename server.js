@@ -351,7 +351,6 @@ app.get("/music/search", async (req, res) => {
 ========================= */
 app.post("/subscribe", async (req, res) => {
 
-    const song_id = `${album}#${title}`;
     const { email, song_id, title, artist, album, year, img_url } = req.body;
 
     try {
