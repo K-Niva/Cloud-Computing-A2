@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="added artsits + uear + album">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="added case sentiveiry">
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,22 +126,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Chaining IP">
-      <option name="closed" value="true" />
-      <created>1777447032353</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1777447032353</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Chaining code around">
-      <option name="closed" value="true" />
-      <created>1777447271884</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1777447271884</updated>
     </task>
     <task id="LOCAL-00049" summary="Chaining moving things around">
       <option name="closed" value="true" />
@@ -519,7 +503,23 @@
       <option name="project" value="LOCAL" />
       <updated>1777648180521</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="added case sentiveiry">
+      <option name="closed" value="true" />
+      <created>1777649006542</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1777649006542</updated>
+    </task>
+    <task id="LOCAL-00097" summary="added case sentiveiry">
+      <option name="closed" value="true" />
+      <created>1777649060261</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1777649060261</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -535,7 +535,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="Chaning the port from 3000 to 80" />
     <MESSAGE value="Moving things around" />
     <MESSAGE value="PLEASE READ THE TEXT FILE!!!" />
     <MESSAGE value="moving files around" />
@@ -560,6 +559,7 @@
     <MESSAGE value="fixed logic to music search api" />
     <MESSAGE value="fixing logic with case sensitivy" />
     <MESSAGE value="added artsits + uear + album" />
-    <option name="LAST_COMMIT_MESSAGE" value="added artsits + uear + album" />
+    <MESSAGE value="added case sentiveiry" />
+    <option name="LAST_COMMIT_MESSAGE" value="added case sentiveiry" />
   </component>
 </project>
