@@ -109,10 +109,7 @@ app.post("/register", async (req, res) => {
 ========================= */
 app.get("/music/search", async (req, res) => {
 
-    const artist = req.query.artist?.toLowerCase();
-    const album = req.query.album?.toLowerCase();
-    const title = req.query.title?.toLowerCase();
-    const year = req.query.year;
+    const { title, artist, album, year } = req.query;
 
     try {
 
@@ -125,7 +122,7 @@ app.get("/music/search", async (req, res) => {
             const result = await dynamo.query({
                 TableName: MUSIC_TABLE,
                 IndexName: "ArtistYearIndex",
-                KeyConditionExpression: "artist_key = :a AND #y = :y",
+                KeyConditionExpression: "artist = :a AND #y = :y",
                 ExpressionAttributeNames: {
                     "#y": "year"
                 },
@@ -151,15 +148,17 @@ app.get("/music/search", async (req, res) => {
 
             const result = await dynamo.query({
                 TableName: MUSIC_TABLE,
-                KeyConditionExpression: "artist_key = :a",
+                KeyConditionExpression: "artist = :a",
                 ExpressionAttributeValues: {
                     ":a": artist
                 }
             }).promise();
 
             const items = result.Items.filter(song =>
-                song.album_key === album &&
-                song.title_key.includes(title)
+                song.album &&
+                song.album.toLowerCase() === album.toLowerCase() &&
+                song.title &&
+                song.title.toLowerCase().includes(title.toLowerCase())
             );
 
             return res.json(items);
@@ -173,7 +172,7 @@ app.get("/music/search", async (req, res) => {
             const result = await dynamo.query({
                 TableName: MUSIC_TABLE,
                 IndexName: "ArtistYearIndex",
-                KeyConditionExpression: "artist_key = :a AND #y = :y",
+                KeyConditionExpression: "artist = :a AND #y = :y",
                 ExpressionAttributeNames: {
                     "#y": "year"
                 },
@@ -221,14 +220,15 @@ app.get("/music/search", async (req, res) => {
 
             const result = await dynamo.query({
                 TableName: MUSIC_TABLE,
-                KeyConditionExpression: "artist_key = :a",
+                KeyConditionExpression: "artist = :a",
                 ExpressionAttributeValues: {
                     ":a": artist
                 }
             }).promise();
 
             const items = result.Items.filter(song =>
-                song.album_key === album
+                song.album &&
+                song.album.toLowerCase() === album.toLowerCase()
             );
 
             return res.json(items);
@@ -242,14 +242,15 @@ app.get("/music/search", async (req, res) => {
 
             const result = await dynamo.query({
                 TableName: MUSIC_TABLE,
-                KeyConditionExpression: "artist_key = :a",
+                KeyConditionExpression: "artist = :a",
                 ExpressionAttributeValues: {
                     ":a": artist
                 }
             }).promise();
 
             const items = result.Items.filter(song =>
-                song.title_key.includes(title)
+                song.title &&
+                song.title.toLowerCase().includes(title.toLowerCase())
             );
 
             return res.json(items);
@@ -264,7 +265,7 @@ app.get("/music/search", async (req, res) => {
             const result = await dynamo.query({
                 TableName: MUSIC_TABLE,
                 IndexName: "AlbumArtistIndex",
-                KeyConditionExpression: "album_key = :al",
+                KeyConditionExpression: "album = :al",
                 ExpressionAttributeValues: {
                     ":al": album
                 }
@@ -281,7 +282,7 @@ app.get("/music/search", async (req, res) => {
 
             const result = await dynamo.query({
                 TableName: MUSIC_TABLE,
-                KeyConditionExpression: "artist_key = :a",
+                KeyConditionExpression: "artist = :a",
                 ExpressionAttributeValues: {
                     ":a": artist
                 }
