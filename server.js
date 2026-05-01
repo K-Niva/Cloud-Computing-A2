@@ -112,9 +112,61 @@ app.get("/music/search", async (req, res) => {
 
     try {
 
-        /* =========================
-           1. ARTIST + YEAR (LSI)
-        ========================= */
+        /* ==================================================
+           1. ARTIST + YEAR + TITLE
+           Query by LSI, then filter title
+        ================================================== */
+        if (artist && year && title) {
+
+            const result = await dynamo.query({
+                TableName: MUSIC_TABLE,
+                IndexName: "ArtistYearIndex",
+                KeyConditionExpression: "artist = :a AND #y = :y",
+                ExpressionAttributeNames: {
+                    "#y": "year"
+                },
+                ExpressionAttributeValues: {
+                    ":a": artist,
+                    ":y": year
+                }
+            }).promise();
+
+            const items = result.Items.filter(song =>
+                song.title &&
+                song.title.toLowerCase().includes(title.toLowerCase())
+            );
+
+            return res.json(items);
+        }
+
+        /* ==================================================
+           2. ARTIST + ALBUM + TITLE
+           Query artist then filter album/title
+        ================================================== */
+        if (artist && album && title) {
+
+            const result = await dynamo.query({
+                TableName: MUSIC_TABLE,
+                KeyConditionExpression: "artist = :a",
+                ExpressionAttributeValues: {
+                    ":a": artist
+                }
+            }).promise();
+
+            const items = result.Items.filter(song =>
+                song.album &&
+                song.album.toLowerCase() === album.toLowerCase() &&
+                song.title &&
+                song.title.toLowerCase().includes(title.toLowerCase())
+            );
+
+            return res.json(items);
+        }
+
+        /* ==================================================
+           3. ARTIST + YEAR
+           Query by LSI
+        ================================================== */
         if (artist && year) {
 
             const result = await dynamo.query({
@@ -130,47 +182,62 @@ app.get("/music/search", async (req, res) => {
                 }
             }).promise();
 
-            let items = result.Items;
-
-            // POST-FILTER for title (IMPORTANT FIX)
-            if (title) {
-                items = items.filter(song =>
-                    song.title &&
-                    song.title.toLowerCase().includes(title.toLowerCase())
-                );
-
-            }
-            return res.json(items);
-        }
-
-
-        /* =========================
-           2. ARTIST + ALBUM (SCAN FILTER)
-           (required for demo questions like "Taylor Swift in Fearless")
-        ========================= */
-        if (artist && album) {
-
-            const result = await dynamo.scan({
-                TableName: MUSIC_TABLE,
-                FilterExpression: "artist = :a AND album = :al",
-                ExpressionAttributeValues: {
-                    ":a": artist,
-                    ":al": album
-                }
-            }).promise();
-
             return res.json(result.Items);
         }
 
+        /* ==================================================
+           4. ARTIST + ALBUM
+           Query artist then filter album
+        ================================================== */
+        if (artist && album) {
 
-        /* =========================
-           3. ALBUM SEARCH (GSI)
-        ========================= */
+            const result = await dynamo.query({
+                TableName: MUSIC_TABLE,
+                KeyConditionExpression: "artist = :a",
+                ExpressionAttributeValues: {
+                    ":a": artist
+                }
+            }).promise();
+
+            const items = result.Items.filter(song =>
+                song.album &&
+                song.album.toLowerCase() === album.toLowerCase()
+            );
+
+            return res.json(items);
+        }
+
+        /* ==================================================
+           5. ARTIST + TITLE
+           Query artist then filter title
+        ================================================== */
+        if (artist && title) {
+
+            const result = await dynamo.query({
+                TableName: MUSIC_TABLE,
+                KeyConditionExpression: "artist = :a",
+                ExpressionAttributeValues: {
+                    ":a": artist
+                }
+            }).promise();
+
+            const items = result.Items.filter(song =>
+                song.title &&
+                song.title.toLowerCase().includes(title.toLowerCase())
+            );
+
+            return res.json(items);
+        }
+
+        /* ==================================================
+           6. ALBUM ONLY
+           Query by GSI
+        ================================================== */
         if (album) {
 
             const result = await dynamo.query({
                 TableName: MUSIC_TABLE,
-                IndexName: "AlbumArtistIndex",   // ✅ FIXED NAME
+                IndexName: "AlbumArtistIndex",
                 KeyConditionExpression: "album = :al",
                 ExpressionAttributeValues: {
                     ":al": album
@@ -180,10 +247,10 @@ app.get("/music/search", async (req, res) => {
             return res.json(result.Items);
         }
 
-
-        /* =========================
-           4. ARTIST ONLY (PK QUERY)
-        ========================= */
+        /* ==================================================
+           7. ARTIST ONLY
+           Query by PK
+        ================================================== */
         if (artist) {
 
             const result = await dynamo.query({
@@ -197,55 +264,55 @@ app.get("/music/search", async (req, res) => {
             return res.json(result.Items);
         }
 
-
-        /* =========================
-           5. FALLBACK SCAN (MULTI-FILTER)
-        ========================= */
-        let filters = [];
-        let values = {};
-        let names = {};
-
+        /* ==================================================
+           8. TITLE ONLY
+           Scan (fallback)
+        ================================================== */
         if (title) {
-            filters.push("contains(title, :t)");
-            values[":t"] = title;
+
+            const result = await dynamo.scan({
+                TableName: MUSIC_TABLE,
+                FilterExpression: "contains(title, :t)",
+                ExpressionAttributeValues: {
+                    ":t": title
+                }
+            }).promise();
+
+            return res.json(result.Items);
         }
 
-        if (artist) {
-            filters.push("artist = :a");
-            values[":a"] = artist;
-        }
-
-        if (album) {
-            filters.push("album = :al");
-            values[":al"] = album;
-        }
-
+        /* ==================================================
+           9. YEAR ONLY
+           Scan (fallback)
+        ================================================== */
         if (year) {
-            filters.push("#y = :y");
-            values[":y"] = year;
-            names["#y"] = "year";
+
+            const result = await dynamo.scan({
+                TableName: MUSIC_TABLE,
+                FilterExpression: "#y = :y",
+                ExpressionAttributeNames: {
+                    "#y": "year"
+                },
+                ExpressionAttributeValues: {
+                    ":y": year
+                }
+            }).promise();
+
+            return res.json(result.Items);
         }
 
-        if (filters.length === 0) {
-            return res.json([]);
-        }
-
-        const scanParams = {
-            TableName: MUSIC_TABLE,
-            FilterExpression: filters.join(" AND "),
-            ExpressionAttributeValues: values
-        };
-
-        if (Object.keys(names).length > 0) {
-            scanParams.ExpressionAttributeNames = names;
-        }
-
-        const result = await dynamo.scan(scanParams).promise();
-        return res.json(result.Items);
+        /* ==================================================
+           10. NOTHING ENTERED
+        ================================================== */
+        return res.json([]);
 
     } catch (err) {
+
         console.log(err);
-        return res.status(500).json({ error: err.message });
+
+        return res.status(500).json({
+            error: err.message
+        });
     }
 });
 

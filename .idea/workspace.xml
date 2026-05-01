@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Added backend logic for register page">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/style_home.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/style_home.css" afterDir="false" />
-    </list>
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Fixed some css for the home page" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -127,22 +124,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00031" summary="started to createBuckets to upload images">
-      <option name="closed" value="true" />
-      <created>1776757987652</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1776757987652</updated>
-    </task>
-    <task id="LOCAL-00032" summary="added GSI and LSI to createMusicTable">
-      <option name="closed" value="true" />
-      <created>1776844274819</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1776844274819</updated>
     </task>
     <task id="LOCAL-00033" summary="added secuirty meassures to the buckets creation">
       <option name="closed" value="true" />
@@ -520,7 +501,23 @@
       <option name="project" value="LOCAL" />
       <updated>1777643372334</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="Fixed some css for the home page">
+      <option name="closed" value="true" />
+      <created>1777643855322</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1777643855322</updated>
+    </task>
+    <task id="LOCAL-00081" summary="Fixed some css for the home page">
+      <option name="closed" value="true" />
+      <created>1777643930252</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1777643930252</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -536,7 +533,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="added ec2 folder" />
     <MESSAGE value="added code for server.js" />
     <MESSAGE value="Chaining IP" />
     <MESSAGE value="Chaining code around" />
@@ -561,6 +557,7 @@
     <MESSAGE value="Fixing logic for music api" />
     <MESSAGE value="Commited everyting check" />
     <MESSAGE value="Added backend logic for register page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added backend logic for register page" />
+    <MESSAGE value="Fixed some css for the home page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed some css for the home page" />
   </component>
 </project>
