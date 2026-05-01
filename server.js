@@ -16,13 +16,6 @@ const LOGIN_TABLE = "login";
 const MUSIC_TABLE = "music";
 const SUB_TABLE = "subscriptions";
 
-const normalize = (v) =>
-    v ? v.trim().toLowerCase() : null;
-
-const artist = normalize(req.query.artist);
-const title = normalize(req.query.title);
-const album = normalize(req.query.album);
-const year = req.query.year; // keep raw (important: number/string matching)
 
 /* =========================
    STATIC FRONTEND
@@ -117,6 +110,14 @@ app.post("/register", async (req, res) => {
 app.get("/music/search", async (req, res) => {
 
     const { title, artist, album, year } = req.query;
+
+    const normalize = (v) =>
+        v ? v.trim().toLowerCase() : null;
+
+    const artist = normalize(req.query.artist);
+    const title = normalize(req.query.title);
+    const album = normalize(req.query.album);
+    const year = req.query.year; // keep raw (important: number/string matching)
 
     try {
 
