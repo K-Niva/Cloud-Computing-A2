@@ -109,13 +109,7 @@ app.post("/register", async (req, res) => {
 ========================= */
 app.get("/music/search", async (req, res) => {
 
-    const normalize = (v) =>
-        v && v.trim() !== "" ? v.trim().toLowerCase() : null;
-
-    const artist = normalize(req.query.artist);
-    const title = normalize(req.query.title);
-    const album = normalize(req.query.album);
-    const year = req.query.year && req.query.year.trim() !== "" ? req.query.year : null;
+    const { title, artist, album, year } = req.query;
 
     try {
 
@@ -140,7 +134,7 @@ app.get("/music/search", async (req, res) => {
 
             const items = result.Items.filter(song =>
                 song.title &&
-                song.title?.toLowerCase().includes(title)
+                song.title.toLowerCase().includes(title.toLowerCase())
             );
 
             return res.json(items);
@@ -164,7 +158,7 @@ app.get("/music/search", async (req, res) => {
                 song.album &&
                 song.album.toLowerCase() === album.toLowerCase() &&
                 song.title &&
-                song.title?.toLowerCase().includes(title)
+                song.title.toLowerCase().includes(title.toLowerCase())
             );
 
             return res.json(items);
@@ -230,7 +224,7 @@ app.get("/music/search", async (req, res) => {
 
             const items = result.Items.filter(song =>
                 song.title &&
-                song.title?.toLowerCase().includes(title)
+                song.title.toLowerCase().includes(title.toLowerCase())
             );
 
             return res.json(items);
