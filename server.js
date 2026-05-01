@@ -109,7 +109,10 @@ app.post("/register", async (req, res) => {
 ========================= */
 app.get("/music/search", async (req, res) => {
 
-    const { title, artist, album, year } = req.query;
+    const artist = req.query.artist?.trim();
+    const album = req.query.album?.trim();
+    const title = req.query.title?.trim();
+    const year = req.query.year;
 
     try {
 

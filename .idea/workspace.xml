@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="added case sentiveiry" />
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Fejn" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -124,22 +124,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00053" summary="Chaning the port from 3000 to 80">
-      <option name="closed" value="true" />
-      <created>1777452474715</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1777452474715</updated>
-    </task>
-    <task id="LOCAL-00054" summary="Moving things around">
-      <option name="closed" value="true" />
-      <created>1777452602895</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1777452602896</updated>
     </task>
     <task id="LOCAL-00055" summary="PLEASE READ THE TEXT FILE!!!">
       <option name="closed" value="true" />
@@ -517,7 +501,23 @@
       <option name="project" value="LOCAL" />
       <updated>1777649895113</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="LASFnosgn">
+      <option name="closed" value="true" />
+      <created>1777650158903</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1777650158903</updated>
+    </task>
+    <task id="LOCAL-00103" summary="Fejn">
+      <option name="closed" value="true" />
+      <created>1777650214803</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1777650214803</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -533,8 +533,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="Moving things around" />
-    <MESSAGE value="PLEASE READ THE TEXT FILE!!!" />
     <MESSAGE value="moving files around" />
     <MESSAGE value="chaning the ip for page also chaning the 3000 to 80" />
     <MESSAGE value="fixing bug" />
@@ -558,6 +556,8 @@
     <MESSAGE value="fixing logic with case sensitivy" />
     <MESSAGE value="added artsits + uear + album" />
     <MESSAGE value="added case sentiveiry" />
-    <option name="LAST_COMMIT_MESSAGE" value="added case sentiveiry" />
+    <MESSAGE value="LASFnosgn" />
+    <MESSAGE value="Fejn" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fejn" />
   </component>
 </project>
