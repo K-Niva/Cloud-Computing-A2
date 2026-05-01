@@ -81,14 +81,23 @@ button {
     display: block;
     margin: 30px auto 0;
     padding: 12px;
-    background-color: ##000000;
+    background-color: #000000;   /* 👈 purple as default */
     color: white;
     border: none;
     font-weight: bold;
     cursor: pointer;
     text-transform: uppercase;
+    transition: 0.3s; /* smooth hover */
 }
 
 button:hover {
-    background-color: #4e567a;
+    background-color: #4e567a;   /* 👈 black on hover */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;   /* 👈 this is what you wanted */
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }

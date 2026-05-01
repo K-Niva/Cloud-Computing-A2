@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stardust Music - Register</title>
+    <link rel="stylesheet" href="style_login.css">
+</head>
+<body>
 
+<header>
+    <nav>
+        <img src="logo.png" alt="Stardust Music Logo" width="50">
+        <h1>STARDUST MUSIC</h1>
+    </nav>
+</header>
+
+<main>
+    <section id="login-container">
+        <h2>Register Your Account</h2>
+
+        <p>Already have an account? <a href="login.html">Log In</a></p>
+
+        <form id="register-form">
+
+            <!-- Username -->
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <button type="submit">REGISTER</button>
+
+        </form>
+
+        <p id="error-message" style="color: red;"></p>
+
+    </section>
+</main>
+
+<script>
+    document.getElementById("register-form").addEventListener("submit", async function(e) {
+        e.preventDefault();
+
+        const user_name = document.getElementById("username").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        try {
+            const response = await fetch("http://54.167.248.204:3000/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ user_name, email, password })
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                // optional: store username
+                localStorage.setItem("user_name", user_name);
+
+                // redirect to login page
+                window.location.href = "login.html";
+            } else {
+                document.getElementById("error-message").innerText =
+                    data.message || "Registration failed.";
+            }
+
+        } catch (error) {
+            console.log(error);
+            document.getElementById("error-message").innerText =
+                "Server error. Please try again.";
+        }
+    });
+</script>
+
+</body>
+</html>
