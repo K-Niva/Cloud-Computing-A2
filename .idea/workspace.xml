@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="fixed logic to music search api">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="fixing logic with case sensitivy" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -126,30 +124,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Changed the code to createMusic table, as i changed the gsi and lsi">
-      <option name="closed" value="true" />
-      <created>1777050231689</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1777050231689</updated>
-    </task>
-    <task id="LOCAL-00038" summary="addeed the website files + added basic html for login page based on design">
-      <option name="closed" value="true" />
-      <created>1777051494449</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1777051494449</updated>
-    </task>
-    <task id="LOCAL-00039" summary="added the website files + added basic html for login page based on design">
-      <option name="closed" value="true" />
-      <created>1777053271278</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1777053271278</updated>
     </task>
     <task id="LOCAL-00040" summary="added css for login page">
       <option name="closed" value="true" />
@@ -519,7 +493,31 @@
       <option name="project" value="LOCAL" />
       <updated>1777645180477</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="fixing logic with case sensitivy">
+      <option name="closed" value="true" />
+      <created>1777646493430</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1777646493430</updated>
+    </task>
+    <task id="LOCAL-00087" summary="fixing logic with case sensitivy">
+      <option name="closed" value="true" />
+      <created>1777646570227</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1777646570227</updated>
+    </task>
+    <task id="LOCAL-00088" summary="fixing logic with case sensitivy">
+      <option name="closed" value="true" />
+      <created>1777646659069</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1777646659069</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -535,7 +533,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="Chaining code around" />
     <MESSAGE value="Chaining moving things around" />
     <MESSAGE value="Chaning the port from 3000 to 80" />
     <MESSAGE value="Moving things around" />
@@ -560,6 +557,7 @@
     <MESSAGE value="Fixed some css for the home page" />
     <MESSAGE value="Chaning music search api" />
     <MESSAGE value="fixed logic to music search api" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed logic to music search api" />
+    <MESSAGE value="fixing logic with case sensitivy" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing logic with case sensitivy" />
   </component>
 </project>

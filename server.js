@@ -109,14 +109,13 @@ app.post("/register", async (req, res) => {
 ========================= */
 app.get("/music/search", async (req, res) => {
 
-
     const normalize = (v) =>
-        v ? v.trim().toLowerCase() : null;
+        v && v.trim() !== "" ? v.trim().toLowerCase() : null;
 
     const artist = normalize(req.query.artist);
     const title = normalize(req.query.title);
     const album = normalize(req.query.album);
-    const year = req.query.year; // keep raw (important: number/string matching)
+    const year = req.query.year && req.query.year.trim() !== "" ? req.query.year : null;
 
     try {
 
