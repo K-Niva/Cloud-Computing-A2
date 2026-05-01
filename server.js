@@ -58,6 +58,52 @@ app.post("/login", async (req, res) => {
 });
 
 /* =========================
+   REGISTER API
+========================= */
+app.post("/register", async (req, res) => {
+
+    const { user_name, email, password } = req.body;
+
+    try {
+
+        // Check if email already exists
+        const existingUser = await dynamo.get({
+            TableName: LOGIN_TABLE,
+            Key: { email }
+        }).promise();
+
+        if (existingUser.Item) {
+            return res.json({
+                success: false,
+                message: "The email already exists"
+            });
+        }
+
+        // Insert new user
+        await dynamo.put({
+            TableName: LOGIN_TABLE,
+            Item: {
+                email,
+                user_name,
+                password
+            }
+        }).promise();
+
+        return res.json({
+            success: true
+        });
+
+    } catch (err) {
+        console.log(err);
+
+        return res.status(500).json({
+            success: false,
+            message: "Server error"
+        });
+    }
+});
+
+/* =========================
    MUSIC SEARCH API
 ========================= */
 app.get("/music/search", async (req, res) => {
