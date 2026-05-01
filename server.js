@@ -109,7 +109,6 @@ app.post("/register", async (req, res) => {
 ========================= */
 app.get("/music/search", async (req, res) => {
 
-    const { title, artist, album, year } = req.query;
 
     const normalize = (v) =>
         v ? v.trim().toLowerCase() : null;
