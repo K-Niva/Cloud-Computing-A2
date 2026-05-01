@@ -129,26 +129,37 @@ body {
     display: none;
     justify-content: center;
     align-items: center;
+
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .modal-content {
     background: #3e445e;
     width: 90%;
     max-width: 1000px;
+
+    max-height: 90vh;
+
     border-radius: 15px;
-    overflow: hidden;
     position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
 }
 
 /* top bar */
 .modal-top-bar {
     background: #000;
-    height: 50px;
+    min-height: 50px;
+
     display: flex;
     align-items: center;
     padding-left: 10px;
 
-    overflow: hidden;
+    flex-shrink: 0;
 }
 
 /* close button */
@@ -167,9 +178,24 @@ body {
 .query-inputs {
     display: flex;
     gap: 15px;
-    padding: 30px;
+    padding: 25px;
     flex-wrap: wrap;
     align-items: center;
+
+    flex-shrink: 0;
+}
+
+.results-area {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.music-table thead th {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 2;
 }
 
 .input-group {
