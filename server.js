@@ -104,7 +104,7 @@ app.post("/register", async (req, res) => {
 });
 
 /* =========================
-   MUSIC SEARCH API
+   MUSIC SEARCH API push
 ========================= */
 app.get("/music/search", async (req, res) => {
 
