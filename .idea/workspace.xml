@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Fixed some css for the home page" />
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Chaning music search api">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -124,14 +126,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00033" summary="added secuirty meassures to the buckets creation">
-      <option name="closed" value="true" />
-      <created>1777045749494</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1777045749495</updated>
     </task>
     <task id="LOCAL-00034" summary="have uploaded the images to s3">
       <option name="closed" value="true" />
@@ -517,7 +511,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777643930252</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="Chaning music search api">
+      <option name="closed" value="true" />
+      <created>1777644295698</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1777644295698</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -533,7 +535,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="added code for server.js" />
     <MESSAGE value="Chaining IP" />
     <MESSAGE value="Chaining code around" />
     <MESSAGE value="Chaining moving things around" />
@@ -558,6 +559,7 @@
     <MESSAGE value="Commited everyting check" />
     <MESSAGE value="Added backend logic for register page" />
     <MESSAGE value="Fixed some css for the home page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed some css for the home page" />
+    <MESSAGE value="Chaning music search api" />
+    <option name="LAST_COMMIT_MESSAGE" value="Chaning music search api" />
   </component>
 </project>
