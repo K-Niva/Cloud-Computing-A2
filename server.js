@@ -16,6 +16,14 @@ const LOGIN_TABLE = "login";
 const MUSIC_TABLE = "music";
 const SUB_TABLE = "subscriptions";
 
+const normalize = (v) =>
+    v ? v.trim().toLowerCase() : null;
+
+const artist = normalize(req.query.artist);
+const title = normalize(req.query.title);
+const album = normalize(req.query.album);
+const year = req.query.year; // keep raw (important: number/string matching)
+
 /* =========================
    STATIC FRONTEND
 ========================= */
@@ -133,7 +141,7 @@ app.get("/music/search", async (req, res) => {
 
             const items = result.Items.filter(song =>
                 song.title &&
-                song.title.toLowerCase().includes(title.toLowerCase())
+                song.title?.toLowerCase().includes(title)
             );
 
             return res.json(items);
@@ -157,7 +165,7 @@ app.get("/music/search", async (req, res) => {
                 song.album &&
                 song.album.toLowerCase() === album.toLowerCase() &&
                 song.title &&
-                song.title.toLowerCase().includes(title.toLowerCase())
+                song.title?.toLowerCase().includes(title)
             );
 
             return res.json(items);
@@ -223,7 +231,7 @@ app.get("/music/search", async (req, res) => {
 
             const items = result.Items.filter(song =>
                 song.title &&
-                song.title.toLowerCase().includes(title.toLowerCase())
+                song.title?.toLowerCase().includes(title)
             );
 
             return res.json(items);

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Chaning music search api">
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="fixed logic to music search api">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -126,30 +126,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00034" summary="have uploaded the images to s3">
-      <option name="closed" value="true" />
-      <created>1777047588692</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1777047588692</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Changed the code to createMusic table, as i changed the gsi and lsi">
-      <option name="closed" value="true" />
-      <created>1777050032301</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1777050032301</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Changed the code to createMusic table, as i changed the gsi and lsi">
-      <option name="closed" value="true" />
-      <created>1777050196798</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1777050196798</updated>
     </task>
     <task id="LOCAL-00037" summary="Changed the code to createMusic table, as i changed the gsi and lsi">
       <option name="closed" value="true" />
@@ -519,7 +495,31 @@
       <option name="project" value="LOCAL" />
       <updated>1777644295698</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="fixed logic to music search api">
+      <option name="closed" value="true" />
+      <created>1777645017904</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1777645017904</updated>
+    </task>
+    <task id="LOCAL-00084" summary="fixed logic to music search api">
+      <option name="closed" value="true" />
+      <created>1777645165367</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1777645165367</updated>
+    </task>
+    <task id="LOCAL-00085" summary="fixed logic to music search api">
+      <option name="closed" value="true" />
+      <created>1777645180477</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1777645180477</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -535,7 +535,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="Chaining IP" />
     <MESSAGE value="Chaining code around" />
     <MESSAGE value="Chaining moving things around" />
     <MESSAGE value="Chaning the port from 3000 to 80" />
@@ -560,6 +559,7 @@
     <MESSAGE value="Added backend logic for register page" />
     <MESSAGE value="Fixed some css for the home page" />
     <MESSAGE value="Chaning music search api" />
-    <option name="LAST_COMMIT_MESSAGE" value="Chaning music search api" />
+    <MESSAGE value="fixed logic to music search api" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed logic to music search api" />
   </component>
 </project>
