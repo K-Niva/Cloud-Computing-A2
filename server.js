@@ -165,6 +165,32 @@ app.get("/music/search", async (req, res) => {
         }
 
         /* ==================================================
+           3. ARTIST + YEAR + ALBUM
+        ================================================== */
+        if (artist && year && album) {
+
+            const result = await dynamo.query({
+                TableName: MUSIC_TABLE,
+                IndexName: "ArtistYearIndex",
+                KeyConditionExpression: "artist = :a AND #y = :y",
+                ExpressionAttributeNames: {
+                    "#y": "year"
+                },
+                ExpressionAttributeValues: {
+                    ":a": artist,
+                    ":y": year
+                }
+            }).promise();
+
+            const items = result.Items.filter(song =>
+                song.album &&
+                song.album.toLowerCase() === album.toLowerCase()
+            );
+
+            return res.json(items);
+        }
+
+        /* ==================================================
            3. ARTIST + YEAR
            Query by LSI
         ================================================== */
