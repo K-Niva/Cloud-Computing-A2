@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="fixing logic with case sensitivy" />
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="added artsits + uear + album">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -124,14 +126,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00046" summary="added code for server.js">
-      <option name="closed" value="true" />
-      <created>1777446326782</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1777446326782</updated>
     </task>
     <task id="LOCAL-00047" summary="Chaining IP">
       <option name="closed" value="true" />
@@ -517,7 +511,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777647841790</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="added artsits + uear + album">
+      <option name="closed" value="true" />
+      <created>1777648180521</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1777648180521</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -533,7 +535,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="Chaining moving things around" />
     <MESSAGE value="Chaning the port from 3000 to 80" />
     <MESSAGE value="Moving things around" />
     <MESSAGE value="PLEASE READ THE TEXT FILE!!!" />
@@ -558,6 +559,7 @@
     <MESSAGE value="Chaning music search api" />
     <MESSAGE value="fixed logic to music search api" />
     <MESSAGE value="fixing logic with case sensitivy" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing logic with case sensitivy" />
+    <MESSAGE value="added artsits + uear + album" />
+    <option name="LAST_COMMIT_MESSAGE" value="added artsits + uear + album" />
   </component>
 </project>

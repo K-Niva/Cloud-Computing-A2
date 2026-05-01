@@ -43,6 +43,9 @@ public class LoadMusicData {
             String year = current.path("year").asText();
             String album = current.path("album").asText();
             String imgUrl = current.path("img_url").asText();
+            String artistKey = artist.toLowerCase();
+            String albumKey = album.toLowerCase();
+            String titleKey = title.toLowerCase();
 
             String songId = album + "#" + title;
 
@@ -56,6 +59,9 @@ public class LoadMusicData {
                         .withString("title", title)
                         .withString("album", album)
                         .withString("img_url", imgUrl)
+                        .withString("artist_key", artistKey)
+                        .withString("album_key", albumKey)
+                        .withString("title_key", titleKey)
                 );
 
                 System.out.println("Inserted: " + artist + " - " + title);
