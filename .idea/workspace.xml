@@ -125,22 +125,6 @@
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
     </task>
-    <task id="LOCAL-00040" summary="added css for login page">
-      <option name="closed" value="true" />
-      <created>1777054303423</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1777054303423</updated>
-    </task>
-    <task id="LOCAL-00041" summary="added html and css for home page">
-      <option name="closed" value="true" />
-      <created>1777351526099</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1777351526099</updated>
-    </task>
     <task id="LOCAL-00042" summary="testing commit">
       <option name="closed" value="true" />
       <created>1777361743153</created>
@@ -517,7 +501,23 @@
       <option name="project" value="LOCAL" />
       <updated>1777646659069</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="fixing logic with case sensitivy">
+      <option name="closed" value="true" />
+      <created>1777646919386</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1777646919386</updated>
+    </task>
+    <task id="LOCAL-00090" summary="fixing logic with case sensitivy">
+      <option name="closed" value="true" />
+      <created>1777646987195</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1777646987195</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

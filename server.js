@@ -109,7 +109,13 @@ app.post("/register", async (req, res) => {
 ========================= */
 app.get("/music/search", async (req, res) => {
 
-    const { title, artist, album, year } = req.query;
+    const normalize = (v) =>
+        v && v.trim() !== "" ? v.trim().toLowerCase() : null;
+
+    const artist = normalize(req.query.artist);
+    const title = normalize(req.query.title);
+    const album = normalize(req.query.album);
+    const year = req.query.year ? req.query.year.trim() : null;
 
     try {
 
@@ -146,19 +152,14 @@ app.get("/music/search", async (req, res) => {
         ================================================== */
         if (artist && album && title) {
 
-            const result = await dynamo.query({
-                TableName: MUSIC_TABLE,
-                KeyConditionExpression: "artist = :a",
-                ExpressionAttributeValues: {
-                    ":a": artist
-                }
+            const result = await dynamo.scan({
+                TableName: MUSIC_TABLE
             }).promise();
 
             const items = result.Items.filter(song =>
-                song.album &&
-                song.album.toLowerCase() === album.toLowerCase() &&
-                song.title &&
-                song.title.toLowerCase().includes(title.toLowerCase())
+                song.artist?.toLowerCase() === artist &&
+                song.album?.toLowerCase() === album &&
+                song.title?.toLowerCase().includes(title)
             );
 
             return res.json(items);
@@ -168,22 +169,18 @@ app.get("/music/search", async (req, res) => {
            3. ARTIST + YEAR
            Query by LSI
         ================================================== */
-        if (artist && year) {
+        if (artist && year && !title && !album) {
 
-            const result = await dynamo.query({
-                TableName: MUSIC_TABLE,
-                IndexName: "ArtistYearIndex",
-                KeyConditionExpression: "artist = :a AND #y = :y",
-                ExpressionAttributeNames: {
-                    "#y": "year"
-                },
-                ExpressionAttributeValues: {
-                    ":a": artist,
-                    ":y": year
-                }
+            const result = await dynamo.scan({
+                TableName: MUSIC_TABLE
             }).promise();
 
-            return res.json(result.Items);
+            const items = result.Items.filter(song =>
+                song.artist?.toLowerCase() === artist &&
+                song.year === year
+            );
+
+            return res.json(items);
         }
 
         /* ==================================================
@@ -254,15 +251,15 @@ app.get("/music/search", async (req, res) => {
         ================================================== */
         if (artist) {
 
-            const result = await dynamo.query({
-                TableName: MUSIC_TABLE,
-                KeyConditionExpression: "artist = :a",
-                ExpressionAttributeValues: {
-                    ":a": artist
-                }
+            const result = await dynamo.scan({
+                TableName: MUSIC_TABLE
             }).promise();
 
-            return res.json(result.Items);
+            const items = result.Items.filter(song =>
+                song.artist?.toLowerCase() === artist
+            );
+
+            return res.json(items);
         }
 
         /* ==================================================
