@@ -113,7 +113,6 @@ app.get("/music/search", async (req, res) => {
     const album = req.query.album?.toLowerCase();
     const title = req.query.title?.toLowerCase();
 
-    const { title, artist, album, year } = req.query;
 
     try {
 
