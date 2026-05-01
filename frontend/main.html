@@ -274,24 +274,24 @@ window.onload = () => {
     ========================= */
     async function removeSong(email, song_id) {
 
-        try {
-            await fetch("/subscription/delete", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    email,
-                    song_id
-                })
-            });
+    try {
+        await fetch("/subscription", {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                email,
+                song_id
+            })
+        });
 
-            loadSubscriptions();
+        loadSubscriptions();
 
-        } catch (err) {
-            console.log(err);
-        }
+    } catch (err) {
+        console.log(err);
     }
+}
 
     /* =========================
        LOGOUT

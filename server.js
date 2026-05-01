@@ -351,6 +351,7 @@ app.get("/music/search", async (req, res) => {
 ========================= */
 app.post("/subscribe", async (req, res) => {
 
+    const song_id = `${album}#${title}`;
     const { email, song_id, title, artist, album, year, img_url } = req.body;
 
     try {
@@ -402,7 +403,7 @@ app.get("/subscriptions", async (req, res) => {
 /* =========================
    REMOVE SUBSCRIPTION (SAFE VERSION)
 ========================= */
-app.post("/subscription/delete", async (req, res) => {
+app.delete("/subscription", async (req, res) => {
 
     const { email, song_id } = req.body;
 
