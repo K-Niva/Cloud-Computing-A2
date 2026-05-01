@@ -108,31 +108,13 @@ app.post("/register", async (req, res) => {
 ========================= */
 app.get("/music/search", async (req, res) => {
 
-    let { title, artist, album, year } = req.query;
+    const { title, artist, album, year } = req.query;
 
     try {
 
-        /* =========================
-           NORMALISE INPUT (IMPORTANT)
-        ========================= */
-        if (artist) artist = artist.toLowerCase();
-        if (album) album = album.toLowerCase();
-        if (title) title = title.toLowerCase();
-        if (year) year = year;
-
-        /* helper: safer title match */
-        const titleMatch = (songTitle) => {
-            if (!songTitle) return false;
-
-            const t = songTitle.toLowerCase();
-
-            // word-based match (prevents "we" matching inside "were")
-            const regex = new RegExp(`\\b${title}\\b`);
-            return regex.test(t);
-        };
-
         /* ==================================================
-           1. ARTIST + YEAR + TITLE (BEST CASE PATH)
+           1. ARTIST + YEAR + TITLE
+           Query by LSI, then filter title
         ================================================== */
         if (artist && year && title) {
 
@@ -150,7 +132,8 @@ app.get("/music/search", async (req, res) => {
             }).promise();
 
             const items = result.Items.filter(song =>
-                titleMatch(song.title)
+                song.title &&
+                song.title.toLowerCase().includes(title.toLowerCase())
             );
 
             return res.json(items);
@@ -158,6 +141,7 @@ app.get("/music/search", async (req, res) => {
 
         /* ==================================================
            2. ARTIST + ALBUM + TITLE
+           Query artist then filter album/title
         ================================================== */
         if (artist && album && title) {
 
@@ -171,8 +155,9 @@ app.get("/music/search", async (req, res) => {
 
             const items = result.Items.filter(song =>
                 song.album &&
-                song.album.toLowerCase() === album &&
-                titleMatch(song.title)
+                song.album.toLowerCase() === album.toLowerCase() &&
+                song.title &&
+                song.title.toLowerCase().includes(title.toLowerCase())
             );
 
             return res.json(items);
@@ -180,6 +165,7 @@ app.get("/music/search", async (req, res) => {
 
         /* ==================================================
            3. ARTIST + YEAR
+           Query by LSI
         ================================================== */
         if (artist && year) {
 
@@ -201,6 +187,7 @@ app.get("/music/search", async (req, res) => {
 
         /* ==================================================
            4. ARTIST + ALBUM
+           Query artist then filter album
         ================================================== */
         if (artist && album) {
 
@@ -214,7 +201,7 @@ app.get("/music/search", async (req, res) => {
 
             const items = result.Items.filter(song =>
                 song.album &&
-                song.album.toLowerCase() === album
+                song.album.toLowerCase() === album.toLowerCase()
             );
 
             return res.json(items);
@@ -222,6 +209,7 @@ app.get("/music/search", async (req, res) => {
 
         /* ==================================================
            5. ARTIST + TITLE
+           Query artist then filter title
         ================================================== */
         if (artist && title) {
 
@@ -234,14 +222,16 @@ app.get("/music/search", async (req, res) => {
             }).promise();
 
             const items = result.Items.filter(song =>
-                titleMatch(song.title)
+                song.title &&
+                song.title.toLowerCase().includes(title.toLowerCase())
             );
 
             return res.json(items);
         }
 
         /* ==================================================
-           6. ALBUM ONLY (GSI)
+           6. ALBUM ONLY
+           Query by GSI
         ================================================== */
         if (album) {
 
@@ -258,7 +248,8 @@ app.get("/music/search", async (req, res) => {
         }
 
         /* ==================================================
-           7. ARTIST ONLY (PK)
+           7. ARTIST ONLY
+           Query by PK
         ================================================== */
         if (artist) {
 
@@ -274,7 +265,8 @@ app.get("/music/search", async (req, res) => {
         }
 
         /* ==================================================
-           8. TITLE ONLY (SCAN)
+           8. TITLE ONLY
+           Scan (fallback)
         ================================================== */
         if (title) {
 
@@ -290,7 +282,8 @@ app.get("/music/search", async (req, res) => {
         }
 
         /* ==================================================
-           9. YEAR ONLY (SCAN)
+           9. YEAR ONLY
+           Scan (fallback)
         ================================================== */
         if (year) {
 
@@ -309,12 +302,14 @@ app.get("/music/search", async (req, res) => {
         }
 
         /* ==================================================
-           10. EMPTY QUERY
+           10. NOTHING ENTERED
         ================================================== */
         return res.json([]);
 
     } catch (err) {
+
         console.log(err);
+
         return res.status(500).json({
             error: err.message
         });
