@@ -194,7 +194,7 @@ app.get("/music/search", async (req, res) => {
         }
 
         /* ==================================================
-           3. ARTIST + YEAR
+           4. ARTIST + YEAR
            Query by LSI
         ================================================== */
         if (artist && year) {
@@ -216,7 +216,7 @@ app.get("/music/search", async (req, res) => {
         }
 
         /* ==================================================
-           4. ARTIST + ALBUM
+          5. ARTIST + ALBUM
            Query artist then filter album
         ================================================== */
         if (artist && album) {
@@ -238,7 +238,7 @@ app.get("/music/search", async (req, res) => {
         }
 
         /* ==================================================
-           5. ARTIST + TITLE
+           6. ARTIST + TITLE
            Query artist then filter title
         ================================================== */
         if (artist && title) {
@@ -260,7 +260,7 @@ app.get("/music/search", async (req, res) => {
         }
 
         /* ==================================================
-           6. ALBUM ONLY
+           7. ALBUM ONLY
            Query by GSI
         ================================================== */
         if (album) {
@@ -278,7 +278,7 @@ app.get("/music/search", async (req, res) => {
         }
 
         /* ==================================================
-           7. ARTIST ONLY
+           8. ARTIST ONLY
            Query by PK
         ================================================== */
         if (artist) {
@@ -295,7 +295,7 @@ app.get("/music/search", async (req, res) => {
         }
 
         /* ==================================================
-           8. TITLE ONLY
+           9. TITLE ONLY
            Scan (fallback)
         ================================================== */
         if (title) {
@@ -312,7 +312,7 @@ app.get("/music/search", async (req, res) => {
         }
 
         /* ==================================================
-           9. YEAR ONLY
+           10. YEAR ONLY
            Scan (fallback)
         ================================================== */
         if (year) {
@@ -332,7 +332,7 @@ app.get("/music/search", async (req, res) => {
         }
 
         /* ==================================================
-           10. NOTHING ENTERED
+           11. NOTHING ENTERED
         ================================================== */
         return res.json([]);
 
