@@ -109,74 +109,67 @@ app.post("/register", async (req, res) => {
 ========================= */
 app.get("/music/search", async (req, res) => {
 
-    const { title, artist, album, year } = req.query;
+    const normalize = (v) =>
+        v && v.trim() !== "" ? v.trim().toLowerCase() : null;
+
+    const artist = normalize(req.query.artist);
+    const title = normalize(req.query.title);
+    const album = normalize(req.query.album);
+    const year = req.query.year ? req.query.year.trim() : null;
 
     try {
 
-        /* ==================================================
+        /* =========================
            1. ARTIST + YEAR + TITLE
-           Query by LSI, then filter title
-        ================================================== */
+        ========================= */
         if (artist && year && title) {
 
             const result = await dynamo.query({
                 TableName: MUSIC_TABLE,
                 IndexName: "ArtistYearIndex",
                 KeyConditionExpression: "artist = :a AND #y = :y",
-                ExpressionAttributeNames: {
-                    "#y": "year"
-                },
+                ExpressionAttributeNames: { "#y": "year" },
                 ExpressionAttributeValues: {
                     ":a": artist,
                     ":y": year
                 }
             }).promise();
 
-            const items = result.Items.filter(song =>
-                song.title &&
-                song.title.toLowerCase().includes(title.toLowerCase())
+            return res.json(
+                result.Items.filter(song =>
+                    song.title?.toLowerCase().includes(title)
+                )
             );
-
-            return res.json(items);
         }
 
-        /* ==================================================
+        /* =========================
            2. ARTIST + ALBUM + TITLE
-           Query artist then filter album/title
-        ================================================== */
+        ========================= */
         if (artist && album && title) {
 
-            const result = await dynamo.query({
-                TableName: MUSIC_TABLE,
-                KeyConditionExpression: "artist = :a",
-                ExpressionAttributeValues: {
-                    ":a": artist
-                }
+            const result = await dynamo.scan({
+                TableName: MUSIC_TABLE
             }).promise();
 
-            const items = result.Items.filter(song =>
-                song.album &&
-                song.album.toLowerCase() === album.toLowerCase() &&
-                song.title &&
-                song.title.toLowerCase().includes(title.toLowerCase())
+            return res.json(
+                result.Items.filter(song =>
+                    song.artist?.toLowerCase() === artist &&
+                    song.album?.toLowerCase() === album &&
+                    song.title?.toLowerCase().includes(title)
+                )
             );
-
-            return res.json(items);
         }
 
-        /* ==================================================
+        /* =========================
            3. ARTIST + YEAR
-           Query by LSI
-        ================================================== */
-        if (artist && year) {
+        ========================= */
+        if (artist && year && !title && !album) {
 
             const result = await dynamo.query({
                 TableName: MUSIC_TABLE,
                 IndexName: "ArtistYearIndex",
                 KeyConditionExpression: "artist = :a AND #y = :y",
-                ExpressionAttributeNames: {
-                    "#y": "year"
-                },
+                ExpressionAttributeNames: { "#y": "year" },
                 ExpressionAttributeValues: {
                     ":a": artist,
                     ":y": year
@@ -186,32 +179,26 @@ app.get("/music/search", async (req, res) => {
             return res.json(result.Items);
         }
 
-        /* ==================================================
+        /* =========================
            4. ARTIST + ALBUM
-           Query artist then filter album
-        ================================================== */
+        ========================= */
         if (artist && album) {
 
-            const result = await dynamo.query({
-                TableName: MUSIC_TABLE,
-                KeyConditionExpression: "artist = :a",
-                ExpressionAttributeValues: {
-                    ":a": artist
-                }
+            const result = await dynamo.scan({
+                TableName: MUSIC_TABLE
             }).promise();
 
-            const items = result.Items.filter(song =>
-                song.album &&
-                song.album.toLowerCase() === album.toLowerCase()
+            return res.json(
+                result.Items.filter(song =>
+                    song.artist?.toLowerCase() === artist &&
+                    song.album?.toLowerCase() === album
+                )
             );
-
-            return res.json(items);
         }
 
-        /* ==================================================
+        /* =========================
            5. ARTIST + TITLE
-           Query artist then filter title
-        ================================================== */
+        ========================= */
         if (artist && title) {
 
             const result = await dynamo.query({
@@ -222,36 +209,32 @@ app.get("/music/search", async (req, res) => {
                 }
             }).promise();
 
-            const items = result.Items.filter(song =>
-                song.title &&
-                song.title.toLowerCase().includes(title.toLowerCase())
+            return res.json(
+                result.Items.filter(song =>
+                    song.title?.toLowerCase().includes(title)
+                )
             );
-
-            return res.json(items);
         }
 
-        /* ==================================================
+        /* =========================
            6. ALBUM ONLY
-           Query by GSI
-        ================================================== */
+        ========================= */
         if (album) {
 
-            const result = await dynamo.query({
-                TableName: MUSIC_TABLE,
-                IndexName: "AlbumArtistIndex",
-                KeyConditionExpression: "album = :al",
-                ExpressionAttributeValues: {
-                    ":al": album
-                }
+            const result = await dynamo.scan({
+                TableName: MUSIC_TABLE
             }).promise();
 
-            return res.json(result.Items);
+            return res.json(
+                result.Items.filter(song =>
+                    song.album?.toLowerCase() === album
+                )
+            );
         }
 
-        /* ==================================================
+        /* =========================
            7. ARTIST ONLY
-           Query by PK
-        ================================================== */
+        ========================= */
         if (artist) {
 
             const result = await dynamo.query({
@@ -265,15 +248,17 @@ app.get("/music/search", async (req, res) => {
             return res.json(result.Items);
         }
 
-        /* ==================================================
+        /* =========================
            8. TITLE ONLY
-           Scan (fallback)
-        ================================================== */
+        ========================= */
         if (title) {
 
             const result = await dynamo.scan({
                 TableName: MUSIC_TABLE,
-                FilterExpression: "contains(title, :t)",
+                FilterExpression: "contains(#t, :t)",
+                ExpressionAttributeNames: {
+                    "#t": "title"
+                },
                 ExpressionAttributeValues: {
                     ":t": title
                 }
@@ -282,10 +267,9 @@ app.get("/music/search", async (req, res) => {
             return res.json(result.Items);
         }
 
-        /* ==================================================
+        /* =========================
            9. YEAR ONLY
-           Scan (fallback)
-        ================================================== */
+        ========================= */
         if (year) {
 
             const result = await dynamo.scan({
