@@ -205,15 +205,16 @@ body {
     top: 6px;
     right: 8px;
 
-    font-size: 18px;        /* smaller X */
+    font-size: 28px;       /* keep X size */
     font-weight: bold;
     color: red;
 
-    border: 1.5px solid black;   /* thinner border */
-    padding: 2px 6px;            /* smaller box */
+    border: 2px solid black;
+    padding: 1px 5px;      /* smaller box */
     border-radius: 5px;
-    background: white;
 
+    background: black;     /* changed from white */
+    
     cursor: pointer;
 }
 
@@ -293,6 +294,7 @@ body {
     background: #ff9999;
     border: 2px solid purple;
     padding: 20px;
+    font-weight: bold;
 }
 
 body {
