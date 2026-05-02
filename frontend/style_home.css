@@ -202,19 +202,21 @@ body {
 
 .close-x-small {
     position: absolute;
-    top: 6px;
-    right: 8px;
+    top: 4px;          /* tighter to top */
+    right: 6px;        /* tighter to right */
 
-    font-size: 28px;       /* keep X size */
+    font-size: 28px;   /* keep X size */
     font-weight: bold;
     color: red;
 
-    border: 2px solid black;
-    padding: 1px 5px;      /* smaller box */
-    border-radius: 5px;
+    background: black;
+    border: 1.5px solid black;
 
-    background: black;     /* changed from white */
-    
+    padding: 0px 4px;  /* smaller box */
+    border-radius: 4px;
+
+    line-height: 1;    /* removes extra vertical space */
+
     cursor: pointer;
 }
 
