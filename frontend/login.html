@@ -44,6 +44,12 @@
 
 <!-- Backend connection script -->
 <script>
+    const API_BASE = ""; // EC2 same-origin
+
+    // const API_BASE = "http://ecs-url"; // ECS URL
+
+    // const API_BASE = "https://lambda-url"; // Lambda URL
+
     document.getElementById("login-form").addEventListener("submit", async function(e) {
         e.preventDefault();
 
@@ -51,7 +57,7 @@
         const password = document.getElementById("password").value;
 
         try {
-            const response = await fetch("/login", {
+            const response = await fetch(`${API_BASE}/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
