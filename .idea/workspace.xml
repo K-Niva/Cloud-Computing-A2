@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Finshed ec2, will need to clean if have time :/">
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Added intail code for ecs">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/main.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,22 +127,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00059" summary="moving files around">
-      <option name="closed" value="true" />
-      <created>1777560623702</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1777560623702</updated>
-    </task>
-    <task id="LOCAL-00060" summary="chaning the ip for page also chaning the 3000 to 80">
-      <option name="closed" value="true" />
-      <created>1777569577042</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1777569577042</updated>
     </task>
     <task id="LOCAL-00061" summary="fixing bug">
       <option name="closed" value="true" />
@@ -521,7 +504,23 @@
       <option name="project" value="LOCAL" />
       <updated>1777652839804</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="Chaning code so it will be easier to switch backends during demo">
+      <option name="closed" value="true" />
+      <created>1777810471777</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1777810471778</updated>
+    </task>
+    <task id="LOCAL-00109" summary="Added intail code for ecs">
+      <option name="closed" value="true" />
+      <created>1777834944722</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1777834944722</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -537,8 +536,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="Added maven again :/" />
-    <MESSAGE value="Ok ready to start backend now for main page" />
     <MESSAGE value="Added script for main page" />
     <MESSAGE value="Fixed bugs in main page" />
     <MESSAGE value="Added code for server.js for the main page" />
@@ -562,6 +559,8 @@
     <MESSAGE value="double checking ec2" />
     <MESSAGE value="fixing bugs" />
     <MESSAGE value="Finshed ec2, will need to clean if have time :/" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finshed ec2, will need to clean if have time :/" />
+    <MESSAGE value="Chaning code so it will be easier to switch backends during demo" />
+    <MESSAGE value="Added intail code for ecs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added intail code for ecs" />
   </component>
 </project>
