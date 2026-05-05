@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Commit before lambda function">
-      <change afterPath="$PROJECT_DIR$/lambda.js" afterDir="false" />
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Finshed intiall lambda.js file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lambda.js" beforeDir="false" afterPath="$PROJECT_DIR$/lambda.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,14 +152,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00073" summary="Fixing bugs">
-      <option name="closed" value="true" />
-      <created>1777579493658</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1777579493659</updated>
     </task>
     <task id="LOCAL-00074" summary="Fixing code for the table">
       <option name="closed" value="true" />
@@ -545,7 +537,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777990233212</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="Finshed intiall lambda.js file">
+      <option name="closed" value="true" />
+      <created>1777991828264</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1777991828264</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -561,7 +561,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="Added backend logic for register page" />
     <MESSAGE value="Fixed some css for the home page" />
     <MESSAGE value="Chaning music search api" />
     <MESSAGE value="fixed logic to music search api" />
@@ -586,7 +585,8 @@
     <MESSAGE value="adding logout" />
     <MESSAGE value="adding logoutv rjfnre" />
     <MESSAGE value="Commit before lambda function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit before lambda function" />
+    <MESSAGE value="Finshed intiall lambda.js file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finshed intiall lambda.js file" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

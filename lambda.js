@@ -11,18 +11,15 @@ const SUB_TABLE = "subscriptions";
 exports.handler = async (event) => {
 
     const method = event.httpMethod;
-    const path = event.resource || event.path;
+    const path = event.resource || event.path;;
 
-    if (method === "OPTIONS") {
-        return response({});
-    }
 
     try {
 
         /* =========================
            LOGIN
         ========================= */
-        if (method === "POST" && path === "/login") {
+        if (route === "/login") {
 
             const body = JSON.parse(event.body || "{}");
             const { email, password } = body;
@@ -46,7 +43,7 @@ exports.handler = async (event) => {
         /* =========================
            REGISTER
         ========================= */
-        if (method === "POST" && path === "/register") {
+        if (route === "/register") {
 
             const body = JSON.parse(event.body || "{}");
             const { user_name, email, password } = body;
@@ -74,7 +71,7 @@ exports.handler = async (event) => {
         /* =========================
            MUSIC SEARCH
         ========================= */
-        if (method === "GET" && path === "/music/search") {
+        if (route === "/music/search") {
 
             const params = event.queryStringParameters || {};
 
@@ -267,13 +264,22 @@ exports.handler = async (event) => {
         /* =========================
            SUBSCRIBE
         ========================= */
-        if (method === "POST" && path === "/subscribe") {
+        if (route === "/subscribe") {
 
             const body = JSON.parse(event.body || "{}");
+            const { email, song_id, title, artist, album, year, img_url } = body;
 
             await dynamo.put({
                 TableName: SUB_TABLE,
-                Item: body
+                Item: {
+                    email,
+                    song_id,
+                    title,
+                    artist,
+                    album,
+                    year,
+                    img_url
+                }
             }).promise();
 
             return response({ success: true });
@@ -282,7 +288,7 @@ exports.handler = async (event) => {
         /* =========================
            GET SUBSCRIPTIONS
         ========================= */
-        if (method === "GET" && path === "/subscriptions") {
+        if (route === "/subscriptions") {
 
             const params = event.queryStringParameters || {};
 
@@ -313,7 +319,7 @@ exports.handler = async (event) => {
         /* =========================
            DELETE SUBSCRIPTION
         ========================= */
-        if (method === "DELETE" && path === "/subscription") {
+        if (route === "/subscription") {
 
             const body = JSON.parse(event.body || "{}");
 
