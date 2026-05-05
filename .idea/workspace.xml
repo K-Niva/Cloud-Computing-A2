@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Uploaded the html,css and img to s3 bucket">
-      <change afterPath="$PROJECT_DIR$/deleteSubscriptionLambda.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/getSubscriptionsLambda.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginLambda.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/musicSearchLambda.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/registerLambda.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/subscribeLambda.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lambda.js" beforeDir="false" afterPath="$PROJECT_DIR$/lambda.js" afterDir="false" />
-    </list>
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="gobfdgjo" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -164,38 +151,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00076" summary="Fixing logic for music api">
-      <option name="closed" value="true" />
-      <created>1777581334550</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1777581334550</updated>
-    </task>
-    <task id="LOCAL-00077" summary="Fixing logic for music api">
-      <option name="closed" value="true" />
-      <created>1777581536300</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1777581536300</updated>
-    </task>
-    <task id="LOCAL-00078" summary="Commited everyting check">
-      <option name="closed" value="true" />
-      <created>1777581847664</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1777581847664</updated>
-    </task>
-    <task id="LOCAL-00079" summary="Added backend logic for register page">
-      <option name="closed" value="true" />
-      <created>1777643372334</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1777643372334</updated>
     </task>
     <task id="LOCAL-00080" summary="Fixed some css for the home page">
       <option name="closed" value="true" />
@@ -557,7 +512,39 @@
       <option name="project" value="LOCAL" />
       <updated>1777998077554</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="gobfdgjo">
+      <option name="closed" value="true" />
+      <created>1778013948973</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1778013948973</updated>
+    </task>
+    <task id="LOCAL-00126" summary="gobfdgjo">
+      <option name="closed" value="true" />
+      <created>1778014155568</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1778014155568</updated>
+    </task>
+    <task id="LOCAL-00127" summary="gobfdgjo">
+      <option name="closed" value="true" />
+      <created>1778014207476</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1778014207476</updated>
+    </task>
+    <task id="LOCAL-00128" summary="gobfdgjo">
+      <option name="closed" value="true" />
+      <created>1778014309170</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1778014309170</updated>
+    </task>
+    <option name="localTasksCounter" value="129" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -573,7 +560,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="fixed logic to music search api" />
     <MESSAGE value="fixing logic with case sensitivy" />
     <MESSAGE value="added artsits + uear + album" />
     <MESSAGE value="added case sentiveiry" />
@@ -598,7 +584,8 @@
     <MESSAGE value="Finshed intiall lambda.js file" />
     <MESSAGE value="making changes to the lambda file" />
     <MESSAGE value="Uploaded the html,css and img to s3 bucket" />
-    <option name="LAST_COMMIT_MESSAGE" value="Uploaded the html,css and img to s3 bucket" />
+    <MESSAGE value="gobfdgjo" />
+    <option name="LAST_COMMIT_MESSAGE" value="gobfdgjo" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
