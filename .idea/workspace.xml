@@ -4,12 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="making changes to the lambda file">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/lambda/CreateFrontendBucket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/lambda/UploadFrontendToS3.java" afterDir="false" />
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Uploaded the html,css and img to s3 bucket">
+      <change afterPath="$PROJECT_DIR$/deleteSubscriptionLambda.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/getSubscriptionsLambda.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loginLambda.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/musicSearchLambda.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/registerLambda.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/subscribeLambda.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/CreateBucket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/CreateBucketImages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/ecs/test_ecs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/lambda/test_ecs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lambda.js" beforeDir="false" afterPath="$PROJECT_DIR$/lambda.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,14 +164,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00075" summary="Fixing logic for music api">
-      <option name="closed" value="true" />
-      <created>1777580656648</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1777580656648</updated>
     </task>
     <task id="LOCAL-00076" summary="Fixing logic for music api">
       <option name="closed" value="true" />
@@ -550,7 +549,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777996814578</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="Uploaded the html,css and img to s3 bucket">
+      <option name="closed" value="true" />
+      <created>1777998077554</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1777998077554</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -566,7 +573,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="Chaning music search api" />
     <MESSAGE value="fixed logic to music search api" />
     <MESSAGE value="fixing logic with case sensitivy" />
     <MESSAGE value="added artsits + uear + album" />
@@ -591,7 +597,8 @@
     <MESSAGE value="Commit before lambda function" />
     <MESSAGE value="Finshed intiall lambda.js file" />
     <MESSAGE value="making changes to the lambda file" />
-    <option name="LAST_COMMIT_MESSAGE" value="making changes to the lambda file" />
+    <MESSAGE value="Uploaded the html,css and img to s3 bucket" />
+    <option name="LAST_COMMIT_MESSAGE" value="Uploaded the html,css and img to s3 bucket" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

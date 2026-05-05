@@ -10,26 +10,25 @@ const SUB_TABLE = "subscriptions";
 
 exports.handler = async (event) => {
 
+    const route = event.resource || event.path;
     const method = event.httpMethod;
-    const path = event.resource || event.path;;
 
+    const body = event.body ? JSON.parse(event.body) : {};
+    const query = event.queryStringParameters || {};
 
     try {
 
         /* =========================
            LOGIN
         ========================= */
-        if (route === "/login") {
-
-            const body = JSON.parse(event.body || "{}");
-            const { email, password } = body;
+        if (route === "/login" && method === "POST") {
 
             const result = await dynamo.get({
                 TableName: LOGIN_TABLE,
-                Key: { email }
+                Key: { email: body.email }
             }).promise();
 
-            if (!result.Item || result.Item.password !== password) {
+            if (!result.Item || result.Item.password !== body.password) {
                 return response({ success: false });
             }
 
@@ -43,169 +42,129 @@ exports.handler = async (event) => {
         /* =========================
            REGISTER
         ========================= */
-        if (route === "/register") {
-
-            const body = JSON.parse(event.body || "{}");
-            const { user_name, email, password } = body;
+        if (route === "/register" && method === "POST") {
 
             const existingUser = await dynamo.get({
                 TableName: LOGIN_TABLE,
-                Key: { email }
+                Key: { email: body.email }
             }).promise();
 
             if (existingUser.Item) {
-                return response({
-                    success: false,
-                    message: "The email already exists"
-                });
+                return response({ success: false, message: "Email exists" });
             }
 
             await dynamo.put({
                 TableName: LOGIN_TABLE,
-                Item: { email, user_name, password }
+                Item: body
             }).promise();
 
             return response({ success: true });
         }
 
         /* =========================
-           MUSIC SEARCH
+           MUSIC SEARCH (KEEP ALL LOGIC)
         ========================= */
-        if (route === "/music/search") {
+        if (route === "/music/search" && method === "GET") {
 
-            const params = event.queryStringParameters || {};
+            const artist = query.artist?.trim();
+            const album = query.album?.trim();
+            const title = query.title?.trim();
+            const year = query.year;
 
-            const artist = params.artist?.trim();
-            const album = params.album?.trim();
-            const title = params.title?.trim();
-            const year = params.year;
+            let result;
+            let items = [];
 
-            /* ==================================================
-               1. ARTIST + YEAR + TITLE
-            ================================================== */
+            // 1. ARTIST + YEAR + TITLE
             if (artist && year && title) {
-
-                const result = await dynamo.query({
+                result = await dynamo.query({
                     TableName: MUSIC_TABLE,
                     IndexName: "ArtistYearIndex",
                     KeyConditionExpression: "artist = :a AND #y = :y",
                     ExpressionAttributeNames: { "#y": "year" },
-                    ExpressionAttributeValues: {
-                        ":a": artist,
-                        ":y": year
-                    }
+                    ExpressionAttributeValues: { ":a": artist, ":y": year }
                 }).promise();
 
-                const items = result.Items.filter(song =>
-                    song.title?.toLowerCase().includes(title.toLowerCase())
+                items = result.Items.filter(i =>
+                    i.title?.toLowerCase().includes(title.toLowerCase())
                 );
-
                 return response(items);
             }
 
-            /* ==================================================
-               2. ARTIST + ALBUM + TITLE
-            ================================================== */
+            // 2. ARTIST + ALBUM + TITLE
             if (artist && album && title) {
-
-                const result = await dynamo.query({
+                result = await dynamo.query({
                     TableName: MUSIC_TABLE,
                     KeyConditionExpression: "artist = :a",
                     ExpressionAttributeValues: { ":a": artist }
                 }).promise();
 
-                const items = result.Items.filter(song =>
-                    song.album?.toLowerCase() === album.toLowerCase() &&
-                    song.title?.toLowerCase().includes(title.toLowerCase())
+                items = result.Items.filter(i =>
+                    i.album?.toLowerCase() === album.toLowerCase() &&
+                    i.title?.toLowerCase().includes(title.toLowerCase())
                 );
-
                 return response(items);
             }
 
-            /* ==================================================
-               3. ARTIST + YEAR + ALBUM
-            ================================================== */
+            // 3. ARTIST + YEAR + ALBUM
             if (artist && year && album) {
-
-                const result = await dynamo.query({
+                result = await dynamo.query({
                     TableName: MUSIC_TABLE,
                     IndexName: "ArtistYearIndex",
                     KeyConditionExpression: "artist = :a AND #y = :y",
                     ExpressionAttributeNames: { "#y": "year" },
-                    ExpressionAttributeValues: {
-                        ":a": artist,
-                        ":y": year
-                    }
+                    ExpressionAttributeValues: { ":a": artist, ":y": year }
                 }).promise();
 
-                const items = result.Items.filter(song =>
-                    song.album?.toLowerCase() === album.toLowerCase()
+                items = result.Items.filter(i =>
+                    i.album?.toLowerCase() === album.toLowerCase()
                 );
-
                 return response(items);
             }
 
-            /* ==================================================
-               4. ARTIST + YEAR
-            ================================================== */
+            // 4. ARTIST + YEAR
             if (artist && year) {
-
-                const result = await dynamo.query({
+                result = await dynamo.query({
                     TableName: MUSIC_TABLE,
                     IndexName: "ArtistYearIndex",
                     KeyConditionExpression: "artist = :a AND #y = :y",
                     ExpressionAttributeNames: { "#y": "year" },
-                    ExpressionAttributeValues: {
-                        ":a": artist,
-                        ":y": year
-                    }
+                    ExpressionAttributeValues: { ":a": artist, ":y": year }
                 }).promise();
 
                 return response(result.Items);
             }
 
-            /* ==================================================
-               5. ARTIST + ALBUM
-            ================================================== */
+            // 5. ARTIST + ALBUM
             if (artist && album) {
-
-                const result = await dynamo.query({
+                result = await dynamo.query({
                     TableName: MUSIC_TABLE,
                     KeyConditionExpression: "artist = :a",
                     ExpressionAttributeValues: { ":a": artist }
                 }).promise();
 
-                const items = result.Items.filter(song =>
-                    song.album?.toLowerCase() === album.toLowerCase()
+                items = result.Items.filter(i =>
+                    i.album?.toLowerCase() === album.toLowerCase()
                 );
-
                 return response(items);
             }
 
-            /* ==================================================
-               6. ARTIST + TITLE
-            ================================================== */
+            // 6. ARTIST + TITLE
             if (artist && title) {
-
-                const result = await dynamo.query({
+                result = await dynamo.query({
                     TableName: MUSIC_TABLE,
                     KeyConditionExpression: "artist = :a",
                     ExpressionAttributeValues: { ":a": artist }
                 }).promise();
 
-                const items = result.Items.filter(song =>
-                    song.title?.toLowerCase().includes(title.toLowerCase())
+                items = result.Items.filter(i =>
+                    i.title?.toLowerCase().includes(title.toLowerCase())
                 );
-
                 return response(items);
             }
 
-            /* ==================================================
-               7. ALBUM ONLY (GSI)
-            ================================================== */
+            // 7. ALBUM ONLY
             if (album) {
-
-                const result = await dynamo.query({
+                result = await dynamo.query({
                     TableName: MUSIC_TABLE,
                     IndexName: "AlbumArtistIndex",
                     KeyConditionExpression: "album = :al",
@@ -215,12 +174,9 @@ exports.handler = async (event) => {
                 return response(result.Items);
             }
 
-            /* ==================================================
-               8. ARTIST ONLY
-            ================================================== */
+            // 8. ARTIST ONLY
             if (artist) {
-
-                const result = await dynamo.query({
+                result = await dynamo.query({
                     TableName: MUSIC_TABLE,
                     KeyConditionExpression: "artist = :a",
                     ExpressionAttributeValues: { ":a": artist }
@@ -229,12 +185,9 @@ exports.handler = async (event) => {
                 return response(result.Items);
             }
 
-            /* ==================================================
-               9. TITLE ONLY (SCAN)
-            ================================================== */
+            // 9. TITLE ONLY
             if (title) {
-
-                const result = await dynamo.scan({
+                result = await dynamo.scan({
                     TableName: MUSIC_TABLE,
                     FilterExpression: "contains(title, :t)",
                     ExpressionAttributeValues: { ":t": title }
@@ -243,12 +196,9 @@ exports.handler = async (event) => {
                 return response(result.Items);
             }
 
-            /* ==================================================
-               10. YEAR ONLY (SCAN)
-            ================================================== */
+            // 10. YEAR ONLY
             if (year) {
-
-                const result = await dynamo.scan({
+                result = await dynamo.scan({
                     TableName: MUSIC_TABLE,
                     FilterExpression: "#y = :y",
                     ExpressionAttributeNames: { "#y": "year" },
@@ -264,53 +214,26 @@ exports.handler = async (event) => {
         /* =========================
            SUBSCRIBE
         ========================= */
-        if (route === "/subscribe") {
-
-            const body = JSON.parse(event.body || "{}");
-            const { email, song_id, title, artist, album, year, img_url } = body;
-
+        if (route === "/subscribe" && method === "POST") {
             await dynamo.put({
                 TableName: SUB_TABLE,
-                Item: {
-                    email,
-                    song_id,
-                    title,
-                    artist,
-                    album,
-                    year,
-                    img_url
-                }
+                Item: body
             }).promise();
 
             return response({ success: true });
         }
 
         /* =========================
-           GET SUBSCRIPTIONS
+           SUBSCRIPTIONS
         ========================= */
-        if (route === "/subscriptions") {
+        if (route === "/subscriptions" && method === "GET") {
 
-            const params = event.queryStringParameters || {};
-
-            if (!params.email) {
-                return response({ error: "Email is required" }, 400);
-            }
-
-            const user = await dynamo.get({
-                TableName: LOGIN_TABLE,
-                Key: { email: params.email }
-            }).promise();
-
-            if (!user.Item) {
-                return response({ error: "Invalid user" }, 401);
-            }
+            const email = query.email;
 
             const result = await dynamo.query({
                 TableName: SUB_TABLE,
                 KeyConditionExpression: "email = :e",
-                ExpressionAttributeValues: {
-                    ":e": params.email
-                }
+                ExpressionAttributeValues: { ":e": email }
             }).promise();
 
             return response(result.Items);
@@ -319,9 +242,7 @@ exports.handler = async (event) => {
         /* =========================
            DELETE SUBSCRIPTION
         ========================= */
-        if (route === "/subscription") {
-
-            const body = JSON.parse(event.body || "{}");
+        if (route === "/subscription" && method === "DELETE") {
 
             await dynamo.delete({
                 TableName: SUB_TABLE,
@@ -337,15 +258,10 @@ exports.handler = async (event) => {
         return response({ message: "Not found" }, 404);
 
     } catch (err) {
-        console.log(err);
         return response({ error: err.message }, 500);
     }
 };
 
-
-/* =========================
-   HELPER RESPONSE (CORS FIX)
-========================= */
 function response(data, status = 200) {
     return {
         statusCode: status,
