@@ -126,18 +126,27 @@
         document.getElementById('no-results-popup').style.display = 'none';
     }
 
-window.onload = () => {
+    window.onload = async () => {
 
-    const username = localStorage.getItem("user_name");
+        try {
+            const res = await fetch("/subscriptions?email=" + localStorage.getItem("email"));
 
-    if (username) {
-        document.getElementById("user_name").innerText = username;
-    } else {
-        document.getElementById("user_name").innerText = "User";
-    }
+            if (res.status === 401) {
+                window.location.href = "/login.html";
+                return;
+            }
 
-    loadSubscriptions();
-};
+            const username = localStorage.getItem("user_name");
+
+            document.getElementById("user_name").innerText = username || "User";
+
+            loadSubscriptions();
+
+        } catch (err) {
+            console.log(err);
+            window.location.href = "/login.html";
+        }
+    };
 
     /* =========================
        SEARCH MUSIC (EC2)

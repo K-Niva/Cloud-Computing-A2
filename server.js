@@ -43,6 +43,7 @@ function auth(req, res, next) {
     next();
 }
 
+
 /* =========================
    LOGIN API
 ========================= */
@@ -372,7 +373,7 @@ app.get("/music/search", async (req, res) => {
 /* =========================
    SUBSCRIBE SONG
 ========================= */
-app.post("/subscribe", async (req, res) => {
+app.post("/subscribe", auth, async (req, res) => {
 
     const { email, song_id, title, artist, album, year, img_url } = req.body;
 
@@ -401,7 +402,7 @@ app.post("/subscribe", async (req, res) => {
 /* =========================
    GET SUBSCRIPTIONS
 ========================= */
-app.get("/subscriptions", async (req, res) => {
+app.get("/subscriptions", auth, async (req, res) => {
 
     const { email } = req.query;
 
@@ -425,7 +426,7 @@ app.get("/subscriptions", async (req, res) => {
 /* =========================
    REMOVE SUBSCRIPTION (SAFE VERSION)
 ========================= */
-app.delete("/subscription", async (req, res) => {
+app.delete("/subscription", auth, async (req, res) => {
 
     const { email, song_id } = req.body;
 
