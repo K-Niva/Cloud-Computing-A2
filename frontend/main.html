@@ -126,28 +126,17 @@
         document.getElementById('no-results-popup').style.display = 'none';
     }
 
-window.onload = async () => {
+window.onload = () => {
 
-    try {
-        const res = await fetch(`${API_BASE}/subscriptions`);
+    const username = localStorage.getItem("user_name");
 
-        if (res.status === 401) {
-            window.location.href = "/";
-            return;
-        }
-
-        const data = await res.json();
-
-        // load username from localStorage (fine for display only)
-        const username = localStorage.getItem("user_name");
-        document.getElementById("user_name").innerText = username || "User";
-
-        renderSubscriptions(data);
-
-    } catch (err) {
-        console.log(err);
-        window.location.href = "/";
+    if (username) {
+        document.getElementById("user_name").innerText = username;
+    } else {
+        document.getElementById("user_name").innerText = "User";
     }
+
+    loadSubscriptions();
 };
 
     /* =========================
@@ -168,9 +157,7 @@ window.onload = async () => {
         });
 
         try {
-            const res = await fetch(`${API_BASE}/music/search?${query}`, {
-                credentials: "include"
-            });
+            const res = await fetch(`${API_BASE}/music/search?${query}`)
             const data = await res.json();
 
             const tbody = document.getElementById("query-results-body");
@@ -214,14 +201,21 @@ window.onload = async () => {
     ========================= */
     async function subscribeSong(song) {
 
+        const email = localStorage.getItem("email");
+
+        if (!email) {
+            alert("No user logged in");
+            return;
+        }
+
         try {
-            const res = await fetch(`${API_BASE}/subscribe`, {
+            await fetch(`${API_BASE}/subscribe`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                credentials: "include",
                 body: JSON.stringify({
+                    email,
                     song_id: song.album + "#" + song.title,
                     title: song.title,
                     artist: song.artist,
@@ -231,11 +225,6 @@ window.onload = async () => {
                 })
             });
 
-            if (res.status === 401) {
-                window.location.href = "/";
-                return;
-            }
-
             alert("Subscribed!");
             loadSubscriptions();
 
@@ -243,30 +232,43 @@ window.onload = async () => {
             console.log(err);
         }
     }
+
     /* =========================
-       REMOVE SUBSCRIPTION
+       LOAD SUBSCRIPTIONS
     ========================= */
-    async function removeSong(song_id) {
+    async function loadSubscriptions() {
+
+        const email = localStorage.getItem("email");
+
+        if (!email) return;
 
         try {
-            const res = await fetch(`${API_BASE}/subscription`, {
-                credentials: "include",
-                method: "DELETE",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                credentials: "include",
-                body: JSON.stringify({
-                    song_id
-                })
+            const res = await fetch(`${API_BASE}/subscriptions?email=${email}`);
+            const data = await res.json();
+
+            const tbody = document.getElementById("subscription-body");
+            tbody.innerHTML = "";
+
+            data.forEach((song, index) => {
+
+                const row = `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td><img src="${song.img_url}" width="50"></td>
+                        <td>${song.title}</td>
+                        <td>${song.artist}</td>
+                        <td>${song.album}</td>
+                        <td>${song.year}</td>
+                        <td>
+                            <button onclick="removeSong('${song.email}', '${song.song_id}')">
+                                Remove
+                            </button>
+                        </td>
+                    </tr>
+                `;
+
+                tbody.innerHTML += row;
             });
-
-            if (res.status === 401) {
-                window.location.href = "/";
-                return;
-            }
-
-            loadSubscriptions();
 
         } catch (err) {
             console.log(err);
@@ -274,15 +276,34 @@ window.onload = async () => {
     }
 
     /* =========================
+       REMOVE SUBSCRIPTION
+    ========================= */
+    async function removeSong(email, song_id) {
+
+    try {
+        await fetch(`${API_BASE}/subscription`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                email,
+                song_id
+            })
+        });
+
+        loadSubscriptions();
+
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+    /* =========================
        LOGOUT
     ========================= */
-    async function logout() {
-
-        await fetch(`${API_BASE}/logout`);
-        credentials: "include"
-
-        localStorage.clear();
-
+    function logout() {
+        localStorage.removeItem("email");
         window.location.href = "/";
     }
 

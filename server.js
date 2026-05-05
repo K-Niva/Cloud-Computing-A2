@@ -2,23 +2,11 @@ const express = require("express");
 const AWS = require("aws-sdk");
 const cors = require("cors");
 const path = require("path");
-const session = require("express-session");
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
-
-app.use(session({
-    secret: "your-secret-key",
-    resave: false,
-    saveUninitialized: false,
-    cookie: { secure: false }
-}));
-
-app.use(cors({
-    origin: true,
-    credentials: true
-}));
 
 AWS.config.update({ region: "us-east-1" });
 
@@ -28,12 +16,6 @@ const LOGIN_TABLE = "login";
 const MUSIC_TABLE = "music";
 const SUB_TABLE = "subscriptions";
 
-function requireAuth(req, res, next) {
-    if (!req.session.user) {
-        return res.status(401).json({ error: "Unauthorized" });
-    }
-    next();
-}
 
 /* =========================
    STATIC FRONTEND
@@ -62,12 +44,6 @@ app.post("/login", async (req, res) => {
         }
 
         if (result.Item.password === password) {
-
-            req.session.user = {
-                email: result.Item.email,
-                user_name: result.Item.user_name
-            };
-
             return res.json({
                 success: true,
                 user_name: result.Item.user_name
@@ -131,7 +107,7 @@ app.post("/register", async (req, res) => {
 /* =========================
    MUSIC SEARCH API push
 ========================= */
-app.get("/music/search", requireAuth, async (req, res) => {
+app.get("/music/search", async (req, res) => {
 
     const artist = req.query.artist?.trim();
     const album = req.query.album?.trim();
@@ -373,10 +349,9 @@ app.get("/music/search", requireAuth, async (req, res) => {
 /* =========================
    SUBSCRIBE SONG
 ========================= */
-app.post("/subscribe", requireAuth, async (req, res) => {
+app.post("/subscribe", async (req, res) => {
 
-    const email = req.session.user.email;
-    const { song_id, title, artist, album, year, img_url } = req.body;
+    const { email, song_id, title, artist, album, year, img_url } = req.body;
 
     try {
         await dynamo.put({
@@ -403,9 +378,9 @@ app.post("/subscribe", requireAuth, async (req, res) => {
 /* =========================
    GET SUBSCRIPTIONS
 ========================= */
-app.get("/subscriptions", requireAuth, async (req, res) => {
+app.get("/subscriptions", async (req, res) => {
 
-    const email = req.session.user.email;
+    const { email } = req.query;
 
     try {
         const result = await dynamo.query({
@@ -427,12 +402,11 @@ app.get("/subscriptions", requireAuth, async (req, res) => {
 /* =========================
    REMOVE SUBSCRIPTION (SAFE VERSION)
 ========================= */
-app.delete("/subscription", requireAuth, async (req, res) => {
+app.delete("/subscription", async (req, res) => {
 
-    const email = req.session.user.email;
-    const { song_id } = req.body;
+    const { email, song_id } = req.body;
 
-    if (!song_id) {
+    if (!email || !song_id) {
         return res.status(400).json({ error: "Missing fields" });
     }
 
@@ -452,18 +426,6 @@ app.delete("/subscription", requireAuth, async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 });
-
-app.get("/logout", (req, res) => {
-    req.session.destroy(() => {
-        res.json({ success: true });
-    });
-});
-
-app.get("/main", requireAuth, (req, res) => {
-    res.sendFile(path.join(__dirname, "frontend", "main.html"));
-});
-
-
 
 /* =========================
    START SERVER
