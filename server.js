@@ -49,6 +49,17 @@ app.post("/logout", (req, res) => {
     });
 });
 
+app.get("/main.html", (req, res, next) => {
+    if (!req.session.user) {
+        return res.redirect("/login.html");
+    }
+    next();
+});
+
+app.get("/main.html", (req, res) => {
+    res.sendFile(path.join(__dirname, "frontend", "main.html"));
+});
+
 /* =========================
    LOGIN API
 ========================= */

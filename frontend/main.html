@@ -311,9 +311,11 @@
     /* =========================
        LOGOUT
     ========================= */
-    function logout() {
+    async function logout() {
+        await fetch("/logout", { method: "POST" });
         localStorage.removeItem("email");
-        window.location.href = "/";
+        localStorage.removeItem("user_name");
+        window.location.href = "/login.html";
     }
 
 </script>
