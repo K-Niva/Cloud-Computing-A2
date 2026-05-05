@@ -455,6 +455,10 @@ app.get("/logout", (req, res) => {
     });
 });
 
+app.get("/main", requireAuth, (req, res) => {
+    res.sendFile(path.join(__dirname, "frontend", "main.html"));
+});
+
 
 
 /* =========================
