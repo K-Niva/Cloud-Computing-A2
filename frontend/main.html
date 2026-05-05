@@ -112,11 +112,11 @@
 
 <script>
 
-   const API_BASE = ""; // EC2 same-origin
+    // const API_BASE = ""; // EC2 same-origin
 
     // const API_BASE = "http://ecs-url"; // ECS URL
 
-   // const API_BASE = "https://081nphdcwa.execute-api.us-east-1.amazonaws.com/Production"; // Lambda URL // Lambda URL
+    // const API_BASE = "https://lambda-url"; // Lambda URL
 
     function toggleModal(show) {
         document.getElementById('query-modal').style.display = show ? 'flex' : 'none';
@@ -129,7 +129,7 @@
     window.onload = async () => {
 
         try {
-            const res = await fetch(`${API_BASE}/subscriptions?email=${localStorage.getItem("email")}`);
+            const res = await fetch("/subscriptions?email=" + localStorage.getItem("email"));
 
             if (res.status === 401) {
                 window.location.href = "/login.html";
