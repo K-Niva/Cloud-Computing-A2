@@ -168,7 +168,9 @@ window.onload = async () => {
         });
 
         try {
-            const res = await fetch(`${API_BASE}/music/search?${query}`)
+            const res = await fetch(`${API_BASE}/music/search?${query}`, {
+                credentials: "include"
+            });
             const data = await res.json();
 
             const tbody = document.getElementById("query-results-body");
@@ -218,6 +220,7 @@ window.onload = async () => {
                 headers: {
                     "Content-Type": "application/json"
                 },
+                credentials: "include",
                 body: JSON.stringify({
                     song_id: song.album + "#" + song.title,
                     title: song.title,
@@ -247,10 +250,12 @@ window.onload = async () => {
 
         try {
             const res = await fetch(`${API_BASE}/subscription`, {
+                credentials: "include",
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json"
                 },
+                credentials: "include",
                 body: JSON.stringify({
                     song_id
                 })
@@ -274,6 +279,7 @@ window.onload = async () => {
     async function logout() {
 
         await fetch(`${API_BASE}/logout`);
+        credentials: "include"
 
         localStorage.clear();
 
