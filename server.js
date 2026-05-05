@@ -6,14 +6,18 @@ const session = require("express-session");
 
 const app = express();
 
-app.use(cors());
 app.use(express.json());
 
 app.use(session({
     secret: "your-secret-key",
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: false } // OK for HTTP (EC2/ECS)
+    cookie: { secure: false }
+}));
+
+app.use(cors({
+    origin: true,
+    credentials: true
 }));
 
 AWS.config.update({ region: "us-east-1" });
