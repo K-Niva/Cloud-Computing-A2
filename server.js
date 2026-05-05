@@ -5,6 +5,13 @@ const path = require("path");
 
 const app = express();
 
+const session = require("express-session");
+app.use(session({
+    secret: "music-app-secret",
+    resave: false,
+    saveUninitialized: false
+}));
+
 app.use(cors());
 app.use(express.json());
 
@@ -27,6 +34,16 @@ app.get("/", (req, res) => {
 });
 
 /* =========================
+   AUTH MIDDLEWARE
+========================= */
+function auth(req, res, next) {
+    if (!req.session.user) {
+        return res.status(401).json({ error: "Not authenticated" });
+    }
+    next();
+}
+
+/* =========================
    LOGIN API
 ========================= */
 app.post("/login", async (req, res) => {
@@ -44,6 +61,12 @@ app.post("/login", async (req, res) => {
         }
 
         if (result.Item.password === password) {
+
+            req.session.user = {
+                email: result.Item.email,
+                user_name: result.Item.user_name
+            };
+
             return res.json({
                 success: true,
                 user_name: result.Item.user_name
