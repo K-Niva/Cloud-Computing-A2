@@ -42,13 +42,8 @@
     </section>
 </main>
 
-<!-- Backend connection script -->
 <script>
-    const API_BASE = ""; // EC2 same-origin
-
-    // const API_BASE = "http://ecs-url"; // ECS URL music-alb-843515853.us-east-1.elb.amazonaws.com
-
-    // const API_BASE = "https://lambda-url"; // Lambda URL
+    const API_BASE = "";
 
     document.getElementById("login-form").addEventListener("submit", async function(e) {
         e.preventDefault();
@@ -62,18 +57,19 @@
                 headers: {
                     "Content-Type": "application/json"
                 },
+                credentials: "include",
                 body: JSON.stringify({ email, password })
             });
 
             const data = await response.json();
 
             if (data.success) {
-                // optional: store user in browser session
-                localStorage.setItem("email", email);
+
+                // only store display info (NOT auth)
                 localStorage.setItem("user_name", data.user_name);
 
-                // redirect to main page
-                window.location.href = "main.html";
+                // redirect
+                window.location.href = "/main";
             } else {
                 document.getElementById("error-message").innerText =
                     "email or password is invalid";
@@ -86,6 +82,5 @@
         }
     });
 </script>
-
 </body>
 </html>

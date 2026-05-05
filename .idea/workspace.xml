@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="ECS is working, but will need to change code due to bugs">
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="fixing register.html">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,14 +153,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00062" summary="fixing more bugs">
-      <option name="closed" value="true" />
-      <created>1777569862746</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1777569862746</updated>
     </task>
     <task id="LOCAL-00063" summary="fixing more bugs">
       <option name="closed" value="true" />
@@ -544,7 +538,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777845269120</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="fixing register.html">
+      <option name="closed" value="true" />
+      <created>1777957391010</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1777957391011</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -560,7 +562,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="Fixed bugs in main page" />
     <MESSAGE value="Added code for server.js for the main page" />
     <MESSAGE value="fixing username on main page" />
     <MESSAGE value="fixed button to add songs" />
@@ -585,7 +586,8 @@
     <MESSAGE value="Chaning code so it will be easier to switch backends during demo" />
     <MESSAGE value="Added intail code for ecs" />
     <MESSAGE value="ECS is working, but will need to change code due to bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="ECS is working, but will need to change code due to bugs" />
+    <MESSAGE value="fixing register.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing register.html" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
