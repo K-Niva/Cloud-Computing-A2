@@ -43,6 +43,11 @@ function auth(req, res, next) {
     next();
 }
 
+app.post("/logout", (req, res) => {
+    req.session.destroy(() => {
+        res.json({ success: true });
+    });
+});
 
 /* =========================
    LOGIN API
