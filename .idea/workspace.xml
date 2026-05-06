@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Checing code">
-      <change beforePath="$PROJECT_DIR$/frontend/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/main.html" afterDir="false" />
-    </list>
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="EC@ fgnfkng" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -154,22 +152,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00100" summary="added case sentiveiry">
-      <option name="closed" value="true" />
-      <created>1777649773915</created>
-      <option name="number" value="00100" />
-      <option name="presentableId" value="LOCAL-00100" />
-      <option name="project" value="LOCAL" />
-      <updated>1777649773915</updated>
-    </task>
-    <task id="LOCAL-00101" summary="added case sentiveiry">
-      <option name="closed" value="true" />
-      <created>1777649895113</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1777649895113</updated>
     </task>
     <task id="LOCAL-00102" summary="LASFnosgn">
       <option name="closed" value="true" />
@@ -547,7 +529,23 @@
       <option name="project" value="LOCAL" />
       <updated>1778079162190</updated>
     </task>
-    <option name="localTasksCounter" value="149" />
+    <task id="LOCAL-00149" summary="EC@ fgnfkng">
+      <option name="closed" value="true" />
+      <created>1778079303862</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1778079303862</updated>
+    </task>
+    <task id="LOCAL-00150" summary="EC@ fgnfkng">
+      <option name="closed" value="true" />
+      <created>1778079450146</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1778079450146</updated>
+    </task>
+    <option name="localTasksCounter" value="151" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -563,7 +561,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="Finshed ec2, will need to clean if have time :/" />
     <MESSAGE value="Chaning code so it will be easier to switch backends during demo" />
     <MESSAGE value="Added intail code for ecs" />
     <MESSAGE value="ECS is working, but will need to change code due to bugs" />
@@ -588,7 +585,8 @@
     <MESSAGE value="Lambda workek? for muisc checking ec2" />
     <MESSAGE value="ec2 failed" />
     <MESSAGE value="Checing code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Checing code" />
+    <MESSAGE value="EC@ fgnfkng" />
+    <option name="LAST_COMMIT_MESSAGE" value="EC@ fgnfkng" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

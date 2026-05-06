@@ -180,7 +180,14 @@
             const res = await fetch(`${API_BASE}/music/search?${query}`);
             const raw = await res.json();
 
-            const data = parseResponse(raw);
+            let data = raw;
+
+            // If Lambda (API Gateway format)
+            if (raw.body) {
+                data = typeof raw.body === "string"
+                ? JSON.parse(raw.body)
+                : raw.body;
+            }
 
             // Now normalize EC2 + Lambda
             const items = data.items || data.success?.items || data || [];
