@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="EC@ fgnfkng">
-      <change beforePath="$PROJECT_DIR$/frontend/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/main.html" afterDir="false" />
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Subscribe lambda file done!">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lambda_Code/deleteSubscriptionLambda.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lambda_Code/deleteSubscriptionLambda.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -156,14 +156,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00104" summary="help me">
-      <option name="closed" value="true" />
-      <created>1777650321865</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1777650321865</updated>
     </task>
     <task id="LOCAL-00105" summary="double checking ec2">
       <option name="closed" value="true" />
@@ -549,7 +541,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778079697272</updated>
     </task>
-    <option name="localTasksCounter" value="153" />
+    <task id="LOCAL-00153" summary="Subscribe lambda file done!">
+      <option name="closed" value="true" />
+      <created>1778080167505</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1778080167505</updated>
+    </task>
+    <option name="localTasksCounter" value="154" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -565,7 +565,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="Chaning code so it will be easier to switch backends during demo" />
     <MESSAGE value="Added intail code for ecs" />
     <MESSAGE value="ECS is working, but will need to change code due to bugs" />
     <MESSAGE value="fixing register.html" />
@@ -590,7 +589,8 @@
     <MESSAGE value="ec2 failed" />
     <MESSAGE value="Checing code" />
     <MESSAGE value="EC@ fgnfkng" />
-    <option name="LAST_COMMIT_MESSAGE" value="EC@ fgnfkng" />
+    <MESSAGE value="Subscribe lambda file done!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Subscribe lambda file done!" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

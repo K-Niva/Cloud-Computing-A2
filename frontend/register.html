@@ -77,8 +77,16 @@
                     password
                 })
             });
+            const raw = await response.json();
 
-            const data = await response.json();
+            // handle Lambda wrapped response if needed
+            let data = raw;
+
+            if (typeof raw.body === "string") {
+                data = JSON.parse(raw.body);
+            }
+
+            console.log("REGISTER RESPONSE:", data);
 
             if (data.success) {
 

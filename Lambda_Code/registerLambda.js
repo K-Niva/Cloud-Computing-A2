@@ -8,9 +8,15 @@ const LOGIN_TABLE = "login";
 
 export const handler = async (event) => {
 
-    const body = JSON.parse(event.body || "{}");
-    const { user_name, email, password } = body;
+    let body = event.body;
 
+    if (typeof body === "string") {
+        body = JSON.parse(body);
+    }
+
+    const { user_name, email, password } = body || {};
+
+    console.log("REGISTER ATTEMPT:", { user_name, email });
 
     const existingUser = await dynamo.send(
         new GetCommand({
@@ -25,7 +31,6 @@ export const handler = async (event) => {
             message: "The email already exists"
         }, 400);
     }
-
 
     await dynamo.send(
         new PutCommand({

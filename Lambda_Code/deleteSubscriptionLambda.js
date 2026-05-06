@@ -8,8 +8,15 @@ const SUB_TABLE = "subscriptions";
 
 export const handler = async (event) => {
 
-    const body = JSON.parse(event.body || "{}");
-    const { email, song_id } = body;
+    let body = event.body;
+
+    if (typeof body === "string") {
+        body = JSON.parse(body);
+    }
+
+    const { email, song_id } = body || {};
+
+    console.log("DELETE REQUEST:", { email, song_id });
 
     if (!email || !song_id) {
         return response({ error: "email and song_id are required" }, 400);
