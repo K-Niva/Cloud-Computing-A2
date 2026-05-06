@@ -8,7 +8,10 @@ const SUB_TABLE = "subscriptions";
 
 export const handler = async (event) => {
 
-    const body = JSON.parse(event.body || "{}");
+    const body =
+    typeof event.body === "string"
+        ? JSON.parse(event.body)
+        : event.body || {};
 
     const {
         email,
