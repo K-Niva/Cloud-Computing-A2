@@ -280,7 +280,14 @@
             const raw = await res.json();
             const data = parseResponse(raw);
 
-            const items = data.items || data.Items || data || [];
+            // normalize ALL formats safely
+            const items = Array.isArray(data)
+            ? data
+            : Array.isArray(data.items)
+                ? data.items
+                : Array.isArray(data.Items)
+                    ? data.Items
+                    : [];
 
             console.log("SUBSCRIPTIONS RESPONSE:", data);
 
