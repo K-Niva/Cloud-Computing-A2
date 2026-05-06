@@ -112,11 +112,11 @@
 
 <script>
 
-    //const API_BASE = ""; // EC2 same-origin
+    const API_BASE = ""; // EC2 same-origin
 
     // const API_BASE = "http://ecs-url"; // ECS URL
 
-     const API_BASE = "https://081nphdcwa.execute-api.us-east-1.amazonaws.com/Production"; // Lambda URL
+    // const API_BASE = "https://081nphdcwa.execute-api.us-east-1.amazonaws.com/Production"; // Lambda URL
 
     function toggleModal(show) {
         document.getElementById('query-modal').style.display = show ? 'flex' : 'none';
@@ -151,26 +151,33 @@
         const year = document.getElementById("q-year").value;
         const album = document.getElementById("q-album").value;
 
-        const query = new URLSearchParams({
-            title,
-            artist,
-            year,
-            album
-        });
+        const queryObj = {};
+        if (title) queryObj.title = title;
+        if (artist) queryObj.artist = artist;
+        if (year) queryObj.year = year;
+        if (album) queryObj.album = album;
+
+        const query = new URLSearchParams(queryObj);
 
         try {
-            const res = await fetch(`${API_BASE}/music/search?${query}`)
-            const data = await res.json();
+            const res = await fetch(`${API_BASE}/music/search?${query}`);
+            const raw = await res.json();
+
+            const data = raw.body
+                ? (typeof raw.body === "string" ? JSON.parse(raw.body) : raw.body)
+                : raw;
+
+            const items = data.items || [];
 
             const tbody = document.getElementById("query-results-body");
             tbody.innerHTML = "";
 
-            if (!data || data.length === 0) {
+            if (items.length === 0) {
                 document.getElementById("no-results-popup").style.display = "block";
                 return;
             }
 
-            data.forEach((song, index) => {
+            items.forEach((song, index) => {
 
                 const row = `
                     <tr>
@@ -182,7 +189,7 @@
                         <td>${song.year}</td>
                         <td>
                             <button data-song='${JSON.stringify(song)}'
-                                    onclick="subscribeSong(JSON.parse(this.dataset.song))">
+                                onclick="subscribeSong(JSON.parse(this.dataset.song))">
                                 Subscribe
                             </button>
                         </td>

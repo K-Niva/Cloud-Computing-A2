@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Lambda worked?? for get subs">
-      <change beforePath="$PROJECT_DIR$/frontend/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/login.html" afterDir="false" />
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Lambda worked for login and getSubs so far">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lambda_Code/musicSearchLambda.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lambda_Code/musicSearchLambda.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,14 +156,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00096" summary="added case sentiveiry">
-      <option name="closed" value="true" />
-      <created>1777649006542</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1777649006542</updated>
     </task>
     <task id="LOCAL-00097" summary="added case sentiveiry">
       <option name="closed" value="true" />
@@ -549,7 +541,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778076392157</updated>
     </task>
-    <option name="localTasksCounter" value="145" />
+    <task id="LOCAL-00145" summary="Lambda worked for login and getSubs so far">
+      <option name="closed" value="true" />
+      <created>1778076823122</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1778076823122</updated>
+    </task>
+    <option name="localTasksCounter" value="146" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -565,7 +565,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="Fejn" />
     <MESSAGE value="help me" />
     <MESSAGE value="double checking ec2" />
     <MESSAGE value="fixing bugs" />
@@ -590,7 +589,8 @@
     <MESSAGE value="Chaing code around" />
     <MESSAGE value="// testing commit dg" />
     <MESSAGE value="Lambda worked?? for get subs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lambda worked?? for get subs" />
+    <MESSAGE value="Lambda worked for login and getSubs so far" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lambda worked for login and getSubs so far" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
