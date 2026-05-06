@@ -27,7 +27,7 @@ const SUB_TABLE = "subscriptions";
 /* =========================
    STATIC FRONTEND
 ========================= */
-app.use(express.static(path.join(__dirname, "frontend")));
+app.use("/public", express.static(path.join(__dirname, "frontend")));
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "frontend", "login.html"));
@@ -49,14 +49,7 @@ app.post("/logout", (req, res) => {
     });
 });
 
-app.get("/main.html", (req, res, next) => {
-    if (!req.session.user) {
-        return res.redirect("/login.html");
-    }
-    next();
-});
-
-app.get("/main.html", (req, res) => {
+app.get("/main.html", auth, (req, res) => {
     res.sendFile(path.join(__dirname, "frontend", "main.html"));
 });
 
