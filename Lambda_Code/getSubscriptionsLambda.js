@@ -8,15 +8,29 @@ const SUB_TABLE = "subscriptions";
 
 export const handler = async (event) => {
 
-    const params = event.queryStringParameters || {};
-    const email = params.email;
+    console.log("EVENT RECEIVED:", JSON.stringify(event));
+
+    let email = event?.queryStringParameters?.email;
+
+    if (!email && event.body) {
+        try {
+            const body = typeof event.body === "string"
+                ? JSON.parse(event.body)
+                : event.body;
+
+            email = body.email;
+        } catch (e) {
+            console.log("BODY PARSE ERROR:", e);
+        }
+    }
+
+    console.log("EMAIL EXTRACTED:", email);
 
     if (!email) {
         return response({ error: "Email is required" }, 400);
     }
 
     try {
-
         const result = await dynamo.send(new QueryCommand({
             TableName: SUB_TABLE,
             KeyConditionExpression: "email = :e",
@@ -25,10 +39,20 @@ export const handler = async (event) => {
             }
         }));
 
-        return response(result.Items || []);
+        console.log("DYNAMO RESULT:", JSON.stringify(result));
+
+
+        return response({
+            success: true,
+            items: result.Items || []
+        });
 
     } catch (err) {
-        return response({ error: err.message }, 500);
+        console.log("ERROR:", err);
+
+        return response({
+            error: err.message
+        }, 500);
     }
 };
 
