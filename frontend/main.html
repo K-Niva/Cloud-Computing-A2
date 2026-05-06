@@ -112,11 +112,11 @@
 
 <script>
 
-    const API_BASE = ""; // EC2 same-origin
+    //const API_BASE = ""; // EC2 same-origin
 
     // const API_BASE = "http://ecs-url"; // ECS URL
 
-    // const API_BASE = "https://081nphdcwa.execute-api.us-east-1.amazonaws.com/Production"; // Lambda URL
+     const API_BASE = "https://081nphdcwa.execute-api.us-east-1.amazonaws.com/Production"; // Lambda URL
 
     function toggleModal(show) {
         document.getElementById('query-modal').style.display = show ? 'flex' : 'none';
@@ -245,25 +245,25 @@
 
         try {
             const res = await fetch(`${API_BASE}/subscriptions?email=${email}`);
-            let data = await res.json();
+
+            const raw = await res.json();
+            const data = typeof raw.body === "string"
+                ? JSON.parse(raw.body)
+                : raw;
+
+            const items = data.items || data.Items || data || [];
 
             console.log("SUBSCRIPTIONS RESPONSE:", data);
-
-
-            if (typeof data === "string") {
-                data = JSON.parse(data);
-            }
-
-
-            if (!Array.isArray(data)) {
-                console.log("Unexpected response format:", data);
-                data = [];
-            }
 
             const tbody = document.getElementById("subscription-body");
             tbody.innerHTML = "";
 
-            data.forEach((song, index) => {
+            if (!Array.isArray(items)) {
+                console.log("Unexpected items format:", items);
+                return;
+            }
+
+            items.forEach((song, index) => {
 
                 const row = `
                     <tr>
