@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Put the lambda files">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/register.html" afterDir="false" />
-    </list>
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Chaing code around" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -157,14 +152,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00084" summary="fixed logic to music search api">
-      <option name="closed" value="true" />
-      <created>1777645165367</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1777645165367</updated>
     </task>
     <task id="LOCAL-00085" summary="fixed logic to music search api">
       <option name="closed" value="true" />
@@ -550,7 +537,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778069410936</updated>
     </task>
-    <option name="localTasksCounter" value="133" />
+    <task id="LOCAL-00133" summary="Chaing code around">
+      <option name="closed" value="true" />
+      <created>1778073885209</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1778073885210</updated>
+    </task>
+    <option name="localTasksCounter" value="134" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -566,7 +561,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="added artsits + uear + album" />
     <MESSAGE value="added case sentiveiry" />
     <MESSAGE value="LASFnosgn" />
     <MESSAGE value="Fejn" />
@@ -591,7 +585,8 @@
     <MESSAGE value="Uploaded the html,css and img to s3 bucket" />
     <MESSAGE value="gobfdgjo" />
     <MESSAGE value="Put the lambda files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Put the lambda files" />
+    <MESSAGE value="Chaing code around" />
+    <option name="LAST_COMMIT_MESSAGE" value="Chaing code around" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
