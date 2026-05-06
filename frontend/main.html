@@ -240,49 +240,49 @@
     ========================= */
     async function loadSubscriptions() {
 
-        const email = localStorage.getItem("email");
-        if (!email) return;
+    const email = localStorage.getItem("email");
+    if (!email) return;
 
-        try {
-            const res = await fetch(`${API_BASE}/subscriptions?email=${email}`);
-            let data = await res.json();
+    try {
+        const res = await fetch(`${API_BASE}/subscriptions?email=${email}`);
+        let data = await res.json();
 
-            console.log("SUBSCRIPTIONS RESPONSE:", data);
+        console.log("SUBSCRIPTIONS RESPONSE:", data);
 
-            if (typeof data === "string") {
-                data = JSON.parse(data);
-            }
-
-            const items = Array.isArray(data) ? data : [];
-
-            const tbody = document.getElementById("subscription-body");
-            tbody.innerHTML = "";
-
-            items.forEach((song, index) => {
-
-                const row = `
-                    <tr>
-                        <td>${index + 1}</td>
-                        <td><img src="${song.img_url}" width="50"></td>
-                        <td>${song.title}</td>
-                        <td>${song.artist}</td>
-                        <td>${song.album}</td>
-                        <td>${song.year}</td>
-                        <td>
-                            <button onclick="removeSong('${song.email}', '${song.song_id}')">
-                                Remove
-                            </button>
-                        </td>
-                    </tr>
-                `;
-
-                tbody.innerHTML += row;
-            });
-
-        } catch (err) {
-            console.log("LOAD ERROR:", err);
+        if (typeof data === "string") {
+            data = JSON.parse(data);
         }
+
+        const items = Array.isArray(data) ? data : [];
+
+        const tbody = document.getElementById("subscription-body");
+        tbody.innerHTML = "";
+
+        items.forEach((song, index) => {
+
+            const row = `
+                <tr>
+                    <td>${index + 1}</td>
+                    <td><img src="${song.img_url}" width="50"></td>
+                    <td>${song.title}</td>
+                    <td>${song.artist}</td>
+                    <td>${song.album}</td>
+                    <td>${song.year}</td>
+                    <td>
+                        <button onclick="removeSong('${song.email}', '${song.song_id}')">
+                            Remove
+                        </button>
+                    </td>
+                </tr>
+            `;
+
+            tbody.innerHTML += row;
+        });
+
+    } catch (err) {
+        console.log("LOAD ERROR:", err);
     }
+}
 
     /* =========================
        REMOVE SUBSCRIPTION
@@ -322,3 +322,5 @@
 
 </body>
 </html>
+
+// testing commit
