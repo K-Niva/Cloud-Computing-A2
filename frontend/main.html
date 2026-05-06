@@ -112,11 +112,11 @@
 
 <script>
 
-     const API_BASE = ""; // EC2 same-origin
+   // const API_BASE = ""; // EC2 same-origin
 
     // const API_BASE = "http://ecs-url"; // ECS URL
 
-    // const API_BASE = "https://lambda-url"; // Lambda URL
+     const API_BASE = "https://081nphdcwa.execute-api.us-east-1.amazonaws.com/Production"; // Lambda URL
 
     function toggleModal(show) {
         document.getElementById('query-modal').style.display = show ? 'flex' : 'none';
@@ -129,18 +129,11 @@
     window.onload = async () => {
 
         try {
-            const res = await fetch("/subscriptions?email=" + localStorage.getItem("email"));
-
-            if (res.status === 401) {
-                window.location.href = "/login.html";
-                return;
-            }
-
             const username = localStorage.getItem("user_name");
-
             document.getElementById("user_name").innerText = username || "User";
 
-            loadSubscriptions();
+            // ONLY call this
+            await loadSubscriptions();
 
         } catch (err) {
             console.log(err);
@@ -149,7 +142,7 @@
     };
 
     /* =========================
-       SEARCH MUSIC (EC2)
+       SEARCH MUSIC
     ========================= */
     async function performSearch() {
 
@@ -248,17 +241,31 @@
     async function loadSubscriptions() {
 
         const email = localStorage.getItem("email");
-
         if (!email) return;
 
         try {
             const res = await fetch(`${API_BASE}/subscriptions?email=${email}`);
-            const data = await res.json();
+            let data = await res.json();
+
+            console.log("SUBSCRIPTIONS RESPONSE:", data);
+
+            // handle API Gateway string case
+            if (typeof data === "string") {
+                data = JSON.parse(data);
+            }
+
+
+            const items = data.Items || data || [];
+
+            if (!Array.isArray(items)) {
+                console.log("Invalid format:", data);
+                return;
+            }
 
             const tbody = document.getElementById("subscription-body");
             tbody.innerHTML = "";
 
-            data.forEach((song, index) => {
+            items.forEach((song, index) => {
 
                 const row = `
                     <tr>
@@ -280,7 +287,7 @@
             });
 
         } catch (err) {
-            console.log(err);
+            console.log("LOAD ERROR:", err);
         }
     }
 

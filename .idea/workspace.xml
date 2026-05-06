@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="gobfdgjo">
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Put the lambda files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deleteSubscriptionLambda.js" beforeDir="false" afterPath="$PROJECT_DIR$/deleteSubscriptionLambda.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/getSubscriptionsLambda.js" beforeDir="false" afterPath="$PROJECT_DIR$/getSubscriptionsLambda.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subscribeLambda.js" beforeDir="false" afterPath="$PROJECT_DIR$/subscribeLambda.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +90,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/com/amazonaws/samples" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Lambda_Code" />
       <recent name="$PROJECT_DIR$/frontend" />
       <recent name="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/ecs" />
       <recent name="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/frontend" />
@@ -158,22 +157,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00082" summary="Chaning music search api">
-      <option name="closed" value="true" />
-      <created>1777644295698</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1777644295698</updated>
-    </task>
-    <task id="LOCAL-00083" summary="fixed logic to music search api">
-      <option name="closed" value="true" />
-      <created>1777645017904</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1777645017904</updated>
     </task>
     <task id="LOCAL-00084" summary="fixed logic to music search api">
       <option name="closed" value="true" />
@@ -551,7 +534,23 @@
       <option name="project" value="LOCAL" />
       <updated>1778014671694</updated>
     </task>
-    <option name="localTasksCounter" value="131" />
+    <task id="LOCAL-00131" summary="Put the lambda files">
+      <option name="closed" value="true" />
+      <created>1778069401526</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1778069401526</updated>
+    </task>
+    <task id="LOCAL-00132" summary="Put the lambda files">
+      <option name="closed" value="true" />
+      <created>1778069410936</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1778069410936</updated>
+    </task>
+    <option name="localTasksCounter" value="133" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -567,7 +566,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="fixing logic with case sensitivy" />
     <MESSAGE value="added artsits + uear + album" />
     <MESSAGE value="added case sentiveiry" />
     <MESSAGE value="LASFnosgn" />
@@ -592,7 +590,8 @@
     <MESSAGE value="making changes to the lambda file" />
     <MESSAGE value="Uploaded the html,css and img to s3 bucket" />
     <MESSAGE value="gobfdgjo" />
-    <option name="LAST_COMMIT_MESSAGE" value="gobfdgjo" />
+    <MESSAGE value="Put the lambda files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Put the lambda files" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
