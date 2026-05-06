@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Chaing code around">
-      <change beforePath="$PROJECT_DIR$/frontend/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/main.html" afterDir="false" />
-    </list>
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="// testing commit dg" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -154,54 +152,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00087" summary="fixing logic with case sensitivy">
-      <option name="closed" value="true" />
-      <created>1777646570227</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1777646570227</updated>
-    </task>
-    <task id="LOCAL-00088" summary="fixing logic with case sensitivy">
-      <option name="closed" value="true" />
-      <created>1777646659069</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1777646659069</updated>
-    </task>
-    <task id="LOCAL-00089" summary="fixing logic with case sensitivy">
-      <option name="closed" value="true" />
-      <created>1777646919386</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1777646919386</updated>
-    </task>
-    <task id="LOCAL-00090" summary="fixing logic with case sensitivy">
-      <option name="closed" value="true" />
-      <created>1777646987195</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1777646987195</updated>
-    </task>
-    <task id="LOCAL-00091" summary="fixing logic with case sensitivy">
-      <option name="closed" value="true" />
-      <created>1777647228636</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1777647228636</updated>
-    </task>
-    <task id="LOCAL-00092" summary="fixing logic with case sensitivy">
-      <option name="closed" value="true" />
-      <created>1777647525160</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1777647525160</updated>
     </task>
     <task id="LOCAL-00093" summary="fixing logic with case sensitivy">
       <option name="closed" value="true" />
@@ -547,7 +497,55 @@
       <option name="project" value="LOCAL" />
       <updated>1778074456204</updated>
     </task>
-    <option name="localTasksCounter" value="136" />
+    <task id="LOCAL-00136" summary="// testing commit dg">
+      <option name="closed" value="true" />
+      <created>1778074620240</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1778074620240</updated>
+    </task>
+    <task id="LOCAL-00137" summary="// testing commit dg">
+      <option name="closed" value="true" />
+      <created>1778074706155</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1778074706155</updated>
+    </task>
+    <task id="LOCAL-00138" summary="// testing commit dg">
+      <option name="closed" value="true" />
+      <created>1778074799555</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1778074799555</updated>
+    </task>
+    <task id="LOCAL-00139" summary="// testing commit dg">
+      <option name="closed" value="true" />
+      <created>1778074836293</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1778074836293</updated>
+    </task>
+    <task id="LOCAL-00140" summary="// testing commit dg">
+      <option name="closed" value="true" />
+      <created>1778074869429</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1778074869429</updated>
+    </task>
+    <task id="LOCAL-00141" summary="// testing commit dg">
+      <option name="closed" value="true" />
+      <created>1778074937726</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1778074937726</updated>
+    </task>
+    <option name="localTasksCounter" value="142" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -563,7 +561,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="added case sentiveiry" />
     <MESSAGE value="LASFnosgn" />
     <MESSAGE value="Fejn" />
     <MESSAGE value="help me" />
@@ -588,7 +585,8 @@
     <MESSAGE value="gobfdgjo" />
     <MESSAGE value="Put the lambda files" />
     <MESSAGE value="Chaing code around" />
-    <option name="LAST_COMMIT_MESSAGE" value="Chaing code around" />
+    <MESSAGE value="// testing commit dg" />
+    <option name="LAST_COMMIT_MESSAGE" value="// testing commit dg" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
