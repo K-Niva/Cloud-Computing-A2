@@ -249,18 +249,11 @@
 
             console.log("SUBSCRIPTIONS RESPONSE:", data);
 
-            // handle API Gateway string case
             if (typeof data === "string") {
                 data = JSON.parse(data);
             }
 
-
-            const items = data.Items || data || [];
-
-            if (!Array.isArray(items)) {
-                console.log("Invalid format:", data);
-                return;
-            }
+            const items = Array.isArray(data) ? data : [];
 
             const tbody = document.getElementById("subscription-body");
             tbody.innerHTML = "";
