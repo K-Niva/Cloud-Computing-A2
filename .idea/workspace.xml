@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Checing ec2">
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="fixing auth middleware">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lambda_Code/deleteSubscriptionLambda.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lambda_Code/deleteSubscriptionLambda.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lambda_Code/getSubscriptionsLambda.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lambda_Code/getSubscriptionsLambda.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lambda_Code/loginLambda.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lambda_Code/loginLambda.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lambda_Code/musicSearchLambda.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lambda_Code/musicSearchLambda.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lambda_Code/registerLambda.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lambda_Code/registerLambda.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lambda_Code/subscribeLambda.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lambda_Code/subscribeLambda.mjs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,14 +160,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00107" summary="Finshed ec2, will need to clean if have time :/">
-      <option name="closed" value="true" />
-      <created>1777652839804</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1777652839804</updated>
     </task>
     <task id="LOCAL-00108" summary="Chaning code so it will be easier to switch backends during demo">
       <option name="closed" value="true" />
@@ -547,7 +545,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778080980199</updated>
     </task>
-    <option name="localTasksCounter" value="156" />
+    <task id="LOCAL-00156" summary="fixing auth middleware">
+      <option name="closed" value="true" />
+      <created>1778090285799</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1778090285799</updated>
+    </task>
+    <option name="localTasksCounter" value="157" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -563,7 +569,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="fixing register.html" />
     <MESSAGE value="Chaning the code to add secuity" />
     <MESSAGE value="Fixing bugs" />
     <MESSAGE value="Testing commit" />
@@ -588,7 +593,8 @@
     <MESSAGE value="Subscribe lambda file done!" />
     <MESSAGE value="Lambda all wokring double checking with ec2" />
     <MESSAGE value="Checing ec2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Checing ec2" />
+    <MESSAGE value="fixing auth middleware" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing auth middleware" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
