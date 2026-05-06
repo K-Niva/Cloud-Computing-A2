@@ -1,15 +1,26 @@
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { DynamoDBDocumentClient, GetCommand } from "@aws-sdk/lib-dynamodb";
 
-const client = new DynamoDBClient({});
+const client = new DynamoDBClient({ region: "us-east-1" });
 const dynamo = DynamoDBDocumentClient.from(client);
 
 const LOGIN_TABLE = "login";
 
 export const handler = async (event) => {
 
-    const body = JSON.parse(event.body || "{}");
-    const { email, password } = body;
+    console.log("RAW EVENT:", JSON.stringify(event));
+
+    // ✅ FIX: handle both STRING and OBJECT body
+    let body = event.body;
+
+    if (typeof body === "string") {
+        body = JSON.parse(body);
+    }
+
+    const email = body?.email?.trim();
+    const password = body?.password?.trim();
+
+    console.log("LOGIN ATTEMPT:", { email, password });
 
     const result = await dynamo.send(
         new GetCommand({
@@ -18,10 +29,16 @@ export const handler = async (event) => {
         })
     );
 
+    console.log("DYNAMO RESULT:", result);
+
     const item = result.Item;
 
-    if (!item || item.password !== password) {
-        return response({ success: false, message: "email or password is invalid" }, 401);
+    if (!item) {
+        return response({ success: false, message: "User not found" }, 401);
+    }
+
+    if (item.password !== password) {
+        return response({ success: false, message: "Wrong password" }, 401);
     }
 
     return response({

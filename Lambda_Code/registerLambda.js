@@ -1,17 +1,23 @@
-const AWS = require("aws-sdk");
-const dynamo = new AWS.DynamoDB.DocumentClient();
+import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
+import { DynamoDBDocumentClient, GetCommand, PutCommand } from "@aws-sdk/lib-dynamodb";
+
+const client = new DynamoDBClient({ region: "us-east-1" });
+const dynamo = DynamoDBDocumentClient.from(client);
 
 const LOGIN_TABLE = "login";
 
-exports.handler = async (event) => {
+export const handler = async (event) => {
 
     const body = JSON.parse(event.body || "{}");
     const { user_name, email, password } = body;
 
-    const existingUser = await dynamo.get({
-        TableName: LOGIN_TABLE,
-        Key: { email }
-    }).promise();
+
+    const existingUser = await dynamo.send(
+        new GetCommand({
+            TableName: LOGIN_TABLE,
+            Key: { email }
+        })
+    );
 
     if (existingUser.Item) {
         return response({
@@ -20,10 +26,13 @@ exports.handler = async (event) => {
         }, 400);
     }
 
-    await dynamo.put({
-        TableName: LOGIN_TABLE,
-        Item: { email, user_name, password }
-    }).promise();
+
+    await dynamo.send(
+        new PutCommand({
+            TableName: LOGIN_TABLE,
+            Item: { email, user_name, password }
+        })
+    );
 
     return response({ success: true });
 };
