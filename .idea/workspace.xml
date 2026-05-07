@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Logo added">
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Final commit">
       <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -155,14 +155,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00121" summary="Commit before lambda function">
-      <option name="closed" value="true" />
-      <created>1777990233212</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1777990233212</updated>
     </task>
     <task id="LOCAL-00122" summary="Finshed intiall lambda.js file">
       <option name="closed" value="true" />
@@ -548,7 +540,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778180757070</updated>
     </task>
-    <option name="localTasksCounter" value="170" />
+    <task id="LOCAL-00170" summary="Final commit">
+      <option name="closed" value="true" />
+      <created>1778182860578</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1778182860579</updated>
+    </task>
+    <option name="localTasksCounter" value="171" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -564,7 +564,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="adding logoutv rjfnre" />
     <MESSAGE value="Commit before lambda function" />
     <MESSAGE value="Finshed intiall lambda.js file" />
     <MESSAGE value="making changes to the lambda file" />
@@ -589,7 +588,8 @@
     <MESSAGE value="Fixing register" />
     <MESSAGE value="Testing auth" />
     <MESSAGE value="Logo added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Logo added" />
+    <MESSAGE value="Final commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final commit" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
