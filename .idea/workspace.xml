@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Lambda code fixes">
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Final checks">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,14 +154,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00109" summary="Added intail code for ecs">
-      <option name="closed" value="true" />
-      <created>1777834944722</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1777834944722</updated>
     </task>
     <task id="LOCAL-00110" summary="ECS is working, but will need to change code due to bugs">
       <option name="closed" value="true" />
@@ -548,7 +539,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778102478169</updated>
     </task>
-    <option name="localTasksCounter" value="158" />
+    <task id="LOCAL-00158" summary="Final checks">
+      <option name="closed" value="true" />
+      <created>1778172403660</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1778172403660</updated>
+    </task>
+    <option name="localTasksCounter" value="159" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -564,7 +563,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="Fixing bugs" />
     <MESSAGE value="Testing commit" />
     <MESSAGE value="add secuity" />
     <MESSAGE value="add secuity to the code" />
@@ -589,7 +587,8 @@
     <MESSAGE value="Checing ec2" />
     <MESSAGE value="fixing auth middleware" />
     <MESSAGE value="Lambda code fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lambda code fixes" />
+    <MESSAGE value="Final checks" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final checks" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
