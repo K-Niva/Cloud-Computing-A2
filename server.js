@@ -37,6 +37,8 @@ app.get("/register.html", (req, res) => {
     res.sendFile(path.join(__dirname, "frontend", "register.html"));
 });
 
+
+
 /* =========================
    AUTH MIDDLEWARE
 ========================= */
