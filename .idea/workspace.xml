@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Final checks">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Fixing CSS" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -154,30 +152,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00110" summary="ECS is working, but will need to change code due to bugs">
-      <option name="closed" value="true" />
-      <created>1777845269119</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1777845269120</updated>
-    </task>
-    <task id="LOCAL-00111" summary="fixing register.html">
-      <option name="closed" value="true" />
-      <created>1777957391010</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1777957391011</updated>
-    </task>
-    <task id="LOCAL-00112" summary="Chaning the code to add secuity">
-      <option name="closed" value="true" />
-      <created>1777960146273</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1777960146273</updated>
     </task>
     <task id="LOCAL-00113" summary="Fixing bugs">
       <option name="closed" value="true" />
@@ -547,7 +521,31 @@
       <option name="project" value="LOCAL" />
       <updated>1778172403660</updated>
     </task>
-    <option name="localTasksCounter" value="159" />
+    <task id="LOCAL-00159" summary="Fixing CSS">
+      <option name="closed" value="true" />
+      <created>1778173433376</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1778173433376</updated>
+    </task>
+    <task id="LOCAL-00160" summary="Fixing CSS">
+      <option name="closed" value="true" />
+      <created>1778173473334</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1778173473335</updated>
+    </task>
+    <task id="LOCAL-00161" summary="Fixing CSS">
+      <option name="closed" value="true" />
+      <created>1778173563477</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1778173563478</updated>
+    </task>
+    <option name="localTasksCounter" value="162" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -563,7 +561,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="Testing commit" />
     <MESSAGE value="add secuity" />
     <MESSAGE value="add secuity to the code" />
     <MESSAGE value="adding logout" />
@@ -588,7 +585,8 @@
     <MESSAGE value="fixing auth middleware" />
     <MESSAGE value="Lambda code fixes" />
     <MESSAGE value="Final checks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final checks" />
+    <MESSAGE value="Fixing CSS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing CSS" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

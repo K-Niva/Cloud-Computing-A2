@@ -33,6 +33,10 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "frontend", "login.html"));
 });
 
+app.get("/register.html", (req, res) => {
+    res.sendFile(path.join(__dirname, "frontend", "register.html"));
+});
+
 /* =========================
    AUTH MIDDLEWARE
 ========================= */
@@ -51,6 +55,10 @@ app.post("/logout", (req, res) => {
 
 app.get("/main.html", auth, (req, res) => {
     res.sendFile(path.join(__dirname, "frontend", "main.html"));
+});
+
+app.get("/register.html", (req, res) => {
+    res.sendFile(path.join(__dirname, "frontend", "register.html"));
 });
 
 /* =========================
