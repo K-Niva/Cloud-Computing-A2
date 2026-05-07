@@ -40,13 +40,19 @@ app.get("/register.html", (req, res) => {
 /* =========================
    AUTH MIDDLEWARE
 ========================= */
-function auth(req, res, next) {
+function pageAuth(req, res, next) {
+    if (!req.session.user) {
+        return res.redirect("/");
+    }
+    next();
+}
+
+function apiAuth(req, res, next) {
     if (!req.session.user) {
         return res.status(401).json({ error: "Not authenticated" });
     }
     next();
 }
-
 app.post("/logout", (req, res) => {
     req.session.destroy(() => {
         res.json({ success: true });

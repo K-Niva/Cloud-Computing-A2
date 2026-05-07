@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Fixing CSS" />
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Fixing register" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -152,22 +152,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00113" summary="Fixing bugs">
-      <option name="closed" value="true" />
-      <created>1777960481724</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1777960481724</updated>
-    </task>
-    <task id="LOCAL-00114" summary="Fixing bugs">
-      <option name="closed" value="true" />
-      <created>1777961278717</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1777961278717</updated>
     </task>
     <task id="LOCAL-00115" summary="Fixing bugs">
       <option name="closed" value="true" />
@@ -545,7 +529,23 @@
       <option name="project" value="LOCAL" />
       <updated>1778173563478</updated>
     </task>
-    <option name="localTasksCounter" value="162" />
+    <task id="LOCAL-00162" summary="Fixing register">
+      <option name="closed" value="true" />
+      <created>1778173684163</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1778173684163</updated>
+    </task>
+    <task id="LOCAL-00163" summary="Fixing register">
+      <option name="closed" value="true" />
+      <created>1778173763759</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
+      <option name="project" value="LOCAL" />
+      <updated>1778173763759</updated>
+    </task>
+    <option name="localTasksCounter" value="164" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -561,7 +561,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="add secuity" />
     <MESSAGE value="add secuity to the code" />
     <MESSAGE value="adding logout" />
     <MESSAGE value="adding logoutv rjfnre" />
@@ -586,7 +585,8 @@
     <MESSAGE value="Lambda code fixes" />
     <MESSAGE value="Final checks" />
     <MESSAGE value="Fixing CSS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing CSS" />
+    <MESSAGE value="Fixing register" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing register" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
