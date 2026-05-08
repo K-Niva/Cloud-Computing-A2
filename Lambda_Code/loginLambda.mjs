@@ -57,7 +57,7 @@ export const handler = async (event) => {
         });
 
     } catch (err) {
-        // safety catch (why not lol)
+        // safety catch
         console.log("LOGIN ERROR:", err);
 
         return response({

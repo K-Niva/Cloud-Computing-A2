@@ -23,7 +23,7 @@
     <section id="login-container">
         <h2>Log In</h2>
 
-        <!-- Nnvigation link to register page -->
+        <!-- Navigation link to register page -->
         <p>Need an Account? <a href="register.html">Create Account Now!</a></p>
 
         <!-- login form -->
@@ -55,8 +55,11 @@
 <!-- FRONTEND to BACKEND INTEGRATION -->
 <script>
 
-    // base API configuration (supports EC2/ECS/Lambda switching)
-    const API_BASE = ""; 
+    // base API configuration (supports EC2/ECS witching)
+    const API_BASE = "";
+
+    // Lambda URL
+    // const API_BASE = "https://081nphdcwa.execute-api.us-east-1.amazonaws.com/Production";
 
     // login form submission handler
     document.getElementById("login-form").addEventListener("submit", async function(e) {

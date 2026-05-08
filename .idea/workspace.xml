@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Added package files, need to remove them before setting up EC2">
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Fixed Pom">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lambda_Code/loginLambda.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/Lambda_Code/loginLambda.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lambda_Code/musicSearchLambda.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/Lambda_Code/musicSearchLambda.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/LoadUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/database/LoadUsers.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +69,6 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/petreatheodorakopoulos/IdeaProjects/Cloud-Computing-A2",
@@ -108,14 +113,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00124" summary="Uploaded the html,css and img to s3 bucket">
-      <option name="closed" value="true" />
-      <created>1777998077554</created>
-      <option name="number" value="00124" />
-      <option name="presentableId" value="LOCAL-00124" />
-      <option name="project" value="LOCAL" />
-      <updated>1777998077554</updated>
     </task>
     <task id="LOCAL-00125" summary="gobfdgjo">
       <option name="closed" value="true" />
@@ -501,7 +498,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778261672736</updated>
     </task>
-    <option name="localTasksCounter" value="173" />
+    <task id="LOCAL-00173" summary="Fixed Pom">
+      <option name="closed" value="true" />
+      <created>1778262792282</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
+      <option name="project" value="LOCAL" />
+      <updated>1778262792282</updated>
+    </task>
+    <option name="localTasksCounter" value="174" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -517,7 +522,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="Finshed intiall lambda.js file" />
     <MESSAGE value="making changes to the lambda file" />
     <MESSAGE value="Uploaded the html,css and img to s3 bucket" />
     <MESSAGE value="gobfdgjo" />
@@ -542,7 +546,8 @@
     <MESSAGE value="Logo added" />
     <MESSAGE value="Final commit" />
     <MESSAGE value="Added package files, need to remove them before setting up EC2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added package files, need to remove them before setting up EC2" />
+    <MESSAGE value="Fixed Pom" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Pom" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

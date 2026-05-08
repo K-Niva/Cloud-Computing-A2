@@ -225,7 +225,7 @@ export const handler = async (event) => {
         }
 
         /* ==================================================
-           NO SEARCH PARAMETERS PROVIDED
+          11. NO SEARCH PARAMETERS PROVIDED
         ================================================== */
         else {
             items = [];

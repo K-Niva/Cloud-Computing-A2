@@ -146,8 +146,11 @@
 <!-- FRONTEND JAVASCRIPT LOGIC -->
 <script>
 
-    /* API CONFIGURATION - Supports EC2/ECS/Lambda switching */
+    /* API CONFIGURATION - Supports EC2/ECS switching */
     const API_BASE = "";
+
+    // Lambda URL
+    //  const API_BASE = "https://081nphdcwa.execute-api.us-east-1.amazonaws.com/Production";
 
     /* SAFE RESPONSE PARSER - Handles EC2 vs Lambda formats */
     function parseResponse(raw) {

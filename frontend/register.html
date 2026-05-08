@@ -64,8 +64,11 @@
 <!-- FRONTEND → BACKEND REGISTER LOGIC -->
 <script>
 
-    // Backend API base (supports EC2/ECS/Lambda switching)
+    // Backend API base (supports EC2/ECS)
     const API_BASE = "";
+
+    // Lambda URL
+    //  const API_BASE = "https://081nphdcwa.execute-api.us-east-1.amazonaws.com/Production";
 
     // handles the register form submission
     document.getElementById("register-form").addEventListener("submit", async function(e) {

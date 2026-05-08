@@ -99,3 +99,6 @@ public class LoadUsers {
         parser.close();
     }
 }
+
+// this was created to ensure there will be users
+// checking if our system can handle over 10 users
