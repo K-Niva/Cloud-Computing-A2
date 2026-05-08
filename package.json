@@ -1,0 +1,22 @@
+{
+  "name": "cloud-computing-a2",
+  "version": "1.0.0",
+  "description": "2026 Sem 1 Cloud computing A2",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.1043.0",
+    "@aws-sdk/lib-dynamodb": "^3.1043.0",
+    "aws-sdk": "^2.1693.0",
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0"
+  }
+}

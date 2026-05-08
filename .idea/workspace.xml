@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Final commit">
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;petreatheo&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/K-Niva/Cloud-Computing-A2&quot;,
+    &quot;accountId&quot;: &quot;38a4c4bc-b991-45fe-823e-2e31baa36cca&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="3CKrlOtdagUpGOjAxE5Ksohhbcm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.CreateBucket.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CreateFrontendBucket.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CreateLoginTable.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CreateMusicTable.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CreateSubscriptionsTable.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoadMusicData.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoadUsers.executor&quot;: &quot;Run&quot;,
+    &quot;Application.UploadFrontendToS3.executor&quot;: &quot;Run&quot;,
+    &quot;Application.UploadImagesToS3.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/petreatheodorakopoulos/IdeaProjects/Cloud-Computing-A2&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;TEXT&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/storage" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/backend" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/amazonaws/samples" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/Lambda_Code" />
+      <recent name="$PROJECT_DIR$/frontend" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/ecs" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/amazonaws/samples/frontend" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="RUN_TOOL" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="" />
+      <created>1776145253067</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1776145253067</updated>
+    </task>
+    <task id="LOCAL-00123" summary="making changes to the lambda file">
+      <option name="closed" value="true" />
+      <created>1777996814578</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1777996814578</updated>
+    </task>
+    <task id="LOCAL-00124" summary="Uploaded the html,css and img to s3 bucket">
+      <option name="closed" value="true" />
+      <created>1777998077554</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1777998077554</updated>
+    </task>
+    <task id="LOCAL-00125" summary="gobfdgjo">
+      <option name="closed" value="true" />
+      <created>1778013948973</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1778013948973</updated>
+    </task>
+    <task id="LOCAL-00126" summary="gobfdgjo">
+      <option name="closed" value="true" />
+      <created>1778014155568</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1778014155568</updated>
+    </task>
+    <task id="LOCAL-00127" summary="gobfdgjo">
+      <option name="closed" value="true" />
+      <created>1778014207476</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1778014207476</updated>
+    </task>
+    <task id="LOCAL-00128" summary="gobfdgjo">
+      <option name="closed" value="true" />
+      <created>1778014309170</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1778014309170</updated>
+    </task>
+    <task id="LOCAL-00129" summary="gobfdgjo">
+      <option name="closed" value="true" />
+      <created>1778014599340</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1778014599340</updated>
+    </task>
+    <task id="LOCAL-00130" summary="gobfdgjo">
+      <option name="closed" value="true" />
+      <created>1778014671694</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1778014671694</updated>
+    </task>
+    <task id="LOCAL-00131" summary="Put the lambda files">
+      <option name="closed" value="true" />
+      <created>1778069401526</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1778069401526</updated>
+    </task>
+    <task id="LOCAL-00132" summary="Put the lambda files">
+      <option name="closed" value="true" />
+      <created>1778069410936</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1778069410936</updated>
+    </task>
+    <task id="LOCAL-00133" summary="Chaing code around">
+      <option name="closed" value="true" />
+      <created>1778073885209</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1778073885210</updated>
+    </task>
+    <task id="LOCAL-00134" summary="Chaing code around">
+      <option name="closed" value="true" />
+      <created>1778074215679</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1778074215680</updated>
+    </task>
+    <task id="LOCAL-00135" summary="Chaing code around">
+      <option name="closed" value="true" />
+      <created>1778074456203</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1778074456204</updated>
+    </task>
+    <task id="LOCAL-00136" summary="// testing commit dg">
+      <option name="closed" value="true" />
+      <created>1778074620240</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1778074620240</updated>
+    </task>
+    <task id="LOCAL-00137" summary="// testing commit dg">
+      <option name="closed" value="true" />
+      <created>1778074706155</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1778074706155</updated>
+    </task>
+    <task id="LOCAL-00138" summary="// testing commit dg">
+      <option name="closed" value="true" />
+      <created>1778074799555</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1778074799555</updated>
+    </task>
+    <task id="LOCAL-00139" summary="// testing commit dg">
+      <option name="closed" value="true" />
+      <created>1778074836293</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1778074836293</updated>
+    </task>
+    <task id="LOCAL-00140" summary="// testing commit dg">
+      <option name="closed" value="true" />
+      <created>1778074869429</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1778074869429</updated>
+    </task>
+    <task id="LOCAL-00141" summary="// testing commit dg">
+      <option name="closed" value="true" />
+      <created>1778074937726</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1778074937726</updated>
+    </task>
+    <task id="LOCAL-00142" summary="// testing commit dg">
+      <option name="closed" value="true" />
+      <created>1778075038006</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1778075038006</updated>
+    </task>
+    <task id="LOCAL-00143" summary="Lambda worked?? for get subs">
+      <option name="closed" value="true" />
+      <created>1778076373632</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1778076373632</updated>
+    </task>
+    <task id="LOCAL-00144" summary="Lambda worked?? for get subs">
+      <option name="closed" value="true" />
+      <created>1778076392157</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1778076392157</updated>
+    </task>
+    <task id="LOCAL-00145" summary="Lambda worked for login and getSubs so far">
+      <option name="closed" value="true" />
+      <created>1778076823122</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1778076823122</updated>
+    </task>
+    <task id="LOCAL-00146" summary="Lambda workek? for muisc checking ec2">
+      <option name="closed" value="true" />
+      <created>1778078667773</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1778078667773</updated>
+    </task>
+    <task id="LOCAL-00147" summary="ec2 failed">
+      <option name="closed" value="true" />
+      <created>1778078901763</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1778078901764</updated>
+    </task>
+    <task id="LOCAL-00148" summary="Checing code">
+      <option name="closed" value="true" />
+      <created>1778079162190</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1778079162190</updated>
+    </task>
+    <task id="LOCAL-00149" summary="EC@ fgnfkng">
+      <option name="closed" value="true" />
+      <created>1778079303862</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1778079303862</updated>
+    </task>
+    <task id="LOCAL-00150" summary="EC@ fgnfkng">
+      <option name="closed" value="true" />
+      <created>1778079450146</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1778079450146</updated>
+    </task>
+    <task id="LOCAL-00151" summary="EC@ fgnfkng">
+      <option name="closed" value="true" />
+      <created>1778079610997</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1778079610997</updated>
+    </task>
+    <task id="LOCAL-00152" summary="EC@ fgnfkng">
+      <option name="closed" value="true" />
+      <created>1778079697272</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1778079697272</updated>
+    </task>
+    <task id="LOCAL-00153" summary="Subscribe lambda file done!">
+      <option name="closed" value="true" />
+      <created>1778080167505</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1778080167505</updated>
+    </task>
+    <task id="LOCAL-00154" summary="Lambda all wokring double checking with ec2">
+      <option name="closed" value="true" />
+      <created>1778080948363</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1778080948363</updated>
+    </task>
+    <task id="LOCAL-00155" summary="Checing ec2">
+      <option name="closed" value="true" />
+      <created>1778080980199</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1778080980199</updated>
+    </task>
+    <task id="LOCAL-00156" summary="fixing auth middleware">
+      <option name="closed" value="true" />
+      <created>1778090285799</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1778090285799</updated>
+    </task>
+    <task id="LOCAL-00157" summary="Lambda code fixes">
+      <option name="closed" value="true" />
+      <created>1778102478169</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1778102478169</updated>
+    </task>
+    <task id="LOCAL-00158" summary="Final checks">
+      <option name="closed" value="true" />
+      <created>1778172403660</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1778172403660</updated>
+    </task>
+    <task id="LOCAL-00159" summary="Fixing CSS">
+      <option name="closed" value="true" />
+      <created>1778173433376</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1778173433376</updated>
+    </task>
+    <task id="LOCAL-00160" summary="Fixing CSS">
+      <option name="closed" value="true" />
+      <created>1778173473334</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1778173473335</updated>
+    </task>
+    <task id="LOCAL-00161" summary="Fixing CSS">
+      <option name="closed" value="true" />
+      <created>1778173563477</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1778173563478</updated>
+    </task>
+    <task id="LOCAL-00162" summary="Fixing register">
+      <option name="closed" value="true" />
+      <created>1778173684163</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1778173684163</updated>
+    </task>
+    <task id="LOCAL-00163" summary="Fixing register">
+      <option name="closed" value="true" />
+      <created>1778173763759</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
+      <option name="project" value="LOCAL" />
+      <updated>1778173763759</updated>
+    </task>
+    <task id="LOCAL-00164" summary="Testing auth">
+      <option name="closed" value="true" />
+      <created>1778174068202</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1778174068202</updated>
+    </task>
+    <task id="LOCAL-00165" summary="Testing auth">
+      <option name="closed" value="true" />
+      <created>1778174162582</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1778174162582</updated>
+    </task>
+    <task id="LOCAL-00166" summary="Logo added">
+      <option name="closed" value="true" />
+      <created>1778180436163</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1778180436163</updated>
+    </task>
+    <task id="LOCAL-00167" summary="Logo added">
+      <option name="closed" value="true" />
+      <created>1778180569801</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1778180569801</updated>
+    </task>
+    <task id="LOCAL-00168" summary="Logo added">
+      <option name="closed" value="true" />
+      <created>1778180613443</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1778180613443</updated>
+    </task>
+    <task id="LOCAL-00169" summary="Logo added">
+      <option name="closed" value="true" />
+      <created>1778180757070</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1778180757070</updated>
+    </task>
+    <task id="LOCAL-00170" summary="Final commit">
+      <option name="closed" value="true" />
+      <created>1778182860578</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1778182860579</updated>
+    </task>
+    <task id="LOCAL-00171" summary="Final commit">
+      <option name="closed" value="true" />
+      <created>1778184286359</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1778184286359</updated>
+    </task>
+    <option name="localTasksCounter" value="172" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
+    <MESSAGE value="Commit before lambda function" />
+    <MESSAGE value="Finshed intiall lambda.js file" />
+    <MESSAGE value="making changes to the lambda file" />
+    <MESSAGE value="Uploaded the html,css and img to s3 bucket" />
+    <MESSAGE value="gobfdgjo" />
+    <MESSAGE value="Put the lambda files" />
+    <MESSAGE value="Chaing code around" />
+    <MESSAGE value="// testing commit dg" />
+    <MESSAGE value="Lambda worked?? for get subs" />
+    <MESSAGE value="Lambda worked for login and getSubs so far" />
+    <MESSAGE value="Lambda workek? for muisc checking ec2" />
+    <MESSAGE value="ec2 failed" />
+    <MESSAGE value="Checing code" />
+    <MESSAGE value="EC@ fgnfkng" />
+    <MESSAGE value="Subscribe lambda file done!" />
+    <MESSAGE value="Lambda all wokring double checking with ec2" />
+    <MESSAGE value="Checing ec2" />
+    <MESSAGE value="fixing auth middleware" />
+    <MESSAGE value="Lambda code fixes" />
+    <MESSAGE value="Final checks" />
+    <MESSAGE value="Fixing CSS" />
+    <MESSAGE value="Fixing register" />
+    <MESSAGE value="Testing auth" />
+    <MESSAGE value="Logo added" />
+    <MESSAGE value="Final commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final commit" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
