@@ -2,11 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <!-- Page title shown in browser tab -->
     <title>Stardust Music - Register</title>
+
+    <!-- Shared login/register styling -->
     <link rel="stylesheet" href="/public/style_login.css">
 </head>
+
 <body>
 
+<!-- HEADER SECTION -->
 <header>
     <nav>
         <img src="/public/logo.png" alt="Stardust Music Logo" width="50">
@@ -14,58 +20,66 @@
     </nav>
 </header>
 
+<!-- MAIN REGISTRATION FORM -->
 <main>
     <section id="login-container">
+
         <h2>Register Your Account</h2>
 
+        <!-- Navigation link back to login page -->
         <p>Already have an account? <a href="login.html">Log In</a></p>
 
+        <!-- Registration form (handled via JavaScript fetch API) -->
         <form id="register-form" method="POST">
 
-            <!-- Username -->
+            <!-- Username input -->
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>
             </div>
 
-            <!-- Email -->
+            <!-- Email input -->
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
             </div>
 
-            <!-- Password -->
+            <!-- Password input -->
             <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required>
             </div>
 
+            <!-- Submit button triggers API call -->
             <button type="submit">REGISTER</button>
 
         </form>
 
+        <!-- Error message display (server validation / failures) -->
         <p id="error-message" style="color: red;"></p>
 
     </section>
 </main>
 
+<!-- FRONTEND → BACKEND REGISTER LOGIC -->
 <script>
-     const API_BASE = ""; // EC2 same-origin
 
-    // const API_BASE = "http://ecs-url"; // ECS URL
+    // Backend API base (supports EC2/ECS/Lambda switching)
+    const API_BASE = "";
 
-    // const API_BASE = "https://081nphdcwa.execute-api.us-east-1.amazonaws.com/Production"; // Lambda URL
-
+    // handles the register form submission
     document.getElementById("register-form").addEventListener("submit", async function(e) {
 
-        e.preventDefault();
+        e.preventDefault(); // Prevent page reload
 
+        // collects the user input values
         const user_name = document.getElementById("username").value;
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
 
         try {
 
+            // sends the register request to backend API
             const response = await fetch(`${API_BASE}/register`, {
                 method: "POST",
                 headers: {
@@ -77,9 +91,10 @@
                     password
                 })
             });
+
             const raw = await response.json();
 
-            // handle Lambda wrapped response if needed
+            // handles both EC2 and Lambda response formats
             let data = raw;
 
             if (typeof raw.body === "string") {
@@ -88,24 +103,28 @@
 
             console.log("REGISTER RESPONSE:", data);
 
+            // if the registering is successful → redirect to login page
             if (data.success) {
 
                 window.location.href = "login.html";
 
             } else {
 
+                // show the backend validation error message
                 document.getElementById("error-message").innerText =
                     data.message;
             }
 
         } catch (error) {
 
+            // handles the network/server errors
             console.log(error);
 
             document.getElementById("error-message").innerText =
                 "Server error. Please try again.";
         }
     });
+
 </script>
 
 </body>

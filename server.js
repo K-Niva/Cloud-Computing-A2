@@ -5,61 +5,76 @@ const path = require("path");
 
 const app = express();
 
+/* SESSION SETUP */
+
 const session = require("express-session");
+
 app.use(session({
     secret: "music-app-secret",
     resave: false,
     saveUninitialized: false
 }));
 
-app.use(cors());
-app.use(express.json());
+/* MIDDLEWARE */
+app.use(cors());              // frontend-backend communication
+app.use(express.json());      // JSON request bodies
 
+/* AWS CONFIGURATION */
 AWS.config.update({ region: "us-east-1" });
 
 const dynamo = new AWS.DynamoDB.DocumentClient();
 
+/* DynamoDB TABLE NAMES */
 const LOGIN_TABLE = "login";
 const MUSIC_TABLE = "music";
 const SUB_TABLE = "subscriptions";
 
 
-/* =========================
-   STATIC FRONTEND
-========================= */
+/* STATIC FRONTEND FILES */
+
+/* frontend assets */
 app.use("/public", express.static(path.join(__dirname, "frontend")));
 
+/* Default route -> login page */
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "frontend", "login.html"));
 });
 
+/* Register page route */
 app.get("/register.html", (req, res) => {
     res.sendFile(path.join(__dirname, "frontend", "register.html"));
 });
 
 
-
-/* =========================
-   AUTH MIDDLEWARE
-========================= */
+/* AUTHENTICATION MIDDLEWARE */
 function auth(req, res, next) {
+
+    /* If user is not logged in */
     if (!req.session.user) {
         return res.redirect("/");
     }
+
     next();
 }
 
 
+/* LOGOUT ROUTE */
 app.post("/logout", (req, res) => {
+
+    /* destroys current session */
     req.session.destroy(() => {
         res.json({ success: true });
     });
 });
 
+
+/* PROTECTED MAIN PAGE */
 app.get("/main.html", auth, (req, res) => {
     res.sendFile(path.join(__dirname, "frontend", "main.html"));
 });
 
+
+/* LOGIN + REGISTER PAGE ROUTES */
 app.get("/register.html", (req, res) => {
     res.sendFile(path.join(__dirname, "frontend", "register.html"));
 });
@@ -68,25 +83,30 @@ app.get("/login.html", (req, res) => {
     res.sendFile(path.join(__dirname, "frontend", "login.html"));
 });
 
-/* =========================
-   LOGIN API
-========================= */
+
+/* LOGIN API*/
 app.post("/login", async (req, res) => {
 
+    /* retrieves login details */
     const { email, password } = req.body;
 
     try {
+
+        /* GET user from DynamoDB */
         const result = await dynamo.get({
             TableName: LOGIN_TABLE,
             Key: { email }
         }).promise();
 
+        /* user doesn't exist */
         if (!result.Item) {
             return res.json({ success: false });
         }
 
+        /* validates password */
         if (result.Item.password === password) {
 
+            /* stores user session */
             req.session.user = {
                 email: result.Item.email,
                 user_name: result.Item.user_name
@@ -98,37 +118,42 @@ app.post("/login", async (req, res) => {
             });
         }
 
+        /* incorrect password */
         return res.json({ success: false });
 
     } catch (err) {
+
         console.log(err);
+
         res.status(500).json({ success: false });
     }
 });
 
-/* =========================
-   REGISTER API
-========================= */
+
+/* REGISTER API */
 app.post("/register", async (req, res) => {
 
+    /* retrieves register details */
     const { user_name, email, password } = req.body;
 
     try {
 
-        // Check if email already exists
+        /* checks if email already exists */
         const existingUser = await dynamo.get({
             TableName: LOGIN_TABLE,
             Key: { email }
         }).promise();
 
+        /* prevents duplicate accounts */
         if (existingUser.Item) {
+
             return res.json({
                 success: false,
                 message: "The email already exists"
             });
         }
 
-        // Insert new user
+        /* adds new user into DynamoDB */
         await dynamo.put({
             TableName: LOGIN_TABLE,
             Item: {
@@ -143,6 +168,7 @@ app.post("/register", async (req, res) => {
         });
 
     } catch (err) {
+
         console.log(err);
 
         return res.status(500).json({
@@ -152,11 +178,11 @@ app.post("/register", async (req, res) => {
     }
 });
 
-/* =========================
-   MUSIC SEARCH API
-========================= */
+
+/* MUSIC SEARCH API */
 app.get("/music/search", async (req, res) => {
 
+    /* retrieve search filters */
     const artist = req.query.artist?.trim();
     const album = req.query.album?.trim();
     const title = req.query.title?.trim();
@@ -166,23 +192,29 @@ app.get("/music/search", async (req, res) => {
 
         /* ==================================================
            1. ARTIST + YEAR + TITLE
-           Query by LSI, then filter title
+           LSI then filter Title
         ================================================== */
         if (artist && year && title) {
 
             const result = await dynamo.query({
                 TableName: MUSIC_TABLE,
                 IndexName: "ArtistYearIndex",
-                KeyConditionExpression: "artist = :a AND #y = :y",
+
+                KeyConditionExpression:
+                    "artist = :a AND #y = :y",
+
                 ExpressionAttributeNames: {
                     "#y": "year"
                 },
+
                 ExpressionAttributeValues: {
                     ":a": artist,
                     ":y": year
                 }
+
             }).promise();
 
+            /* filter title manually */
             const items = result.Items.filter(song =>
                 song.title &&
                 song.title.toLowerCase().includes(title.toLowerCase())
@@ -191,18 +223,23 @@ app.get("/music/search", async (req, res) => {
             return res.json(items);
         }
 
+
         /* ==================================================
            2. ARTIST + ALBUM + TITLE
-           Query artist then filter album/title
+           using Primary key (Artist), the filter
         ================================================== */
         if (artist && album && title) {
 
             const result = await dynamo.query({
                 TableName: MUSIC_TABLE,
-                KeyConditionExpression: "artist = :a",
+
+                KeyConditionExpression:
+                    "artist = :a",
+
                 ExpressionAttributeValues: {
                     ":a": artist
                 }
+
             }).promise();
 
             const items = result.Items.filter(song =>
@@ -215,22 +252,29 @@ app.get("/music/search", async (req, res) => {
             return res.json(items);
         }
 
+
         /* ==================================================
            3. ARTIST + YEAR + ALBUM
+           LSI (ArtistYearIndex), then filter Album
         ================================================== */
         if (artist && year && album) {
 
             const result = await dynamo.query({
                 TableName: MUSIC_TABLE,
                 IndexName: "ArtistYearIndex",
-                KeyConditionExpression: "artist = :a AND #y = :y",
+
+                KeyConditionExpression:
+                    "artist = :a AND #y = :y",
+
                 ExpressionAttributeNames: {
                     "#y": "year"
                 },
+
                 ExpressionAttributeValues: {
                     ":a": artist,
                     ":y": year
                 }
+
             }).promise();
 
             const items = result.Items.filter(song =>
@@ -241,40 +285,51 @@ app.get("/music/search", async (req, res) => {
             return res.json(items);
         }
 
+
         /* ==================================================
            4. ARTIST + YEAR
-           Query by LSI
+           LSI (ArtistYearIndex) with NO extra filter
         ================================================== */
         if (artist && year) {
 
             const result = await dynamo.query({
                 TableName: MUSIC_TABLE,
                 IndexName: "ArtistYearIndex",
-                KeyConditionExpression: "artist = :a AND #y = :y",
+
+                KeyConditionExpression:
+                    "artist = :a AND #y = :y",
+
                 ExpressionAttributeNames: {
                     "#y": "year"
                 },
+
                 ExpressionAttributeValues: {
                     ":a": artist,
                     ":y": year
                 }
+
             }).promise();
 
             return res.json(result.Items);
         }
 
+
         /* ==================================================
-          5. ARTIST + ALBUM
-           Query artist then filter album
+           5. ARTIST + ALBUM
+           using Primary key (Artist) then filter Album
         ================================================== */
         if (artist && album) {
 
             const result = await dynamo.query({
                 TableName: MUSIC_TABLE,
-                KeyConditionExpression: "artist = :a",
+
+                KeyConditionExpression:
+                    "artist = :a",
+
                 ExpressionAttributeValues: {
                     ":a": artist
                 }
+
             }).promise();
 
             const items = result.Items.filter(song =>
@@ -285,18 +340,23 @@ app.get("/music/search", async (req, res) => {
             return res.json(items);
         }
 
+
         /* ==================================================
            6. ARTIST + TITLE
-           Query artist then filter title
+           using Primary key (Artist), then filter Title
         ================================================== */
         if (artist && title) {
 
             const result = await dynamo.query({
                 TableName: MUSIC_TABLE,
-                KeyConditionExpression: "artist = :a",
+
+                KeyConditionExpression:
+                    "artist = :a",
+
                 ExpressionAttributeValues: {
                     ":a": artist
                 }
+
             }).promise();
 
             const items = result.Items.filter(song =>
@@ -307,80 +367,102 @@ app.get("/music/search", async (req, res) => {
             return res.json(items);
         }
 
+
         /* ==================================================
            7. ALBUM ONLY
-           Query by GSI
+           GSI (AlbumArtistIndex) only
         ================================================== */
         if (album) {
 
             const result = await dynamo.query({
                 TableName: MUSIC_TABLE,
                 IndexName: "AlbumArtistIndex",
-                KeyConditionExpression: "album = :al",
+
+                KeyConditionExpression:
+                    "album = :al",
+
                 ExpressionAttributeValues: {
                     ":al": album
                 }
+
             }).promise();
 
             return res.json(result.Items);
         }
 
+
         /* ==================================================
            8. ARTIST ONLY
-           Query by PK
+           using Primary partition key
         ================================================== */
         if (artist) {
 
             const result = await dynamo.query({
                 TableName: MUSIC_TABLE,
-                KeyConditionExpression: "artist = :a",
+
+                KeyConditionExpression:
+                    "artist = :a",
+
                 ExpressionAttributeValues: {
                     ":a": artist
                 }
+
             }).promise();
 
             return res.json(result.Items);
         }
 
+
         /* ==================================================
            9. TITLE ONLY
-           Scan (fallback)
+           Full table scan (fallback)
         ================================================== */
         if (title) {
 
             const result = await dynamo.scan({
                 TableName: MUSIC_TABLE,
-                FilterExpression: "contains(title, :t)",
+
+                FilterExpression:
+                    "contains(title, :t)",
+
                 ExpressionAttributeValues: {
                     ":t": title
                 }
+
             }).promise();
 
             return res.json(result.Items);
         }
 
+
         /* ==================================================
            10. YEAR ONLY
-           Scan (fallback)
+           Full table scan (fallback)
         ================================================== */
         if (year) {
 
             const result = await dynamo.scan({
                 TableName: MUSIC_TABLE,
-                FilterExpression: "#y = :y",
+
+                FilterExpression:
+                    "#y = :y",
+
                 ExpressionAttributeNames: {
                     "#y": "year"
                 },
+
                 ExpressionAttributeValues: {
                     ":y": year
                 }
+
             }).promise();
 
             return res.json(result.Items);
         }
 
+
         /* ==================================================
-           11. NOTHING ENTERED
+           11. No filtering search
         ================================================== */
         return res.json([]);
 
@@ -394,92 +476,130 @@ app.get("/music/search", async (req, res) => {
     }
 });
 
-/* =========================
-   SUBSCRIBE SONG
-========================= */
+
+/* SUBSCRIBE TO SONG */
 app.post("/subscribe", auth, async (req, res) => {
 
-    const { email, song_id, title, artist, album, year, img_url } = req.body;
+    /* retrieves song details */
+    const {
+        email,
+        song_id,
+        title,
+        artist,
+        album,
+        year,
+        img_url
+
+    } = req.body;
 
     try {
+
+        /* inserts subscription record */
         await dynamo.put({
             TableName: SUB_TABLE,
+
             Item: {
                 email,
-                song_id,   // MUST BE album#title everywhere
+                song_id,
                 title,
                 artist,
                 album,
                 year,
                 img_url
             }
+
         }).promise();
 
         res.json({ success: true });
 
     } catch (err) {
+
         console.log(err);
-        res.status(500).json({ error: err.message });
+
+        res.status(500).json({
+            error: err.message
+        });
     }
 });
 
-/* =========================
-   GET SUBSCRIPTIONS
-========================= */
+
+/* USER SUBSCRIPTIONS */
 app.get("/subscriptions", auth, async (req, res) => {
 
     const { email } = req.query;
 
     try {
+
+        /* subscriptions table */
         const result = await dynamo.query({
             TableName: SUB_TABLE,
-            KeyConditionExpression: "email = :e",
+
+            KeyConditionExpression:
+                "email = :e",
+
             ExpressionAttributeValues: {
                 ":e": email
             }
+
         }).promise();
 
         res.json(result.Items);
 
     } catch (err) {
+
         console.log(err);
-        res.status(500).json({ error: err.message });
+
+        res.status(500).json({
+            error: err.message
+        });
     }
 });
 
-/* =========================
-   REMOVE SUBSCRIPTION (SAFE VERSION)
-========================= */
+
+/* REMOVE SUBSCRIPTION */
 app.delete("/subscription", auth, async (req, res) => {
 
     const { email, song_id } = req.body;
 
+    /* validating */
     if (!email || !song_id) {
-        return res.status(400).json({ error: "Missing fields" });
+
+        return res.status(400).json({
+            error: "Missing fields"
+        });
     }
 
     try {
+
+        /* deletes subscription record */
         await dynamo.delete({
             TableName: SUB_TABLE,
+
             Key: {
                 email,
                 song_id
             }
+
         }).promise();
 
         res.json({ success: true });
 
     } catch (err) {
+
         console.log(err);
-        res.status(500).json({ error: err.message });
+
+        res.status(500).json({
+            error: err.message
+        });
     }
 });
 
-/* =========================
-   START SERVER
-========================= */
+
+/* START EXPRESS SERVER */
 app.listen(80, "0.0.0.0", () => {
+
     console.log("Server running on port 80");
+
 });
-// fianlly commit for tn
-// testing coomit
+
+/* END OF SERVER */

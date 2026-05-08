@@ -10,14 +10,13 @@ const dynamo = DynamoDBDocumentClient.from(client);
 
 const MUSIC_TABLE = "music";
 
-/* =========================
-   MAIN HANDLER
-========================= */
+/* MAIN HANDLER */
 export const handler = async (event) => {
 
+    // Extracts query parameters from API Gateway request
     const params = event.queryStringParameters || {};
 
-    // Clean inputs
+    // cleans and normalises input values
     const artist = params.artist?.trim() || null;
     const album  = params.album?.trim() || null;
     const title  = params.title?.trim() || null;
@@ -29,6 +28,7 @@ export const handler = async (event) => {
 
         /* ==================================================
            1. ARTIST + YEAR + TITLE
+           using LSI (ArtistYearIndex) then filters Title
         ================================================== */
         if (artist && year && title) {
 
@@ -43,6 +43,7 @@ export const handler = async (event) => {
                 }
             }));
 
+            // filters results by Title match
             items = (result.Items || []).filter(s =>
                 (s.title || "").toLowerCase().includes(title.toLowerCase())
             );
@@ -50,6 +51,7 @@ export const handler = async (event) => {
 
         /* ==================================================
            2. ARTIST + ALBUM + TITLE
+           using Artist, then filters Album + Title
         ================================================== */
         else if (artist && album && title) {
 
@@ -69,6 +71,7 @@ export const handler = async (event) => {
 
         /* ==================================================
            3. ARTIST + YEAR + ALBUM
+           uses LSI (ArtistYearIndex)
         ================================================== */
         else if (artist && year && album) {
 
@@ -90,6 +93,7 @@ export const handler = async (event) => {
 
         /* ==================================================
            4. ARTIST + YEAR
+           uses LSI only + no extra filters
         ================================================== */
         else if (artist && year) {
 
@@ -109,6 +113,7 @@ export const handler = async (event) => {
 
         /* ==================================================
            5. ARTIST + ALBUM
+           using Partition key (Artist), then filters by Album
         ================================================== */
         else if (artist && album) {
 
@@ -127,6 +132,7 @@ export const handler = async (event) => {
 
         /* ==================================================
            6. ARTIST + TITLE
+           using Partition key (Album), then filters with Title
         ================================================== */
         else if (artist && title) {
 
@@ -144,7 +150,8 @@ export const handler = async (event) => {
         }
 
         /* ==================================================
-           7. ALBUM ONLY (GSI)
+           7. ALBUM ONLY
+           uses GSI (AlbumArtistIndex)
         ================================================== */
         else if (album) {
 
@@ -162,6 +169,7 @@ export const handler = async (event) => {
 
         /* ==================================================
            8. ARTIST ONLY
+           directly uses Primary Partition key
         ================================================== */
         else if (artist) {
 
@@ -177,7 +185,8 @@ export const handler = async (event) => {
         }
 
         /* ==================================================
-           9. TITLE ONLY (SCAN)
+           9. TITLE ONLY (SCAN - fallback)
+           full table scan
         ================================================== */
         else if (title) {
 
@@ -196,7 +205,8 @@ export const handler = async (event) => {
         }
 
         /* ==================================================
-           10. YEAR ONLY (SCAN)
+           10. YEAR ONLY (SCAN - fallback)
+           full table scan (fallback)
         ================================================== */
         else if (year) {
 
@@ -215,18 +225,21 @@ export const handler = async (event) => {
         }
 
         /* ==================================================
-           NO INPUTS
+           NO SEARCH PARAMETERS PROVIDED
         ================================================== */
         else {
             items = [];
         }
 
+        // success !!
         return response({
             success: true,
             items
         });
 
     } catch (err) {
+
+        // logs the errors for debugging in CloudWatch
         console.error("SEARCH ERROR:", err);
 
         return response({
@@ -236,9 +249,7 @@ export const handler = async (event) => {
     }
 };
 
-/* =========================
-   RESPONSE WRAPPER
-========================= */
+/* RESPONSE WRAPPER */
 function response(data, status = 200) {
     return {
         statusCode: status,

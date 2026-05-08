@@ -1,103 +1,136 @@
-/* General Page Styling */
+/* GENERAL PAGE STYLING (background + layout) */
 body {
     margin: 0;
     padding: 0;
+
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    /* dark grain + background image */
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
                 url('background.jpg');
+
     background-size: cover;
     background-position: center;
+
+    /* full screen height layout */
     height: 100vh;
+
+    /* centers the content vertically & horizontally */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Top Header Bar */
+/* TOP HEADER BAR */
 header {
     width: 100%;
+
     background-color: black;
     color: white;
+
     text-align: center;
     padding: 10px 0;
+
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-/* The Central Login Card */
+/* LOGIN CARD CONTAINER (main form box) */
 #login-container {
-    background-color: rgba(60, 64, 91, 0.9); /* Dark blue/grey with transparency */
+    background-color: rgba(60, 64, 91, 0.9); /* half-transparent dark box */
+
     padding: 40px;
     border-radius: 20px;
+
     width: 350px;
     margin-top: 100px;
+
     color: white;
+
+    /* shadow for the floating effect */
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+
     text-align: left;
 }
 
+/* main title */
 h2 {
     font-size: 3rem;
     margin-bottom: 10px;
     margin-top: 0;
 }
 
-/* Registration Link */
+/* REGISTER/LOGIN TEXT LINK */
 #login-container p {
     font-size: 0.9rem;
     margin-bottom: 25px;
 }
 
+/* link styling */
 #login-container a {
     color: #aaa;
     text-decoration: none;
     margin-left: 10px;
 }
 
-/* Form Layout */
+/* FORM LAYOUT */
 .form-group {
     margin-bottom: 20px;
 }
 
+/* labels the inputs above */
 label {
     display: block;
     font-weight: bold;
     margin-bottom: 8px;
 }
 
-/* Input Fields */
+/* INPUT FIELDS (LOGIN FORM) */
 input[type="email"],
 input[type="password"] {
     width: 100%;
     padding: 12px;
-    border-radius: 25px; /* Creates the rounded pill shape */
+
+    border-radius: 25px; /* pill shape */
     border: none;
-    box-sizing: border-box; /* Ensures padding doesn't break the width */
+
+    box-sizing: border-box; /* padding in width */
 }
 
-/* The ENTER Button */
-button {
-    width: 50%;
-    display: block;
-    margin: 30px auto 0;
-    padding: 12px;
-    background-color: #000000;   /* 👈 purple as default */
-    color: white;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: 0.3s; /* smooth hover */
-}
-
-button:hover {
-    background-color: #4e567a;   /* 👈 black on hover */
-}
-
+/* alternate input styling (used for register form) */
 .form-group input {
     width: 100%;
     padding: 10px;
-    border-radius: 10px;   /* 👈 this is what you wanted */
+
+    border-radius: 10px; /* slightly rounded */
+
     border: 1px solid #ccc;
     box-sizing: border-box;
+}
+
+/* SUBMIT BUTTON */
+button {
+    width: 50%;
+    display: block;
+
+    margin: 30px auto 0;
+    padding: 12px;
+
+    background-color: #000000; /* black */
+
+    color: white;
+    border: none;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    text-transform: uppercase;
+
+    /* smooth hover transition */
+    transition: 0.3s;
+}
+
+/* hover effect for button */
+button:hover {
+    background-color: #4e567a;
 }

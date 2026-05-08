@@ -3,51 +3,71 @@ import { DynamoDBDocumentClient, GetCommand } from "@aws-sdk/lib-dynamodb";
 
 const client = new DynamoDBClient({ region: "us-east-1" });
 const dynamo = DynamoDBDocumentClient.from(client);
-
 const LOGIN_TABLE = "login";
 
+/* Lambda handler for user login authentication */
 export const handler = async (event) => {
 
+    // log is full with incoming API Gateway event for debugging
     console.log("RAW EVENT:", JSON.stringify(event));
 
-    // ✅ FIX: handle both STRING and OBJECT body
+    // =========================
+    // Parse request body safely + Handles both stringified JSON and object payloads
+    // =========================
     let body = event.body;
 
     if (typeof body === "string") {
         body = JSON.parse(body);
     }
 
+    // extracts and cleans user input
     const email = body?.email?.trim();
     const password = body?.password?.trim();
 
     console.log("LOGIN ATTEMPT:", { email, password });
 
-    const result = await dynamo.send(
-        new GetCommand({
-            TableName: LOGIN_TABLE,
-            Key: { email }
-        })
-    );
+    try {
+        // fetches user record from DynamoDB using primary key (email)
+        const result = await dynamo.send(
+            new GetCommand({
+                TableName: LOGIN_TABLE,
+                Key: { email }
+            })
+        );
 
-    console.log("DYNAMO RESULT:", result);
+        console.log("DYNAMO RESULT:", result);
 
-    const item = result.Item;
+        const item = result.Item;
 
-    if (!item) {
-        return response({ success: false, message: "User not found" }, 401);
+        // if the user does not exist
+        if (!item) {
+            return response({ success: false, message: "User not found" }, 401);
+        }
+
+        // validates password (plain-text comparison for assignment !!)
+        if (item.password !== password) {
+            return response({ success: false, message: "Wrong password" }, 401);
+        }
+
+        // successful login
+        return response({
+            success: true,
+            user_name: item.user_name,
+            email: item.email
+        });
+
+    } catch (err) {
+        // safety catch (why not lol)
+        console.log("LOGIN ERROR:", err);
+
+        return response({
+            success: false,
+            message: "Server error"
+        }, 500);
     }
-
-    if (item.password !== password) {
-        return response({ success: false, message: "Wrong password" }, 401);
-    }
-
-    return response({
-        success: true,
-        user_name: item.user_name,
-        email: item.email
-    });
 };
 
+/* Standard API response wrapper with CORS headers */
 function response(data, status = 200) {
     return {
         statusCode: status,

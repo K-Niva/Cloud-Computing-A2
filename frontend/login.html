@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Stardust Music - Login</title>
+
+    <!-- External CSS for login page styling -->
     <link rel="stylesheet" href="/public/style_login.css">
 </head>
+
 <body>
 
+<!-- HEADER SECTION - logo + application title -->
 <header>
     <nav>
         <img src="/public/logo.png" alt="Stardust Music Logo" width="50">
@@ -14,49 +18,56 @@
     </nav>
 </header>
 
+<!--  MAIN LOGIN SECTION -->
 <main>
     <section id="login-container">
         <h2>Log In</h2>
 
+        <!-- Nnvigation link to register page -->
         <p>Need an Account? <a href="register.html">Create Account Now!</a></p>
 
-        <!-- Changed: removed PHP backend -->
+        <!-- login form -->
         <form id="login-form">
 
+            <!-- Email input field -->
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
             </div>
 
+            <!-- Password input field -->
             <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required>
             </div>
 
+            <!-- submit button -->
             <button type="submit">ENTER</button>
 
         </form>
 
+        <!-- authentication error message -->
         <p id="error-message" style="color: red;"></p>
 
     </section>
 </main>
 
-<!-- Backend connection script -->
+<!-- FRONTEND to BACKEND INTEGRATION -->
 <script>
-     const API_BASE = ""; // EC2 same-origin
 
-    // const API_BASE = "http://ecs-url"; // ECS URL music-alb-843515853.us-east-1.elb.amazonaws.com
+    // base API configuration (supports EC2/ECS/Lambda switching)
+    const API_BASE = ""; 
 
-    // const API_BASE = "https://081nphdcwa.execute-api.us-east-1.amazonaws.com/Production"; // Lambda URL
-
+    // login form submission handler
     document.getElementById("login-form").addEventListener("submit", async function(e) {
-        e.preventDefault();
+        e.preventDefault(); // Prevent page refresh on form submit
 
+        // collects user input values
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
 
         try {
+            // sends login request to backend API
             const response = await fetch(`${API_BASE}/login`, {
                 method: "POST",
                 headers: {
@@ -65,29 +76,36 @@
                 body: JSON.stringify({ email, password })
             });
 
+            // parsing API response safely
             const raw = await response.json();
             const data = typeof raw.body === "string"
                 ? JSON.parse(raw.body)
                 : raw;
 
+            // if authentication is successful
             if (data.success) {
-                // optional: store user in browser session
+
+                // stores the user session data in browser storage
                 localStorage.setItem("email", email);
                 localStorage.setItem("user_name", data.user_name);
 
-                // redirect to main page
+                // redirects the user to main application page
                 window.location.href = "main.html";
+
             } else {
+                // shows authentication error message
                 document.getElementById("error-message").innerText =
                     "email or password is invalid";
             }
 
         } catch (error) {
+            // handles network/server errors
             console.log(error);
             document.getElementById("error-message").innerText =
                 "Server error. Please try again.";
         }
     });
+
 </script>
 
 </body>

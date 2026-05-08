@@ -3,36 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title for browser tab -->
     <title>Stardust Music - Dashboard</title>
+
+    <!-- External CSS for homepage/dashboard styling -->
     <link rel="stylesheet" href="/public/style_home.css">
 </head>
+
 <body>
 
+<!-- HEADER SECTION - logo + logout -->
 <header class="main-header">
+
     <div class="header-left">
         <img src="/public/logo.png" alt="Stardust Music Logo" width="50">
         <h1>STARDUST MUSIC</h1>
     </div>
+
+    <!-- the logout button triggers session clear and redirects to login page -->
     <a href="login.html">
         <button id="logout-btn" class="logout-btn" onclick="logout()">Logout</button>
     </a>
+
 </header>
 
+<!-- MAIN DASHBOARD CONTENT -->
 <main class="content-container">
+
+    <!-- welcome back message !! (dynamic username from localStorage) -->
     <section class="user-banner">
         <h1 id="welcome-msg">Welcome Back <span id="user_name">User</span>!</h1>
     </section>
 
+    <!-- SUBSCRIPTION TABLE SECTION -->
     <section class="subscription-section">
+
         <div class="sub-header">
+
             <div class="sub-title-box">Your Subscriptions!</div>
 
+            <!-- the button opens modal for song search -->
             <button class="add-songs-box" onclick="toggleModal(true)">
                 <span>Add New Songs?</span>
                 <span class="plus-btn">+</span>
             </button>
+
         </div>
 
+        <!-- table shows the subscribed songs -->
         <table class="music-table">
             <thead>
             <tr>
@@ -45,19 +64,25 @@
                 <th>Remove</th>
             </tr>
             </thead>
+
+            <!-- dynamically populated subscription rows -->
             <tbody id="subscription-body"></tbody>
         </table>
+
     </section>
 </main>
 
-<!-- MODAL -->
+<!-- SEARCH MODAL POPUP -->
 <div id="query-modal" class="modal-overlay">
+
     <div class="modal-content">
 
+        <!-- close button for modal -->
         <div class="modal-top-bar">
             <span class="close-x" onclick="toggleModal(false)">&times;</span>
         </div>
 
+        <!-- Search input fields -->
         <div class="query-inputs">
 
             <div class="input-group">
@@ -80,10 +105,14 @@
                 <input type="text" id="q-album" placeholder="Text box">
             </div>
 
+            <!-- triggers the search API call -->
             <button class="search-btn-modal" onclick="performSearch()">Search!</button>
+
         </div>
 
+        <!-- Search results table -->
         <div class="results-area">
+
             <div class="results-label">Your Matching Results !! :</div>
 
             <table class="music-table">
@@ -98,10 +127,14 @@
                     <th>Subscribe</th>
                 </tr>
                 </thead>
+
+                <!-- dashboard populated search results -->
                 <tbody id="query-results-body"></tbody>
             </table>
+
         </div>
 
+        <!-- Error popup, when NO results found -->
         <div id="no-results-popup" class="error-modal" style="display:none;">
             <span class="close-x-small" onclick="closeError()">&times;</span>
             <p>No result is retrieved. Please try again</p>
@@ -110,17 +143,14 @@
     </div>
 </div>
 
+<!-- FRONTEND JAVASCRIPT LOGIC -->
 <script>
 
-    const API_BASE = ""; // EC2 same-origin
+    /* API CONFIGURATION - Supports EC2/ECS/Lambda switching */
+    const API_BASE = "";
 
-    // const API_BASE = "http://ecs-url"; // ECS URL
-
-    // const API_BASE = "https://081nphdcwa.execute-api.us-east-1.amazonaws.com/Production"; // Lambda URL
-
+    /* SAFE RESPONSE PARSER - Handles EC2 vs Lambda formats */
     function parseResponse(raw) {
-
-        // Lambda format: { body: "string" }
         if (raw.body) {
             try {
                 return typeof raw.body === "string"
@@ -130,11 +160,10 @@
                 return raw.body;
             }
         }
-
-        // EC2 / normal Express
         return raw;
     }
 
+    /* MODAL CONTROLS */
     function toggleModal(show) {
         document.getElementById('query-modal').style.display = show ? 'flex' : 'none';
     }
@@ -143,26 +172,30 @@
         document.getElementById('no-results-popup').style.display = 'none';
     }
 
+    /* PAGE INITIALISATION - Loads user session + subscriptions */
     window.onload = async () => {
 
-    try {
-        const username = localStorage.getItem("user_name");
-        document.getElementById("user_name").innerText = username || "User";
+        try {
+            const username = localStorage.getItem("user_name");
 
-        // ONLY call this
-        await loadSubscriptions();
+            // displays the logged-in user name
+            document.getElementById("user_name").innerText = username || "User";
 
-    } catch (err) {
-        console.log(err);
-        window.location.href = "/login.html";
-    }
-};
+            // loads the user's subscriptions on page load
+            await loadSubscriptions();
 
-    /* =========================
-       SEARCH MUSIC
-    ========================= */
+        } catch (err) {
+            console.log(err);
+
+            // redirects if session is invalid
+            window.location.href = "/login.html";
+        }
+    };
+
+    /* MUSIC SEARCH FUNCTION */
     async function performSearch() {
 
+        // collects the search filters
         const title = document.getElementById("q-title").value;
         const artist = document.getElementById("q-artist").value;
         const year = document.getElementById("q-year").value;
@@ -182,25 +215,25 @@
 
             let data = raw;
 
-            // If Lambda (API Gateway format)
+            // normalises the Lambda response format
             if (raw.body) {
                 data = typeof raw.body === "string"
-                ? JSON.parse(raw.body)
-                : raw.body;
+                    ? JSON.parse(raw.body)
+                    : raw.body;
             }
 
-            // Now normalize EC2 + Lambda
             const items = data.items || data.success?.items || data || [];
-
 
             const tbody = document.getElementById("query-results-body");
             tbody.innerHTML = "";
 
+            // shows the error popup when no results
             if (items.length === 0) {
                 document.getElementById("no-results-popup").style.display = "block";
                 return;
             }
 
+            // renders the search results dynamically
             items.forEach((song, index) => {
 
                 const row = `
@@ -229,9 +262,7 @@
         }
     }
 
-    /* =========================
-       SUBSCRIBE SONG
-    ========================= */
+    /* SUBSCRIBE TO SONG */
     async function subscribeSong(song) {
 
         const email = localStorage.getItem("email");
@@ -244,9 +275,7 @@
         try {
             await fetch(`${API_BASE}/subscribe`, {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     email,
                     song_id: song.album + "#" + song.title,
@@ -266,9 +295,7 @@
         }
     }
 
-    /* =========================
-       LOAD SUBSCRIPTIONS
-    ========================= */
+    /* LOAD USER SUBSCRIPTIONS */
     async function loadSubscriptions() {
 
         const email = localStorage.getItem("email");
@@ -276,28 +303,15 @@
 
         try {
             const res = await fetch(`${API_BASE}/subscriptions?email=${email}`);
-
             const raw = await res.json();
             const data = parseResponse(raw);
 
-            // normalize ALL formats safely
             const items = Array.isArray(data)
-            ? data
-            : Array.isArray(data.items)
-                ? data.items
-                : Array.isArray(data.Items)
-                    ? data.Items
-                    : [];
-
-            console.log("SUBSCRIPTIONS RESPONSE:", data);
+                ? data
+                : data.items || data.Items || [];
 
             const tbody = document.getElementById("subscription-body");
             tbody.innerHTML = "";
-
-            if (!Array.isArray(items)) {
-                console.log("Unexpected items format:", items);
-                return;
-            }
 
             items.forEach((song, index) => {
 
@@ -325,37 +339,30 @@
         }
     }
 
-    /* =========================
-       REMOVE SUBSCRIPTION
-    ========================= */
+    /* REMOVE SUBSCRIPTION */
     async function removeSong(email, song_id) {
 
-    try {
-        await fetch(`${API_BASE}/subscription`, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                email,
-                song_id
-            })
-        });
+        try {
+            await fetch(`${API_BASE}/subscription`, {
+                method: "DELETE",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, song_id })
+            });
 
-        loadSubscriptions();
+            loadSubscriptions();
 
-    } catch (err) {
-        console.log(err);
+        } catch (err) {
+            console.log(err);
+        }
     }
-}
 
-    /* =========================
-       LOGOUT
-    ========================= */
+    /* LOGOUT FUNCTION */
     async function logout() {
         await fetch("/logout", { method: "POST" });
+
         localStorage.removeItem("email");
         localStorage.removeItem("user_name");
+
         window.location.href = "/login.html";
     }
 

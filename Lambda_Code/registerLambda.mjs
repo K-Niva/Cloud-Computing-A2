@@ -6,18 +6,24 @@ const dynamo = DynamoDBDocumentClient.from(client);
 
 const LOGIN_TABLE = "login";
 
+/* Lambda handler for user registration:
+ * - checks if user already exists
+ * - if not, inserts the new user into DynamoDB */
 export const handler = async (event) => {
 
+    // parses request body
     let body = event.body;
 
     if (typeof body === "string") {
         body = JSON.parse(body);
     }
 
+    // extracts register fields from request body
     const { user_name, email, password } = body || {};
 
     console.log("REGISTER ATTEMPT:", { user_name, email });
 
+    // CHECK IF USER EXISTS
     const existingUser = await dynamo.send(
         new GetCommand({
             TableName: LOGIN_TABLE,
@@ -25,6 +31,7 @@ export const handler = async (event) => {
         })
     );
 
+    // If email already exists, reject registration
     if (existingUser.Item) {
         return response({
             success: false,
@@ -32,6 +39,7 @@ export const handler = async (event) => {
         }, 400);
     }
 
+    // CREATE NEW USER
     await dynamo.send(
         new PutCommand({
             TableName: LOGIN_TABLE,
@@ -39,9 +47,11 @@ export const handler = async (event) => {
         })
     );
 
+    // success !!
     return response({ success: true });
 };
 
+/* Standard API response wrapper with CORS support */
 function response(data, status = 200) {
     return {
         statusCode: status,

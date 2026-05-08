@@ -1,57 +1,90 @@
-/* GLOBAL */
+/* GLOBAL STYLES */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+
+    /* background image for all pages */
     background: url('background.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
-/* HEADER */
+/* second body block (overrides the background with darker overlay) */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+
+    /* dark grain + background image */
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+        url('background.jpg') no-repeat center center fixed;
+
+    background-size: cover;
+}
+
+/* EADER SECTION */
 .main-header {
     background: #000;
     color: #fff;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     padding: 10px 20px;
 }
 
-.header-left { display: flex; align-items: center; }
-.nav-logo { width: 40px; margin-right: 15px; }
+/* left side of header (logo + title) */
+.header-left {
+    display: flex;
+    align-items: center;
+}
 
+/* logo styling */
+.nav-logo {
+    width: 40px;
+    margin-right: 15px;
+}
+
+/* logout button styling */
 .logout-btn {
     background: linear-gradient(to right, #6a11cb, #2575fc);
     color: white;
+
     border: none;
     padding: 8px 20px;
     border-radius: 10px;
+
     cursor: pointer;
     font-weight: bold;
 }
 
-/* CONTENT */
-.content-container { padding: 40px; }
+/* MAIN CONTENT AREA */
+.content-container {
+    padding: 40px;
+}
 
+/* user welcome banner section */
 .user-banner {
     background: transparent;
 }
 
-/* welcome */
+/* welcome text styling */
 #welcome-msg {
     border: none;
     background: transparent;
 
     font-size: 2.6rem;
-    font-weight: 600;   /* less thick than before */
+    font-weight: 600;
 
-    color: #d07a95;     /* slightly softer pink */
+    color: #d07a95;
 
+    /* layered shadow */
     text-shadow:
         3px 3px 0px black,
-        5px 5px 8px rgba(0, 0, 0, 0.6);  /* thicker shadow depth */
+        5px 5px 8px rgba(0, 0, 0, 0.6);
 }
 
-/* SUB HEADER */
+/* SUBSCRIPTION HEADER */
 .sub-header {
     display: flex;
     justify-content: space-between;
@@ -59,38 +92,45 @@ body {
     margin-bottom: 20px;
 }
 
-/* subscriptions */
+/* "Your Subscriptions" label box */
 .sub-title-box {
     background: #de6352;
     border: 2px solid black;
+
     padding: 10px 25px;
     font-weight: bold;
     font-size: 1.2rem;
+
     border-radius: 12px;
 }
 
-/* add songs */
+/* "Add Songs" button box */
 .add-songs-box {
     background: #c78eaa;
     border: 2px solid black;
+
     padding: 8px 15px;
     display: flex;
     align-items: center;
+
     cursor: pointer;
     font-size: 1.2rem;
     font-weight: bold;
+
     border-radius: 12px;
 }
 
-/* plus button */
+/* plus icon inside add button */
 .plus-btn {
     background: #a24c76;
     color: black;
+
     border: 2px solid black;
-    font-weight: bold;
     border-radius: 50%;
+
     width: 30px;
     height: 30px;
+
     margin-left: 10px;
 
     display: flex;
@@ -98,43 +138,50 @@ body {
     justify-content: center;
 }
 
-/* TABLE */
+/* MUSIC TABLE STYLING */
 .music-table {
     width: 100%;
-    border-collapse: separate;   /* important for rounded effect */
-    border-spacing: 0 10px;      /* space between rows */
+    border-collapse: separate;
+    border-spacing: 0 10px; /* spacing between rows */
     background: transparent;
 }
 
+/* album images inside table */
 .music-table img {
-    width: 80px;     /* increase this if you want bigger */
+    width: 80px;
     height: auto;
     border-radius: 6px;
 }
 
+/* table header */
 .music-table thead th {
     background: #000;
     color: white;
+
     padding: 12px;
     border: none;
     font-weight: bold;
 }
 
+/* table header border styling */
 .music-table th {
     border: 2px solid black;
     padding: 10px;
 }
 
+/* table rows */
 .music-table tbody tr {
     background: white;
     transition: 0.2s;
 }
 
+/* hover effect on rows */
 .music-table tbody tr:hover {
     transform: scale(1.01);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
+/* table cells */
 .music-table td {
     border: 2px solid black;
     padding: 12px;
@@ -142,11 +189,12 @@ body {
     border: none;
 }
 
-/* MODAL */
+/* MODAL (POPUP WINDOW) */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
 
@@ -160,6 +208,7 @@ body {
     box-sizing: border-box;
 }
 
+/* modal main container */
 .modal-content {
     background: #3e445e;
     width: 90%;
@@ -168,7 +217,6 @@ body {
     max-height: 90vh;
 
     border-radius: 15px;
-    position: relative;
 
     display: flex;
     flex-direction: column;
@@ -176,54 +224,56 @@ body {
     overflow: hidden;
 }
 
-/* top bar */
+/* modal top bar */
 .modal-top-bar {
     background: #000;
     min-height: 50px;
 
     display: flex;
     align-items: center;
-    padding-left: 10px;
 
+    padding-left: 10px;
     flex-shrink: 0;
 }
 
-/* close button */
+/* big close button (top left) */
 .close-x {
     color: red;
     font-size: 40px;
     font-weight: bold;
+
     border: 2px solid black;
     padding: 5px 12px;
+
     border-radius: 6px;
     cursor: pointer;
-    margin-top: 2px;
 }
 
+/* small close button (error popup) */
 .close-x-small {
     position: absolute;
-    top: 4px;          /* tighter to top */
-    right: 6px;        /* tighter to right */
+    top: 4px;
+    right: 6px;
 
-    font-size: 28px;   /* keep X size */
+    font-size: 28px;
     font-weight: bold;
     color: red;
 
     background: black;
     border: 1.5px solid black;
 
-    padding: 0px 4px;  /* smaller box */
+    padding: 0px 4px;
     border-radius: 4px;
 
-    line-height: 1;    /* removes extra vertical space */
-
+    line-height: 1;
     cursor: pointer;
 }
 
-/* INPUTS */
+/* SEARCH INPUT SECTION */
 .query-inputs {
     display: flex;
     gap: 15px;
+
     padding: 25px;
     flex-wrap: wrap;
     align-items: center;
@@ -231,45 +281,54 @@ body {
     flex-shrink: 0;
 }
 
+/* results container inside modal */
 .results-area {
     flex: 1;
     overflow-y: auto;
+
     padding: 20px;
 }
 
-
-
+/* input field group (label + input) */
 .input-group {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
+/* input labels */
 .input-group label {
     background: #e95e5b;
     border: 2px solid black;
+
     padding: 8px 10px;
     border-radius: 10px;
+
     color: black;
     font-weight: bold;
     width: 80px;
 }
 
+/* input boxes */
 .input-group input {
     background: #c78eaa;
     border: 2px solid black;
+
     padding: 10px;
     border-radius: 6px;
 }
 
-/* SEARCH BUTTON (modal) */
+/* search button inside modal */
 .search-btn-modal {
-    background: #000000;              /* black button */
-    color: white;                    /* white text */
-    border: none;                    /* keep it soft like before */
+    background: #000000;
+    color: white;
+
+    border: none;
     padding: 10px 20px;
+
     border-radius: 20px;
     font-weight: bold;
+
     cursor: pointer;
     transition: 0.3s;
 }
@@ -277,35 +336,31 @@ body {
 /* RESULTS LABEL */
 .results-label {
     display: none;
+
     background: #0ba84a;
     color: black;
+
     border: 2px solid black;
     padding: 8px 15px;
+
     margin-bottom: 10px;
     width: fit-content;
+
     font-weight: bold;
     font-size: 1.1rem;
 }
 
-/* ERROR */
+/* ERROR POPUP */
 .error-modal {
     position: absolute;
     top: 50%;
     left: 50%;
+
     transform: translate(-50%, -50%);
+
     background: #ff9999;
     border: 2px solid purple;
+
     padding: 20px;
     font-weight: bold;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-
-    background:
-        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-        url('background.jpg') no-repeat center center fixed;
-
-    background-size: cover;
 }
