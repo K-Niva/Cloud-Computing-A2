@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Stardust Music - Register</title>
-    <link rel="stylesheet" href="style_login.css">
+    <link rel="stylesheet" href="/public/style_login.css">
 </head>
 <body>
 
 <header>
     <nav>
-        <img src="logo.png" alt="Stardust Music Logo" width="50">
+        <img src="/public/logo.png" alt="Stardust Music Logo" width="50">
         <h1>STARDUST MUSIC</h1>
     </nav>
 </header>
@@ -20,7 +20,7 @@
 
         <p>Already have an account? <a href="login.html">Log In</a></p>
 
-        <form id="register-form">
+        <form id="register-form" method="POST">
 
             <!-- Username -->
             <div class="form-group">
@@ -50,6 +50,12 @@
 </main>
 
 <script>
+     const API_BASE = ""; // EC2 same-origin
+
+    // const API_BASE = "http://ecs-url"; // ECS URL
+
+    // const API_BASE = "https://081nphdcwa.execute-api.us-east-1.amazonaws.com/Production"; // Lambda URL
+
     document.getElementById("register-form").addEventListener("submit", async function(e) {
 
         e.preventDefault();
@@ -60,7 +66,7 @@
 
         try {
 
-            const response = await fetch("/register", {
+            const response = await fetch(`${API_BASE}/register`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -71,8 +77,16 @@
                     password
                 })
             });
+            const raw = await response.json();
 
-            const data = await response.json();
+            // handle Lambda wrapped response if needed
+            let data = raw;
+
+            if (typeof raw.body === "string") {
+                data = JSON.parse(raw.body);
+            }
+
+            console.log("REGISTER RESPONSE:", data);
 
             if (data.success) {
 

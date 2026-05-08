@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Stardust Music - Login</title>
-    <link rel="stylesheet" href="style_login.css">
+    <link rel="stylesheet" href="/public/style_login.css">
 </head>
 <body>
 
 <header>
     <nav>
-        <img src="logo.png" alt="Stardust Music Logo" width="50">
+        <img src="/public/logo.png" alt="Stardust Music Logo" width="50">
         <h1>STARDUST MUSIC</h1>
     </nav>
 </header>
@@ -44,6 +44,12 @@
 
 <!-- Backend connection script -->
 <script>
+     const API_BASE = ""; // EC2 same-origin
+
+    // const API_BASE = "http://ecs-url"; // ECS URL music-alb-843515853.us-east-1.elb.amazonaws.com
+
+    // const API_BASE = "https://081nphdcwa.execute-api.us-east-1.amazonaws.com/Production"; // Lambda URL
+
     document.getElementById("login-form").addEventListener("submit", async function(e) {
         e.preventDefault();
 
@@ -51,7 +57,7 @@
         const password = document.getElementById("password").value;
 
         try {
-            const response = await fetch("/login", {
+            const response = await fetch(`${API_BASE}/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -59,7 +65,10 @@
                 body: JSON.stringify({ email, password })
             });
 
-            const data = await response.json();
+            const raw = await response.json();
+            const data = typeof raw.body === "string"
+                ? JSON.parse(raw.body)
+                : raw;
 
             if (data.success) {
                 // optional: store user in browser session

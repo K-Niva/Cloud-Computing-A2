@@ -5,6 +5,13 @@ const path = require("path");
 
 const app = express();
 
+const session = require("express-session");
+app.use(session({
+    secret: "music-app-secret",
+    resave: false,
+    saveUninitialized: false
+}));
+
 app.use(cors());
 app.use(express.json());
 
@@ -20,9 +27,44 @@ const SUB_TABLE = "subscriptions";
 /* =========================
    STATIC FRONTEND
 ========================= */
-app.use(express.static(path.join(__dirname, "frontend")));
+app.use("/public", express.static(path.join(__dirname, "frontend")));
 
 app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "frontend", "login.html"));
+});
+
+app.get("/register.html", (req, res) => {
+    res.sendFile(path.join(__dirname, "frontend", "register.html"));
+});
+
+
+
+/* =========================
+   AUTH MIDDLEWARE
+========================= */
+function auth(req, res, next) {
+    if (!req.session.user) {
+        return res.redirect("/");
+    }
+    next();
+}
+
+
+app.post("/logout", (req, res) => {
+    req.session.destroy(() => {
+        res.json({ success: true });
+    });
+});
+
+app.get("/main.html", auth, (req, res) => {
+    res.sendFile(path.join(__dirname, "frontend", "main.html"));
+});
+
+app.get("/register.html", (req, res) => {
+    res.sendFile(path.join(__dirname, "frontend", "register.html"));
+});
+
+app.get("/login.html", (req, res) => {
     res.sendFile(path.join(__dirname, "frontend", "login.html"));
 });
 
@@ -44,6 +86,12 @@ app.post("/login", async (req, res) => {
         }
 
         if (result.Item.password === password) {
+
+            req.session.user = {
+                email: result.Item.email,
+                user_name: result.Item.user_name
+            };
+
             return res.json({
                 success: true,
                 user_name: result.Item.user_name
@@ -105,7 +153,7 @@ app.post("/register", async (req, res) => {
 });
 
 /* =========================
-   MUSIC SEARCH API push
+   MUSIC SEARCH API
 ========================= */
 app.get("/music/search", async (req, res) => {
 
@@ -349,7 +397,7 @@ app.get("/music/search", async (req, res) => {
 /* =========================
    SUBSCRIBE SONG
 ========================= */
-app.post("/subscribe", async (req, res) => {
+app.post("/subscribe", auth, async (req, res) => {
 
     const { email, song_id, title, artist, album, year, img_url } = req.body;
 
@@ -378,7 +426,7 @@ app.post("/subscribe", async (req, res) => {
 /* =========================
    GET SUBSCRIPTIONS
 ========================= */
-app.get("/subscriptions", async (req, res) => {
+app.get("/subscriptions", auth, async (req, res) => {
 
     const { email } = req.query;
 
@@ -402,7 +450,7 @@ app.get("/subscriptions", async (req, res) => {
 /* =========================
    REMOVE SUBSCRIPTION (SAFE VERSION)
 ========================= */
-app.delete("/subscription", async (req, res) => {
+app.delete("/subscription", auth, async (req, res) => {
 
     const { email, song_id } = req.body;
 
@@ -434,3 +482,4 @@ app.listen(80, "0.0.0.0", () => {
     console.log("Server running on port 80");
 });
 // fianlly commit for tn
+// testing coomit

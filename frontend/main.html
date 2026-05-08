@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stardust Music - Dashboard</title>
-    <link rel="stylesheet" href="style_home.css">
+    <link rel="stylesheet" href="/public/style_home.css">
 </head>
 <body>
 
 <header class="main-header">
     <div class="header-left">
-        <img src="logo.png" alt="Logo" class="nav-logo">
+        <img src="/public/logo.png" alt="Stardust Music Logo" width="50">
         <h1>STARDUST MUSIC</h1>
     </div>
     <a href="login.html">
@@ -112,6 +112,29 @@
 
 <script>
 
+    const API_BASE = ""; // EC2 same-origin
+
+    // const API_BASE = "http://ecs-url"; // ECS URL
+
+    // const API_BASE = "https://081nphdcwa.execute-api.us-east-1.amazonaws.com/Production"; // Lambda URL
+
+    function parseResponse(raw) {
+
+        // Lambda format: { body: "string" }
+        if (raw.body) {
+            try {
+                return typeof raw.body === "string"
+                    ? JSON.parse(raw.body)
+                    : raw.body;
+            } catch (e) {
+                return raw.body;
+            }
+        }
+
+        // EC2 / normal Express
+        return raw;
+    }
+
     function toggleModal(show) {
         document.getElementById('query-modal').style.display = show ? 'flex' : 'none';
     }
@@ -120,21 +143,23 @@
         document.getElementById('no-results-popup').style.display = 'none';
     }
 
-window.onload = () => {
+    window.onload = async () => {
 
-    const username = localStorage.getItem("user_name");
+    try {
+        const username = localStorage.getItem("user_name");
+        document.getElementById("user_name").innerText = username || "User";
 
-    if (username) {
-        document.getElementById("user_name").innerText = username;
-    } else {
-        document.getElementById("user_name").innerText = "User";
+        // ONLY call this
+        await loadSubscriptions();
+
+    } catch (err) {
+        console.log(err);
+        window.location.href = "/login.html";
     }
-
-    loadSubscriptions();
 };
 
     /* =========================
-       SEARCH MUSIC (EC2)
+       SEARCH MUSIC
     ========================= */
     async function performSearch() {
 
@@ -143,26 +168,40 @@ window.onload = () => {
         const year = document.getElementById("q-year").value;
         const album = document.getElementById("q-album").value;
 
-        const query = new URLSearchParams({
-            title,
-            artist,
-            year,
-            album
-        });
+        const queryObj = {};
+        if (title) queryObj.title = title;
+        if (artist) queryObj.artist = artist;
+        if (year) queryObj.year = year;
+        if (album) queryObj.album = album;
+
+        const query = new URLSearchParams(queryObj);
 
         try {
-            const res = await fetch(`/music/search?${query}`);
-            const data = await res.json();
+            const res = await fetch(`${API_BASE}/music/search?${query}`);
+            const raw = await res.json();
+
+            let data = raw;
+
+            // If Lambda (API Gateway format)
+            if (raw.body) {
+                data = typeof raw.body === "string"
+                ? JSON.parse(raw.body)
+                : raw.body;
+            }
+
+            // Now normalize EC2 + Lambda
+            const items = data.items || data.success?.items || data || [];
+
 
             const tbody = document.getElementById("query-results-body");
             tbody.innerHTML = "";
 
-            if (!data || data.length === 0) {
+            if (items.length === 0) {
                 document.getElementById("no-results-popup").style.display = "block";
                 return;
             }
 
-            data.forEach((song, index) => {
+            items.forEach((song, index) => {
 
                 const row = `
                     <tr>
@@ -174,7 +213,7 @@ window.onload = () => {
                         <td>${song.year}</td>
                         <td>
                             <button data-song='${JSON.stringify(song)}'
-                                    onclick="subscribeSong(JSON.parse(this.dataset.song))">
+                                onclick="subscribeSong(JSON.parse(this.dataset.song))">
                                 Subscribe
                             </button>
                         </td>
@@ -203,7 +242,7 @@ window.onload = () => {
         }
 
         try {
-            await fetch("/subscribe", {
+            await fetch(`${API_BASE}/subscribe`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -233,17 +272,34 @@ window.onload = () => {
     async function loadSubscriptions() {
 
         const email = localStorage.getItem("email");
-
         if (!email) return;
 
         try {
-            const res = await fetch(`/subscriptions?email=${email}`);
-            const data = await res.json();
+            const res = await fetch(`${API_BASE}/subscriptions?email=${email}`);
+
+            const raw = await res.json();
+            const data = parseResponse(raw);
+
+            // normalize ALL formats safely
+            const items = Array.isArray(data)
+            ? data
+            : Array.isArray(data.items)
+                ? data.items
+                : Array.isArray(data.Items)
+                    ? data.Items
+                    : [];
+
+            console.log("SUBSCRIPTIONS RESPONSE:", data);
 
             const tbody = document.getElementById("subscription-body");
             tbody.innerHTML = "";
 
-            data.forEach((song, index) => {
+            if (!Array.isArray(items)) {
+                console.log("Unexpected items format:", items);
+                return;
+            }
+
+            items.forEach((song, index) => {
 
                 const row = `
                     <tr>
@@ -275,7 +331,7 @@ window.onload = () => {
     async function removeSong(email, song_id) {
 
     try {
-        await fetch("/subscription", {
+        await fetch(`${API_BASE}/subscription`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
@@ -296,9 +352,11 @@ window.onload = () => {
     /* =========================
        LOGOUT
     ========================= */
-    function logout() {
+    async function logout() {
+        await fetch("/logout", { method: "POST" });
         localStorage.removeItem("email");
-        window.location.href = "/";
+        localStorage.removeItem("user_name");
+        window.location.href = "/login.html";
     }
 
 </script>
