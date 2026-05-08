@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Final commit">
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -155,6 +154,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
+    </task>
+    <task id="LOCAL-00122" summary="Finshed intiall lambda.js file">
+      <option name="closed" value="true" />
+      <created>1777991828264</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1777991828264</updated>
     </task>
     <task id="LOCAL-00123" summary="making changes to the lambda file">
       <option name="closed" value="true" />
@@ -540,15 +547,7 @@
       <option name="project" value="LOCAL" />
       <updated>1778182860579</updated>
     </task>
-    <task id="LOCAL-00171" summary="Final commit">
-      <option name="closed" value="true" />
-      <created>1778184286359</created>
-      <option name="number" value="00171" />
-      <option name="presentableId" value="LOCAL-00171" />
-      <option name="project" value="LOCAL" />
-      <updated>1778184286359</updated>
-    </task>
-    <option name="localTasksCounter" value="172" />
+    <option name="localTasksCounter" value="171" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
