@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Making final changes (e.g making project cleaner)">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Making changes to readme file">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,14 +107,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00127" summary="gobfdgjo">
-      <option name="closed" value="true" />
-      <created>1778014207476</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
-      <option name="project" value="LOCAL" />
-      <updated>1778014207476</updated>
     </task>
     <task id="LOCAL-00128" summary="gobfdgjo">
       <option name="closed" value="true" />
@@ -500,7 +492,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778582314415</updated>
     </task>
-    <option name="localTasksCounter" value="176" />
+    <task id="LOCAL-00176" summary="Making changes to readme file">
+      <option name="closed" value="true" />
+      <created>1778585246956</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
+      <option name="project" value="LOCAL" />
+      <updated>1778585246956</updated>
+    </task>
+    <option name="localTasksCounter" value="177" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -516,7 +516,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="gobfdgjo" />
     <MESSAGE value="Put the lambda files" />
     <MESSAGE value="Chaing code around" />
     <MESSAGE value="// testing commit dg" />
@@ -541,7 +540,8 @@
     <MESSAGE value="Fixed Pom" />
     <MESSAGE value="Making changes to comments" />
     <MESSAGE value="Making final changes (e.g making project cleaner)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Making final changes (e.g making project cleaner)" />
+    <MESSAGE value="Making changes to readme file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Making changes to readme file" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
