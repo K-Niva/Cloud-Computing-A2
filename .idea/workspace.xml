@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="adding back package files">
+    <list default="true" id="09001b1b-b94d-4743-9d79-9d26f00c160a" name="Changes" comment="Changed the readme file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -108,14 +108,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776145253067</updated>
-    </task>
-    <task id="LOCAL-00131" summary="Put the lambda files">
-      <option name="closed" value="true" />
-      <created>1778069401526</created>
-      <option name="number" value="00131" />
-      <option name="presentableId" value="LOCAL-00131" />
-      <option name="project" value="LOCAL" />
-      <updated>1778069401526</updated>
     </task>
     <task id="LOCAL-00132" summary="Put the lambda files">
       <option name="closed" value="true" />
@@ -501,7 +493,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778586667499</updated>
     </task>
-    <option name="localTasksCounter" value="180" />
+    <task id="LOCAL-00180" summary="Changed the readme file">
+      <option name="closed" value="true" />
+      <created>1778588193188</created>
+      <option name="number" value="00180" />
+      <option name="presentableId" value="LOCAL-00180" />
+      <option name="project" value="LOCAL" />
+      <updated>1778588193188</updated>
+    </task>
+    <option name="localTasksCounter" value="181" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -517,7 +517,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
-    <MESSAGE value="// testing commit dg" />
     <MESSAGE value="Lambda worked?? for get subs" />
     <MESSAGE value="Lambda worked for login and getSubs so far" />
     <MESSAGE value="Lambda workek? for muisc checking ec2" />
@@ -542,7 +541,8 @@
     <MESSAGE value="Making changes to readme file" />
     <MESSAGE value="Checking ec2" />
     <MESSAGE value="adding back package files" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding back package files" />
+    <MESSAGE value="Changed the readme file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed the readme file" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

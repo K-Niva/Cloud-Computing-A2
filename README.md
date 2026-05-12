@@ -46,7 +46,7 @@ Contains:
 Location:
 
 ```text
-main/java/com/amazonaws/samples/database/
+src/main/java/com/amazonaws/samples/database/
 ```
 
 Contains:
