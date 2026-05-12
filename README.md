@@ -62,7 +62,7 @@ Contains:
 Location:
 
 ```text
-main/java/com/amazonaws/samples/lambda/
+src/main/java/com/amazonaws/samples/lambda/
 ```
 
 Contains:
